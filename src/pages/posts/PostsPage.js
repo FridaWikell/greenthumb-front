@@ -10,7 +10,7 @@ import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 
 import InfiniteScroll from "react-infinite-scroll-component";

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import CommentEditForm from "./CommentEditForm";
+
+import Media from "react-bootstrap/Media";
 
 import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";

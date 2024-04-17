@@ -10,10 +10,7 @@ import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 
 import { axiosReq } from "../../api/axiosDefaults";
-import {
-  useCurrentUser,
-  useSetCurrentUser,
-} from "../../contexts/CurrentUserContext";
+import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
