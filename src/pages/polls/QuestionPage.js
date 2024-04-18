@@ -15,6 +15,7 @@ function QuestionPage() {
   const { id } = useParams();
   const [question, setQuestion] = useState(null);
   const [answers, setAnswers] = useState([]);
+  const [selectedAnswerId, setSelectedAnswerId] = useState(null);
 
   useEffect(() => {
     const fetchQuestionAndAnswers = async () => {
@@ -32,7 +33,7 @@ function QuestionPage() {
 
   return (
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
+      <Col className="py-2 p-0 p-lg-2 mx-auto" lg={8}>
         <Container className={appStyles.Content}>
           {question && (
             <QuestionDetails {...question} />
@@ -40,15 +41,21 @@ function QuestionPage() {
           {answers.length > 0 && (
             <Container>
               {answers.map((answer) => (
-                <Answer key={answer.id} {...answer} />
+                <Answer 
+                  key={answer.id} 
+                  {...answer} 
+                  onSelectAnswer={setSelectedAnswerId}
+                  isSelected={selectedAnswerId === answer.id}
+                />
               ))}
-              <VoteForm questionId={id} answers={answers} />
+              <VoteForm 
+                questionId={id} 
+                answers={answers} 
+                selectedAnswerId={selectedAnswerId}
+              />
             </Container>
           )}
         </Container>
-      </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        Other related questions or popular questions here
       </Col>
     </Row>
   );

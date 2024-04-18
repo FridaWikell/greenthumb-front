@@ -67,3 +67,13 @@
   background-color: #2ed9ff;
   color: #2142b2;
 }
+
+.VoteEnabled {
+  background-color: blue; /* Normal state color */
+  color: white;
+}
+
+.VoteDisabled {
+  background-color: lightblue; /* More noticeable disabled state color */
+  color: gray;
+}

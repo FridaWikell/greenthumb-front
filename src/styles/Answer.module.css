@@ -1,0 +1,8 @@
+.answerButton {
+  cursor: pointer;
+}
+
+.selectedAnswer {
+  background-color: #f0f0f0; /* Light grey background to highlight selection */
+  border: 2px solid blue; /* Optional: add a border to highlight selected answer */
+}
