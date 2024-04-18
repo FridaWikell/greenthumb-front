@@ -1,6 +1,6 @@
 .App {
   font-family: "DM Sans", sans-serif;
-  background-color: #f8f8f8;
+  background-color: #f1f5f0;
   min-height: 100vh;
 }
 
@@ -32,16 +32,17 @@
 }
 
 a {
-  color: #555555;
+  color: #222222;
   transition: color ease-in-out 0.3s;
 }
 
 a:hover {
   text-decoration: none;
+  color: #4b4c50;
 }
 
 a:hover i {
-  color: #2142b2;
+  color: #4b4c50;
   transition: color ease-in-out 0.3s;
 }
 
@@ -50,7 +51,7 @@ input[type="file"] {
 }
 
 i {
-  color: #cfced3;
+  color: #303030;
   font-size: 1.6rem;
   padding: 7px;
   vertical-align: middle;
@@ -59,7 +60,7 @@ i {
 i:hover {
   cursor: pointer;
   transition: color ease-in-out 0.3s;
-  color: #2142b2;
+  color: #4b4c50;
 }
 
 figure {
