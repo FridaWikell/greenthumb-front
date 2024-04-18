@@ -14,6 +14,9 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import Questions from "./pages/polls/Questions";
+import QuestionForm from "./pages/polls/QuestionForm";
+import QuestionPage from "./pages/polls/QuestionPage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -48,7 +51,6 @@ function App() {
               />
             )}
           />
-          <Route exact path="/" render={() => <h1>Home page</h1>} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
@@ -67,6 +69,9 @@ function App() {
             exact path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
           />
+          <Route exact path="/questions" render={() => <Questions />} />
+          <Route exact path="/questions/create" render={() => <QuestionForm />} />
+          <Route exact path="/questions/:id" render={() => <QuestionPage />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
