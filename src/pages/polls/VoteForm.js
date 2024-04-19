@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+
 import btnStyles from "../../styles/Button.module.css";
 
 function VoteForm({ questionId, selectedAnswerId }) {
@@ -33,11 +34,11 @@ function VoteForm({ questionId, selectedAnswerId }) {
   return (
     <div>
       <Button 
+        disabled={!selectedAnswerId}
         className={`${selectedAnswerId ? btnStyles.VoteEnabled : btnStyles.VoteDisabled} mt-3`}
         onClick={handleSubmit} 
-        disabled={!selectedAnswerId}
       >
-        Submit Vote
+        Submit
       </Button>
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>

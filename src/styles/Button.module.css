@@ -69,11 +69,13 @@
 }
 
 .VoteEnabled {
-  background-color: blue; /* Normal state color */
-  color: white;
+  background-color: #a7b3a4;
+  color: #000000;
+  border: #9daf99;
 }
 
 .VoteDisabled {
-  background-color: lightblue; /* More noticeable disabled state color */
-  color: gray;
+  background-color: #c6d6c2 !important;
+  color: #808080;
+  border: #9daf99;
 }

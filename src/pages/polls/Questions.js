@@ -70,7 +70,7 @@ function Questions({ message = "No questions found." }) {
                 hasMore={!!questions.next}
                 loader={<Asset spinner />}
                 children={questions.results.map((question) => (
-                  <Container key={question.id} className={appStyles.Content}>
+                  <Container key={question.id} className={`mb-4 ${appStyles.Content}`}>
                     <h4>{question.text}</h4>
                     {question.answers.map((answer) => (
                       <Answer
