@@ -3,6 +3,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import VoteForm from "./VoteForm";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import Answer from "../../components/Answer";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -11,12 +12,13 @@ import Form from "react-bootstrap/Form";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
-import styles from "../../styles/Questions.module.css"; // Assume you have similar CSS setup for questions
+import styles from "../../styles/Questions.module.css";
 
-function QuestionsPage({ message = "No questions found." }) {
+function Questions({ message = "No questions found." }) {
   const [questions, setQuestions] = useState({ results: [], next: null });
   const [hasLoaded, setHasLoaded] = useState(false);
   const [query, setQuery] = useState("");
+  const [selectedAnswers, setSelectedAnswers] = useState({});
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -36,6 +38,13 @@ function QuestionsPage({ message = "No questions found." }) {
 
     return () => clearTimeout(timer);
   }, [query]);
+
+  const handleSelectAnswer = (questionId, answerId) => {
+    setSelectedAnswers((prev) => ({
+      ...prev,
+      [questionId]: answerId
+    }));
+  };
 
   return (
     <Row className="h-100">
@@ -63,7 +72,16 @@ function QuestionsPage({ message = "No questions found." }) {
                 children={questions.results.map((question) => (
                   <Container key={question.id} className={appStyles.Content}>
                     <h4>{question.text}</h4>
-                    <VoteForm questionId={question.id} />
+                    {question.answers.map((answer) => (
+                      <Answer
+                        key={answer.id}
+                        id={answer.id}
+                        text={answer.text}
+                        isSelected={selectedAnswers[question.id] === answer.id}
+                        onSelectAnswer={() => handleSelectAnswer(question.id, answer.id)}
+                      />
+                    ))}
+                    <VoteForm questionId={question.id} selectedAnswerId={selectedAnswers[question.id]} />
                   </Container>
                 ))}
               />
@@ -83,4 +101,4 @@ function QuestionsPage({ message = "No questions found." }) {
   );
 }
 
-export default QuestionsPage;
+export default Questions;
