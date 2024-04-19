@@ -49,14 +49,14 @@ const NavBar = () => {
       >
         <i className="fa-regular fa-circle-question"></i>Questions
       </NavLink>
-      <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-        <i className="fas fa-sign-out-alt"></i>Sign out
-      </NavLink>
       <NavLink
         className={styles.NavLink}
         to={`/profiles/${currentUser?.profile_id}`}
       >
         <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+      </NavLink>
+      <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
+        <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>
     </>
   );
