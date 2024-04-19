@@ -4,15 +4,18 @@ import VoteForm from "./VoteForm";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import Answer from "../../components/Answer";
+import { Link } from "react-router-dom";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Questions.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 function Questions({ message = "No questions found." }) {
   const [questions, setQuestions] = useState({ results: [], next: null });
@@ -49,6 +52,11 @@ function Questions({ message = "No questions found." }) {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2 mx-auto" lg={8}>
+        <div className="d-flex justify-content-center mb-4">
+          <Link to="/questions/create">
+            <Button className={btnStyles.StandardBtn}><i className="fa-regular fa-square-plus"></i>Add question</Button>
+          </Link>
+        </div>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}

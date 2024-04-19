@@ -35,7 +35,7 @@ function VoteForm({ questionId, selectedAnswerId }) {
     <div>
       <Button 
         disabled={!selectedAnswerId}
-        className={`${selectedAnswerId ? btnStyles.VoteEnabled : btnStyles.VoteDisabled} mt-3`}
+        className={`${selectedAnswerId ? btnStyles.StandardBtn : btnStyles.VoteDisabled} mt-3`}
         onClick={handleSubmit} 
       >
         Submit
