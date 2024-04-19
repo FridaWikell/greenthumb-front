@@ -13,8 +13,22 @@
   opacity: 0.8;
   border-color: transparent;
   cursor: pointer;
+  background-color: #8d998a;
 }
 
+.Button:hover:active {
+  background-color: #8d998a;
+}
+
+.Button:active {
+  background-color: #8d998a;
+}
+
+.Button:focus {
+  background-color: #8d998a;
+}
+
+/*
 .Button:hover:active {
   background-color: #2142b2 !important;
 }
@@ -25,13 +39,14 @@
 
 .Button:focus {
   background-color: #2142b2;
-}
+} */
 
 .Wide {
   padding: 10px 50px;
   width: 100%;
 }
 
+/*
 .Blue,
 .BlueOutline:hover,
 .Bright:hover {
@@ -41,10 +56,11 @@
 
 .BlueOutline,
 .Blue:hover {
-  /* border: 1px solid #2142b2; */
+  /* border: 1px solid #2142b2; 
   background-color: #ffffff;
   color: #2142b2;
 }
+*/
 
 .Black,
 .BlackOutline:hover {
@@ -70,8 +86,12 @@
 
 .VoteEnabled {
   background-color: #a7b3a4;
-  color: #000000;
+  color: #222222;
   border: #9daf99;
+}
+
+.VoteEnabled:hover {
+  background-color: #707a6e;
 }
 
 .VoteDisabled {
