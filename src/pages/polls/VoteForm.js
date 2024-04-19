@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+// VoteForm.js
+import React from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import Button from "react-bootstrap/Button";
 import btnStyles from "../../styles/Button.module.css";
 
-function VoteForm({ questionId, answers }) {
-  const [selectedAnswerId, setSelectedAnswerId] = useState(null);
-
+function VoteForm({ questionId, selectedAnswerId }) {
   const handleSubmit = async () => {
-
     if (!selectedAnswerId) {
       alert("Please select an answer before voting.");
       return;
@@ -16,7 +14,7 @@ function VoteForm({ questionId, answers }) {
     try {
       await axiosReq.post("/votes/", { answer: selectedAnswerId });
       alert("Thank you for voting!");
-      setSelectedAnswerId(null); // Reset selection after voting
+      // No need to reset selectedAnswerId here, handle that in the QuestionPage if needed
     } catch (err) {
       console.error("Error submitting vote:", err);
     }
