@@ -24,15 +24,6 @@ const NavBar = () => {
     }
   };
 
-  const addPostIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/posts/create"
-    >
-      <i className="far fa-plus-square"></i>Add post
-    </NavLink>
-  );
   const loggedInIcons = (
     <>
       <NavLink
@@ -93,7 +84,6 @@ const NavBar = () => {
             <img src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713369500/GreenThumb_2_jomuby.png" alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
-        {currentUser && addPostIcon}
         <Navbar.Toggle
           ref={ref}
           onClick={() => setExpanded(!expanded)}
