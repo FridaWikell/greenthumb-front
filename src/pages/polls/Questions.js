@@ -78,8 +78,13 @@ function Questions({ message = "No questions found." }) {
                 hasMore={!!questions.next}
                 loader={<Asset spinner />}
                 children={questions.results.map((question) => (
-                  <Container key={question.id} className={`mb-4 ${appStyles.Content}`}>
+                  <Container key={question.id} className={`mb-4 py-4 px-4 ${appStyles.Content}`}>
                     <h4>{question.text}</h4>
+                    <div className="mb-2">
+                      <small>
+                        Asked by <Link to={`/profiles/${question.owner}`}>{question.owner_username}</Link>, at {question.created_at}
+                      </small>
+                    </div>
                     {question.answers.map((answer) => (
                       <Answer
                         key={answer.id}
