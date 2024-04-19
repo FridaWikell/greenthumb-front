@@ -99,3 +99,35 @@
   color: #808080;
   border: #9daf99;
 }
+
+.SubmitBtn {
+  background-color: #9bcf8e;
+  border: transparent;
+  color: #222222;
+  width: fit-content;
+}
+
+.SubmitBtn:hover {
+  background-color: #6bb459;
+}
+
+.CancelBtn {
+  background-color: #d6a0a0;
+  border: transparent;
+  color: #222222;
+  width: fit-content;
+}
+
+.CancelBtn:hover {
+  background-color: #cf7171;
+}
+
+.AddAnswer {
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+}
+
+.AddAnswer:hover {
+  background-color: #d3d3d3;
+}

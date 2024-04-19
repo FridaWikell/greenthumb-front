@@ -67,6 +67,7 @@ function QuestionForm() {
           <Container
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
+            <Col className="mx-auto" lg={8}>
             <Form.Group>
               <Form.Label>Question</Form.Label>
               <Form.Control
@@ -92,25 +93,27 @@ function QuestionForm() {
                   placeholder="Enter an answer option"
                 />
                 {index + 1 === questionData.answers.length && (
-                  <Button variant="outline-secondary" onClick={addAnswer} className="mt-2">
-                    Add Another Answer
+                  <Button onClick={addAnswer} className={`${btnStyles.AddAnswer} mt-2`}>
+                    <i class="fa-regular fa-square-plus"></i>
                   </Button>
                 )}
               </Form.Group>
             ))}
-
+            </Col>
+            <div className="d-flex justify-content-center">
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue} mt-3`}
+              className={`${btnStyles.CancelBtn} px-3 py-2 mt-3 mx-2`}
               onClick={() => history.goBack()}
             >
               Cancel
             </Button>
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue} mt-3`}
+              className={`${btnStyles.SubmitBtn} px-3 py-2 mt-3 mx-2`}
               type="submit"
             >
-              Submit Question
+              Submit
             </Button>
+            </div>
           </Container>
         </Col>
       </Row>
