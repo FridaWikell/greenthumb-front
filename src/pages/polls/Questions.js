@@ -102,13 +102,13 @@ function Questions({ message = "No questions found." }) {
                           isSelected={selectedAnswers[question.id] === answer.id}
                           onSelectAnswer={() => handleSelectAnswer(question.id, answer.id)}
                         />
-                        {showResults[question.id] && <span>{answer.voteCount || 0} votes</span>}
+                        {showResults[question.id] && <span className="ml-2">{answer.vote_count || 0} votes</span>}
                       </div>
                     ))}
                     <div className="d-flex justify-content-between align-items-center">
                       <VoteForm questionId={question.id} selectedAnswerId={selectedAnswers[question.id]} />
                       <Button variant="link" onClick={() => toggleResults(question.id)} className="text-muted">
-                        {showResults[question.id] ? "Hide Results" : "See Results"}
+                        {showResults[question.id] ? "Hide results" : "See results"}
                       </Button>
                     </div>
                   </Container>
