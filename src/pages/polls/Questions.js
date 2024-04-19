@@ -102,7 +102,7 @@ function Questions({ message = "No questions found." }) {
                           isSelected={selectedAnswers[question.id] === answer.id}
                           onSelectAnswer={() => handleSelectAnswer(question.id, answer.id)}
                         />
-                        {showResults[question.id] && <span className="ml-2">{answer.vote_count || 0} votes</span>}
+                        {showResults[question.id] && <span className="ml-2">{answer.votes_count || 0} votes</span>}
                       </div>
                     ))}
                     <div className="d-flex justify-content-between align-items-center">
