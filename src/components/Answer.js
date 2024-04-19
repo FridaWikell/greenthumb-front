@@ -9,7 +9,7 @@ function Answer({ text, id, onSelectAnswer, isSelected }) {
 
   return (
     <Card 
-      className={`mb-2 clickable ${styles.answerButton} ${isSelected ? styles.selectedAnswer : ''}`} 
+      className={`mb-2 w-100 clickable ${styles.answerButton} ${isSelected ? styles.selectedAnswer : ''}`} 
       onClick={handleSelect}
     >
       <Card.Body>

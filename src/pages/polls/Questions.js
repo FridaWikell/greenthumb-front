@@ -22,6 +22,7 @@ function Questions({ message = "No questions found." }) {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [query, setQuery] = useState("");
   const [selectedAnswers, setSelectedAnswers] = useState({});
+  const [showResults, setShowResults] = useState({});
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -46,6 +47,13 @@ function Questions({ message = "No questions found." }) {
     setSelectedAnswers((prev) => ({
       ...prev,
       [questionId]: answerId
+    }));
+  };
+
+  const toggleResults = (questionId) => {
+    setShowResults(prev => ({
+      ...prev,
+      [questionId]: !prev[questionId]
     }));
   };
 
@@ -86,15 +94,23 @@ function Questions({ message = "No questions found." }) {
                       </small>
                     </div>
                     {question.answers.map((answer) => (
-                      <Answer
-                        key={answer.id}
-                        id={answer.id}
-                        text={answer.text}
-                        isSelected={selectedAnswers[question.id] === answer.id}
-                        onSelectAnswer={() => handleSelectAnswer(question.id, answer.id)}
-                      />
+                      <div key={answer.id} className="d-flex justify-content-between align-items-center">
+                        <Answer
+                          key={answer.id}
+                          id={answer.id}
+                          text={answer.text}
+                          isSelected={selectedAnswers[question.id] === answer.id}
+                          onSelectAnswer={() => handleSelectAnswer(question.id, answer.id)}
+                        />
+                        {showResults[question.id] && <span>{answer.voteCount || 0} votes</span>}
+                      </div>
                     ))}
-                    <VoteForm questionId={question.id} selectedAnswerId={selectedAnswers[question.id]} />
+                    <div className="d-flex justify-content-between align-items-center">
+                      <VoteForm questionId={question.id} selectedAnswerId={selectedAnswers[question.id]} />
+                      <Button variant="link" onClick={() => toggleResults(question.id)} className="text-muted">
+                        {showResults[question.id] ? "Hide Results" : "See Results"}
+                      </Button>
+                    </div>
                   </Container>
                 ))}
               />
