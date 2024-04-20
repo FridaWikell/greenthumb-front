@@ -36,7 +36,6 @@ const UserPasswordForm = () => {
 
   useEffect(() => {
     if (currentUser?.profile_id?.toString() !== id) {
-      // redirect user if they are not the owner of this profile
       history.push("/");
     }
   }, [currentUser, history, id]);
@@ -60,7 +59,7 @@ const UserPasswordForm = () => {
             <Form.Group>
               <Form.Label>New password</Form.Label>
               <Form.Control
-                placeholder="new password"
+                placeholder="New password"
                 type="password"
                 value={new_password1}
                 onChange={handleChange}
@@ -75,7 +74,7 @@ const UserPasswordForm = () => {
             <Form.Group>
               <Form.Label>Confirm password</Form.Label>
               <Form.Control
-                placeholder="confirm new password"
+                placeholder="Confirm new password"
                 type="password"
                 value={new_password2}
                 onChange={handleChange}
@@ -88,16 +87,16 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={`${btnStyles.CancelBtn} px-3 py-2 mx-2`}
               onClick={() => history.goBack()}
             >
-              cancel
+              Cancel
             </Button>
             <Button
               type="submit"
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={`${btnStyles.SubmitBtn} px-3 py-2 mx-2`}
             >
-              save
+              Save
             </Button>
           </Form>
         </Container>

@@ -7,6 +7,11 @@
   padding: 5px;
 }
 
+.Active {
+  color: #000000;
+  font-weight: 600;
+}
+
 .Active i {
   color: #000000;
 }

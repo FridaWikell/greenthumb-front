@@ -102,13 +102,13 @@ function PostCreateForm() {
       ))}
 
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.CancelBtn} px-3 py-2 mx-2`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+      <Button className={`${btnStyles.SubmitBtn} px-3 py-2 mx-2`} type="submit">
+        Create
       </Button>
     </div>
   );
@@ -128,7 +128,7 @@ function PostCreateForm() {
                   </figure>
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      className={`${btnStyles.StandardBtn} btn`}
                       htmlFor="image-upload"
                     >
                       Change the image
