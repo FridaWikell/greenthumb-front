@@ -131,3 +131,9 @@
 .AddAnswer:hover {
   background-color: #d3d3d3;
 }
+
+.FollowBtn {
+  background-color: #82d889;
+  border: transparent;
+  color: #222222;
+}

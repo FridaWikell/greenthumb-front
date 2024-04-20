@@ -69,16 +69,16 @@ function ProfilePage() {
         </Col>
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
-          <Row className="justify-content-center no-gutters">
-            <Col xs={3} className="my-2">
+          <Row className="justify-content-center">
+            <Col xs={4} className="my-2">
               <div>{profile?.posts_count}</div>
               <div>posts</div>
             </Col>
-            <Col xs={3} className="my-2">
+            <Col xs={4} className="my-2">
               <div>{profile?.followers_count}</div>
               <div>followers</div>
             </Col>
-            <Col xs={3} className="my-2">
+            <Col xs={4} className="my-2">
               <div>{profile?.following_count}</div>
               <div>following</div>
             </Col>
@@ -92,14 +92,14 @@ function ProfilePage() {
                 className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
                 onClick={() => handleUnfollow(profile)}
               >
-                unfollow
+                Unfollow
               </Button>
             ) : (
               <Button
-                className={`${btnStyles.Button} ${btnStyles.Black}`}
+                className={`${btnStyles.FollowBtn}`}
                 onClick={() => handleFollow(profile)}
               >
-                follow
+                Follow
               </Button>
             ))}
         </Col>
