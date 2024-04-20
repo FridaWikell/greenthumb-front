@@ -83,7 +83,7 @@ const ProfileEditForm = () => {
   const textFields = (
     <>
       <Form.Group>
-        <Form.Label>Bio</Form.Label>
+        <Form.Label className="mt-2 mb-3">What does the world need to know about you (and your plants)?</Form.Label>
         <Form.Control
           as="textarea"
           value={content}
@@ -99,13 +99,13 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.CancelBtn} px-3 py-2 mx-2`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
+      <Button className={`${btnStyles.SubmitBtn} px-3 py-2 mx-2`} type="submit">
+        Save
       </Button>
     </>
   );
@@ -131,7 +131,7 @@ const ProfileEditForm = () => {
                   className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
                   htmlFor="image-upload"
                 >
-                  Change the image
+                  Ready for a new profile image? Click here!
                 </Form.Label>
               </div>
               <Form.File
