@@ -137,3 +137,19 @@
   border: transparent;
   color: #222222;
 }
+
+.FollowBtn:hover {
+  background-color: #3f8344;
+  border: transparent;
+}
+
+.UnfollowBtn {
+  background-color: #caa9a9;
+  color: #222222;
+  border: transparent;
+}
+
+.UnfollowBtn:hover {
+  background-color: #c07171;
+  border: transparent;
+}
