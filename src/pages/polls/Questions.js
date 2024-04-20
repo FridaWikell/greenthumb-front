@@ -4,7 +4,7 @@ import VoteForm from "./VoteForm";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import Answer from "../../components/Answer";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -23,6 +23,7 @@ function Questions({ message = "No questions found." }) {
   const [query, setQuery] = useState("");
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showResults, setShowResults] = useState({});
+  const history = useHistory();
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -57,13 +58,15 @@ function Questions({ message = "No questions found." }) {
     }));
   };
 
+  function handleAddQuestion() {
+    history.push("/questions/create");
+  }
+
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2 mx-auto" lg={8}>
         <div className="d-flex justify-content-center mb-4">
-          <Link to="/questions/create">
-            <Button className={btnStyles.StandardBtn}><i className="fa-regular fa-square-plus"></i>Add question</Button>
-          </Link>
+          <Button onClick={handleAddQuestion} className={btnStyles.StandardBtn}><i className="fa-regular fa-square-plus"></i>Add question</Button>
         </div>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
