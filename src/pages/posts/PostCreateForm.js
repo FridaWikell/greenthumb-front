@@ -141,7 +141,7 @@ function PostCreateForm() {
                   htmlFor="image-upload"
                 >
                   <Asset
-                    src="https://res.cloudinary.com/dihkuau3v/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1713339593/download-1873539_640_motfhg.png"
+                    src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713789452/download_pfp4hn.webp"
                     message="Click or tap to upload an image"
                   />
                 </Form.Label>
