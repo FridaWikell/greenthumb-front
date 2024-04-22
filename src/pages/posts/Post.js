@@ -97,12 +97,14 @@ const Post = (props) => {
           </div>
         </Media>
       </Card.Body>
-      <Link to={`/posts/${id}`}>
-        <Card.Img src={image} alt={title} />
-      </Link>
-      <Card.Body>
-        {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {content && <Card.Text>{content}</Card.Text>}
+      {!image?.includes('default-image_r3k7wr') && (
+        <Card.Img className="mb-4" src={image} alt={title} />
+      )}
+      <Card.Body className="pt-0">
+        <Link to={`/posts/${id}`}>
+          {title && <Card.Title className="text-center">{title}</Card.Title>}
+          {content && <Card.Text className="mb-2">{content}</Card.Text>}
+        </Link>
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
