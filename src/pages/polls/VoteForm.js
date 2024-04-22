@@ -42,11 +42,11 @@ function VoteForm({ questionId, selectedAnswerId }) {
       </Button>
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Voting Error</Modal.Title>
+          <Modal.Title>Voting error</Modal.Title>
         </Modal.Header>
         <Modal.Body>{errorMessage}</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button className={btnStyles.StandardBtn} onClick={handleClose}>
             Close
           </Button>
         </Modal.Footer>
