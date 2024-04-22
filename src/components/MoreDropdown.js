@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import styles from "../styles/MoreDropdown.module.css";
 import { useHistory } from "react-router-dom";
+import ConfirmModal from "./ConfirmModal";
 
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
@@ -73,15 +74,36 @@ export const ProfileEditDropdown = ({ id }) => {
   );
 };
 
-export const QuestionOptionsDropdown = ({ handleDelete }) => {
+export const QuestionOptionsDropdown = ({ questionId, onDelete }) => {
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+
+  const handleDeleteClick = () => {
+    setShowConfirmModal(true);
+  };
+
+  const handleConfirmDelete = () => {
+    onDelete(questionId);
+    setShowConfirmModal(false);
+  };
+
   return (
-    <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
+    <>
+    <Dropdown className={`ml-auto pr-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={ThreeDots} />
-      <Dropdown.Menu>
-        <Dropdown.Item onClick={handleDelete}>
-          <i className="fas fa-trash-alt"></i> Delete
-        </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+      <Dropdown.Menu className="text-center" popperConfig={{ strategy: "fixed" }}>
+          <Dropdown.Item className={styles.DeleteItem} onClick={handleDeleteClick}>
+            <i className="fas fa-trash-alt" /> Delete
+          </Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+
+      <ConfirmModal
+        show={showConfirmModal}
+        handleClose={() => setShowConfirmModal(false)}
+        handleConfirm={handleConfirmDelete}
+        message="Are you sure you want to delete this question?"
+        title="Confirm deletion"
+      />
+    </>
   );
 };

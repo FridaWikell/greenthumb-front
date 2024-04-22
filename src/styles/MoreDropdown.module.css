@@ -9,3 +9,8 @@
   right: 0;
   z-index: 99;
 }
+
+.DeleteItem {
+  display: inline-block;
+  padding: 0px;
+}
