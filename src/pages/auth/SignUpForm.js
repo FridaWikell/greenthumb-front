@@ -50,11 +50,10 @@ const SignUpForm = () => {
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>sign up</h1>
-
-          <Form onSubmit={handleSubmit}>
+          <h1 className={`${styles.Header} mb-3`}>New here? Welcome!</h1>
+          <Form onSubmit={handleSubmit} className="d-flex flex-column">
             <Form.Group controlId="username">
-              <Form.Label className="d-none">username</Form.Label>
+              <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
                 className={styles.Input}
                 type="text"
@@ -105,7 +104,7 @@ const SignUpForm = () => {
             ))}
 
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+              className={`${btnStyles.StandardBtn} px-3 py-2 mx-auto`}
               type="submit"
             >
               Sign up
@@ -129,8 +128,8 @@ const SignUpForm = () => {
         className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
       >
         <Image
-          className={`${appStyles.FillerImage}`}
-          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero2.jpg"}
+          className={`${appStyles.FillerImage} ${styles.OverflowImage}`}
+          src={"https://res.cloudinary.com/dihkuau3v/image/upload/v1713793275/vecteezy_gardening-png-graphic-clipart-design_23743657_1_nzcncc.webp"}
         />
       </Col>
     </Row>
