@@ -81,7 +81,7 @@ const NavBar = () => {
       <Container>
         <NavLink to="/">
           <Navbar.Brand>
-            <img src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713369500/GreenThumb_2_jomuby.png" alt="logo" height="45" />
+            <img src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713771228/logo-black-transparent_ne2udk.webp" alt="logo" height="45" />
           </Navbar.Brand>
         </NavLink>
         <Navbar.Toggle
