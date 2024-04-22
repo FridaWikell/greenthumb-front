@@ -2,28 +2,41 @@
 import React, { useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import CloseModal from "../../components/CloseModal";
 
 import btnStyles from "../../styles/Button.module.css";
 
 function VoteForm({ questionId, selectedAnswerId }) {
   const [showModal, setShowModal] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [modalContent, setModalContent] = useState({
+    title: "",
+    message: ""
+  });
 
   const handleSubmit = async () => {
     if (!selectedAnswerId) {
-      alert("Please select an answer before voting.");
+      setModalContent({
+        title: "Selection required",
+        message: "Please select an answer before voting."
+      });
+      setShowModal(true);
       return;
     }
 
     try {
       await axiosReq.post("/votes/", { answer: selectedAnswerId });
-      alert("Thank you for voting!");
-      // No need to reset selectedAnswerId here, handle that in the QuestionPage if needed
+      setModalContent({
+        title: "Bam! Your vote just landed!",
+        message: "Cheers to you for casting your vote! You've spiced up the poll!"
+      });
+      setShowModal(true);
     } catch (err) {
       console.error("Error submitting vote:", err);
       if (err.response && err.response.data) {
-        setErrorMessage("You have already voted on this question."); // Customize based on your API response
+        setModalContent({
+          title: "Voting error",
+          message: "Oops! Our vote-o-meter says you’ve already hit the button. No double-dipping allowed!"
+        });
         setShowModal(true);
       }
     }
@@ -40,17 +53,12 @@ function VoteForm({ questionId, selectedAnswerId }) {
       >
         Submit
       </Button>
-      <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Voting error</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{errorMessage}</Modal.Body>
-        <Modal.Footer>
-          <Button className={btnStyles.StandardBtn} onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <CloseModal
+        show={showModal}
+        title={modalContent.title}
+        message={modalContent.message}
+        handleClose={handleClose}
+      />
     </div>
   );
 }
