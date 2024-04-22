@@ -53,8 +53,8 @@ function SignInForm() {
     <Row className={styles.Row}>
       <Col className="my-auto p-0 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
-          <h1 className={styles.Header}>sign in</h1>
-          <Form onSubmit={handleSubmit}>
+          <h1 className={styles.Header}>Welcome back!</h1>
+          <Form onSubmit={handleSubmit} className="d-flex flex-column">
             <Form.Group controlId="username">
               <Form.Label className="d-none">Username</Form.Label>
               <Form.Control
@@ -89,7 +89,7 @@ function SignInForm() {
               </Alert>
             ))}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+              className={`${btnStyles.StandardBtn} px-3 py-2 mx-auto`}
               type="submit"
             >
               Sign in
@@ -103,17 +103,17 @@ function SignInForm() {
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
-            Don't have an account? <span>Sign up now!</span>
+            Don't have an account yet? <span>Sign up now!</span>
           </Link>
         </Container>
       </Col>
       <Col
         md={6}
-        className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
+        className={`my-auto d-none d-md-block ${styles.SignInCol}`}
       >
         <Image
-          className={`${appStyles.FillerImage}`}
-          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"}
+          className={`${appStyles.FillerImage} ${styles.OverflowImage}`}
+          src={"https://res.cloudinary.com/dihkuau3v/image/upload/v1713790789/sign-in_ij6uzg.webp"}
         />
       </Col>
     </Row>
