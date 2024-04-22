@@ -5,6 +5,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import Answer from "../../components/Answer";
 import { Link, useHistory } from "react-router-dom";
+import { QuestionOptionsDropdown } from "../../components/MoreDropdown";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -23,7 +25,9 @@ function Questions({ message = "No questions found." }) {
   const [query, setQuery] = useState("");
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showResults, setShowResults] = useState({});
+
   const history = useHistory();
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -62,6 +66,18 @@ function Questions({ message = "No questions found." }) {
     history.push("/questions/create");
   }
 
+  const handleDeleteQuestion = async (questionId) => {
+    try {
+      await axiosReq.delete(`/questions/${questionId}`);
+      setQuestions((prevQuestions) => ({
+        ...prevQuestions,
+        results: prevQuestions.results.filter((question) => question.id !== questionId),
+      }));
+    } catch (error) {
+      console.error("Failed to delete the question:", error);
+    }
+  };
+
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2 mx-auto" lg={8}>
@@ -90,6 +106,9 @@ function Questions({ message = "No questions found." }) {
                 loader={<Asset spinner />}
                 children={questions.results.map((question) => (
                   <Container key={question.id} className={`mb-4 py-4 px-4 ${appStyles.Content}`}>
+                    {question.owner_username === currentUser.username && ( // Ensure correct user comparison
+                      <QuestionOptionsDropdown handleDelete={() => handleDeleteQuestion(question.id)} />
+                    )}
                     <h4>{question.text}</h4>
                     <div className="mb-2">
                       <small>

@@ -72,3 +72,16 @@ export const ProfileEditDropdown = ({ id }) => {
     </Dropdown>
   );
 };
+
+export const QuestionOptionsDropdown = ({ handleDelete }) => {
+  return (
+    <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
+      <Dropdown.Toggle as={ThreeDots} />
+      <Dropdown.Menu>
+        <Dropdown.Item onClick={handleDelete}>
+          <i className="fas fa-trash-alt"></i> Delete
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+};
