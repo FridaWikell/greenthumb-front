@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
@@ -11,6 +11,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import ConfirmModal from "../../components/ConfirmModal";
 
 const Post = (props) => {
   const {
@@ -32,18 +33,29 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
 
-  const handleDelete = async () => {
+  const handleDelete = () => {
+      setShowConfirmModal(true);
+  };
+
+  const confirmDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
-      history.goBack();
+      history.goBack(); 
+      setShowConfirmModal(false);
     } catch (err) {
-      console.log(err);
+      console.error("Failed to delete post:", err);
+      setShowConfirmModal(false);
     }
+  };
+
+  const cancelDelete = () => {
+    setShowConfirmModal(false);
   };
 
   const handleLike = async () => {
@@ -79,64 +91,73 @@ const Post = (props) => {
   };
 
   return (
-    <Card className={styles.Post}>
-      <Card.Body>
-        <Media className="align-items-center justify-content-between">
-          <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profile_image} height={55} />
-            {owner}
-          </Link>
-          <div className="d-flex align-items-center">
-            <span>{updated_at}</span>
-            {is_owner && postPage && (
-              <MoreDropdown
-                handleEdit={handleEdit}
-                handleDelete={handleDelete}
-              />
-            )}
-          </div>
-        </Media>
-      </Card.Body>
-      {!image?.includes('default-image_r3k7wr') && (
-        <Card.Img className="mb-4" src={image} alt={title} />
-      )}
-      <Card.Body className="pt-0">
-        <Link to={`/posts/${id}`}>
-          {title && <Card.Title className="text-center">{title}</Card.Title>}
-          {content && <Card.Text className="mb-2">{content}</Card.Text>}
-        </Link>
-        <div className={styles.PostBar}>
-          {is_owner ? (
-            <OverlayTrigger
-              placement="top"
-              overlay={<Tooltip>You can't like your own post!</Tooltip>}
-            >
-              <i className="far fa-heart" />
-            </OverlayTrigger>
-          ) : like_id ? (
-            <span onClick={handleUnlike}>
-              <i className={`fas fa-heart ${styles.Heart}`} />
-            </span>
-          ) : currentUser ? (
-            <span onClick={handleLike}>
-              <i className={`far fa-heart ${styles.HeartOutline}`} />
-            </span>
-          ) : (
-            <OverlayTrigger
-              placement="top"
-              overlay={<Tooltip>Log in to like posts!</Tooltip>}
-            >
-              <i className="far fa-heart" />
-            </OverlayTrigger>
-          )}
-          {likes_count}
+    <>
+      <Card className={styles.Post}>
+        <Card.Body>
+          <Media className="align-items-center justify-content-between">
+            <Link to={`/profiles/${profile_id}`}>
+              <Avatar src={profile_image} height={55} />
+              {owner}
+            </Link>
+            <div className="d-flex align-items-center">
+              <span>{updated_at}</span>
+              {is_owner && postPage && (
+                <MoreDropdown
+                  handleEdit={handleEdit}
+                  handleDelete={handleDelete}
+                />
+              )}
+            </div>
+          </Media>
+        </Card.Body>
+        {!image?.includes('default-image_r3k7wr') && (
+          <Card.Img className="mb-4" src={image} alt={title} />
+        )}
+        <Card.Body className="pt-0">
           <Link to={`/posts/${id}`}>
-            <i className="far fa-comments" />
+            {title && <Card.Title className="text-center">{title}</Card.Title>}
+            {content && <Card.Text className="mb-2">{content}</Card.Text>}
           </Link>
-          {comments_count}
-        </div>
-      </Card.Body>
-    </Card>
+          <div className={styles.PostBar}>
+            {is_owner ? (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>You can't like your own post!</Tooltip>}
+              >
+                <i className="far fa-heart" />
+              </OverlayTrigger>
+            ) : like_id ? (
+              <span onClick={handleUnlike}>
+                <i className={`fas fa-heart ${styles.Heart}`} />
+              </span>
+            ) : currentUser ? (
+              <span onClick={handleLike}>
+                <i className={`far fa-heart ${styles.HeartOutline}`} />
+              </span>
+            ) : (
+              <OverlayTrigger
+                placement="top"
+                overlay={<Tooltip>Log in to like posts!</Tooltip>}
+              >
+                <i className="far fa-heart" />
+              </OverlayTrigger>
+            )}
+            {likes_count}
+            <Link to={`/posts/${id}`}>
+              <i className="far fa-comments" />
+            </Link>
+            {comments_count}
+          </div>
+        </Card.Body>
+      </Card>
+      <ConfirmModal
+        show={showConfirmModal}
+        handleClose={cancelDelete}
+        handleConfirm={confirmDelete}
+        title="Confirm deletion"
+        message="Are you sure you want to delete this post? This action cannot be undone."
+      />
+    </>
   );
 };
 

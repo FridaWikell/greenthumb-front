@@ -91,7 +91,7 @@ export const QuestionOptionsDropdown = ({ questionId, onDelete }) => {
     <Dropdown className={`ml-auto pr-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={ThreeDots} />
       <Dropdown.Menu className="text-center" popperConfig={{ strategy: "fixed" }}>
-          <Dropdown.Item className={styles.DeleteItem} onClick={handleDeleteClick}>
+          <Dropdown.Item className={styles.DeleteItem} onClick={handleDeleteClick} aria-label="delete-question">
             <i className="fas fa-trash-alt" /> Delete
           </Dropdown.Item>
         </Dropdown.Menu>
@@ -107,3 +107,5 @@ export const QuestionOptionsDropdown = ({ questionId, onDelete }) => {
     </>
   );
 };
+
+
