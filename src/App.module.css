@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Dekko&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .App {
-  font-family: "DM Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #f1f5f0;
   min-height: 100vh;
 }

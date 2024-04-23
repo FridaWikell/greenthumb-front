@@ -28,6 +28,7 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
+    hardiness_zone
   } = props;
 
   const currentUser = useCurrentUser();
@@ -100,7 +101,7 @@ const Post = (props) => {
               {owner}
             </Link>
             <div className="d-flex align-items-center">
-              <span>{updated_at}</span>
+              <span className={styles.SmallerText}>{updated_at}</span>
               {is_owner && postPage && (
                 <MoreDropdown
                   handleEdit={handleEdit}
@@ -115,9 +116,12 @@ const Post = (props) => {
         )}
         <Card.Body className="pt-0">
           <Link to={`/posts/${id}`}>
-            {title && <Card.Title className="text-center">{title}</Card.Title>}
-            {content && <Card.Text className="mb-2">{content}</Card.Text>}
+            {title && <Card.Title className="text-center mb-4">{title}</Card.Title>}
+            {content && <Card.Text className="mb-4">{content}</Card.Text>}
+            <hr className={styles.Line}/>
+            <div className={`${styles.SmallerText} mb-2`}>Hardiness zone {hardiness_zone}</div>
           </Link>
+          <hr className={styles.Line}/>
           <div className={styles.PostBar}>
             {is_owner ? (
               <OverlayTrigger
