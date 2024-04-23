@@ -74,7 +74,7 @@ export const ProfileEditDropdown = ({ id }) => {
   );
 };
 
-export const QuestionOptionsDropdown = ({ questionId, onDelete }) => {
+export const QuestionOptionsDropdown = ({ questionId, handleDelete }) => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   const handleDeleteClick = () => {
@@ -82,7 +82,7 @@ export const QuestionOptionsDropdown = ({ questionId, onDelete }) => {
   };
 
   const handleConfirmDelete = () => {
-    onDelete(questionId);
+    handleDelete(questionId);
     setShowConfirmModal(false);
   };
 
