@@ -129,7 +129,9 @@ function Questions({ message = "No questions found." }) {
                     {question.owner_username === currentUser.username && ( // Ensure correct user comparison
                       <QuestionOptionsDropdown handleDelete={() => handleDeleteQuestion(question.id)} />
                     )}
-                    <h4>{question.text}</h4>
+                    <Link to={`/questions/${question.id}`}>
+                      <h4>{question.text}</h4>
+                    </Link>
                     <div className="mb-2">
                       <small>
                         Asked by <Link to={`/profiles/${question.owner}`}>{question.owner_username}</Link>, at {question.created_at}
