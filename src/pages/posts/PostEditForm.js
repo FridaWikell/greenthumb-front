@@ -22,8 +22,9 @@ function PostEditForm() {
     title: "",
     content: "",
     image: "",
+    hardiness_zone: "0",
   });
-  const { title, content, image } = postData;
+  const { title, content, image, hardiness_zone } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -33,9 +34,9 @@ function PostEditForm() {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/${id}/`);
-        const { title, content, image, is_owner } = data;
+        const { title, content, image, hardiness_zone, is_owner } = data;
 
-        is_owner ? setPostData({ title, content, image }) : history.push("/");
+        is_owner ? setPostData({ title, content, image, hardiness_zone }) : history.push("/");
       } catch (err) {
         console.log(err);
       }
@@ -67,6 +68,7 @@ function PostEditForm() {
 
     formData.append("title", title);
     formData.append("content", content);
+    formData.append("hardiness_zone", hardiness_zone);
 
     if (imageInput?.current?.files[0]) {
       formData.append("image", imageInput.current.files[0]);
@@ -111,6 +113,31 @@ function PostEditForm() {
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group>
+        <Form.Label>Hardiness zone</Form.Label>
+        <Form.Control
+          as="select"
+          name="hardiness_zone"
+          value={hardiness_zone}
+          onChange={handleChange}
+        >
+          <option value="0">Not applicable</option>
+          <option value="1">Zone 1</option>
+          <option value="2">Zone 2</option>
+          <option value="3">Zone 3</option>
+          <option value="4">Zone 4</option>
+          <option value="5">Zone 5</option>
+          <option value="6">Zone 6</option>
+          <option value="7">Zone 7</option>
+          <option value="8">Zone 8</option>
+        </Form.Control>
+      </Form.Group>
+      {errors?.hardiness_zone?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
