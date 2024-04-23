@@ -6,7 +6,7 @@ import CloseModal from "../../components/CloseModal";
 
 import btnStyles from "../../styles/Button.module.css";
 
-function VoteForm({ questionId, selectedAnswerId }) {
+function VoteForm({ questionId, selectedAnswerId, onVoteSuccess }) {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({
     title: "",
@@ -25,6 +25,7 @@ function VoteForm({ questionId, selectedAnswerId }) {
 
     try {
       await axiosReq.post("/votes/", { answer: selectedAnswerId });
+      onVoteSuccess(questionId, selectedAnswerId);
       setModalContent({
         title: "Bam! Your vote just landed!",
         message: "Cheers to you for casting your vote! You've spiced up the poll!"

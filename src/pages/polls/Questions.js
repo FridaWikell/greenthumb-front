@@ -78,6 +78,26 @@ function Questions({ message = "No questions found." }) {
     }
   };
 
+  const handleVoteSuccess = (questionId, answerId) => {
+    setQuestions(prev => ({
+      ...prev,
+      results: prev.results.map(question => {
+        if (question.id === questionId) {
+          return {
+            ...question,
+            answers: question.answers.map(answer => {
+              if (answer.id === answerId) {
+                return { ...answer, votes_count: answer.votes_count ? answer.votes_count + 1 : 1 };
+              }
+              return answer;
+            })
+          };
+        }
+        return question;
+      })
+    }));
+  };
+
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2 mx-auto" lg={8}>
@@ -128,7 +148,11 @@ function Questions({ message = "No questions found." }) {
                       </div>
                     ))}
                     <div className="d-flex justify-content-between align-items-center">
-                      <VoteForm questionId={question.id} selectedAnswerId={selectedAnswers[question.id]} />
+                      <VoteForm 
+                        questionId={question.id}
+                        selectedAnswerId={selectedAnswers[question.id]}
+                        onVoteSuccess={handleVoteSuccess}
+                      />
                       <Button variant="link" onClick={() => toggleResults(question.id)} className="text-muted">
                         {showResults[question.id] ? "Hide results" : "See results"}
                       </Button>
