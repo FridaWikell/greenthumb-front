@@ -26,8 +26,9 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
+    hardiness_zone: "",
   });
-  const { title, content, image } = postData;
+  const { title, content, image, hardiness_zone } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -55,6 +56,7 @@ function PostCreateForm() {
 
     formData.append("title", title);
     formData.append("content", content);
+    formData.append("hardiness_zone", hardiness_zone);
     if (imageInput.current.files[0]) {
       formData.append("image", imageInput.current.files[0]);
     }
@@ -69,6 +71,37 @@ function PostCreateForm() {
       }
     }
   };
+
+  const hardinessZoneDropdown = (
+    <>
+      <Form.Group>
+        <Form.Label>Hardiness zone</Form.Label>
+        <Form.Control
+          as="select"
+          name="hardiness_zone"
+          value={hardiness_zone}
+          onChange={handleChange}
+          required
+        >
+          <option value="" disabled selected>Choose a zone</option>
+          <option value="1">Zone 1</option>
+          <option value="2">Zone 2</option>
+          <option value="3">Zone 3</option>
+          <option value="4">Zone 4</option>
+          <option value="5">Zone 5</option>
+          <option value="6">Zone 6</option>
+          <option value="7">Zone 7</option>
+          <option value="8">Zone 8</option>
+          <option value="0">Not applicable</option>
+        </Form.Control>
+      </Form.Group>
+      {errors?.hardiness_zone?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+    </>
+  );
 
   const textFields = (
     <div className="text-center">
@@ -102,6 +135,8 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
+
+      {hardinessZoneDropdown}
 
       <Button
         className={`${btnStyles.CancelBtn} px-3 py-2 mx-2`}
