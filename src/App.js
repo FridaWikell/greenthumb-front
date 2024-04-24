@@ -17,6 +17,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import Questions from "./pages/polls/Questions";
 import QuestionForm from "./pages/polls/QuestionForm";
 import QuestionPage from "./pages/polls/QuestionPage";
+import NotFoundPage from "./components/NotFoundPage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -72,7 +73,7 @@ function App() {
           <Route exact path="/questions" render={() => <Questions />} />
           <Route exact path="/questions/create" render={() => <QuestionForm />} />
           <Route exact path="/questions/:id" render={() => <QuestionPage />} />
-          <Route render={() => <p>Page not found!</p>} />
+          <Route render={() => <NotFoundPage />} />
         </Switch>
       </Container>
     </div>
