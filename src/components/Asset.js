@@ -1,21 +1,13 @@
 import React from "react";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import spinnerAnimation from "./Spinner.json";
 import styles from "../styles/Asset.module.css";
 
-const Asset = ({ spinner, src, message }) => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: spinnerAnimation,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  };
 
+const Asset = ({ spinner, src, message }) => {
   return (
     <div className={`${styles.Asset} p-4`}>
-      {spinner && <Lottie options={defaultOptions} height={150} width={150} />}
+      {spinner && <Lottie animationData={spinnerAnimation} loop autoplay style={{ width: 150, height: 150 }} />}
       {src && <img src={src} alt={message} />}
       {message && <p className="mt-4">{message}</p>}
     </div>
