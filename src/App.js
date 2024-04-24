@@ -18,6 +18,7 @@ import Questions from "./pages/polls/Questions";
 import QuestionForm from "./pages/polls/QuestionForm";
 import QuestionPage from "./pages/polls/QuestionPage";
 import NotFoundPage from "./pages/errors/NotFoundPage";
+import InternalServerErrorPage from "./pages/errors/InternalServerErrorPage";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -73,6 +74,7 @@ function App() {
           <Route exact path="/questions" render={() => <Questions />} />
           <Route exact path="/questions/create" render={() => <QuestionForm />} />
           <Route exact path="/questions/:id" render={() => <QuestionPage />} />
+          <Route exact path="/work" render={() => <InternalServerErrorPage />} />
           <Route render={() => <NotFoundPage />} />
         </Switch>
       </Container>
