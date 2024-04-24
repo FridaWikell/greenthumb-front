@@ -1,10 +1,15 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Container, Button, Image, Row, Col } from 'react-bootstrap';
 
-import appStyles from "../App.module.css";
-import styles from "../styles/NotFoundPage.module.css";
-import btnStyles from "../styles/Button.module.css";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+import appStyles from "../../App.module.css";
+import styles from "../../styles/NotFoundPage.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 const NotFoundPage = () => {
   const history = useHistory();

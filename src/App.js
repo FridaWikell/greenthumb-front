@@ -17,7 +17,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import Questions from "./pages/polls/Questions";
 import QuestionForm from "./pages/polls/QuestionForm";
 import QuestionPage from "./pages/polls/QuestionPage";
-import NotFoundPage from "./components/NotFoundPage";
+import NotFoundPage from "./pages/errors/NotFoundPage";
 
 function App() {
   const currentUser = useCurrentUser();
