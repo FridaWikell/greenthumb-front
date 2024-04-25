@@ -19,24 +19,23 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className="ml-auto" drop="left">
       <Dropdown.Toggle as={ThreeDots} />
-
       <Dropdown.Menu
         className="text-center"
         popperConfig={{ strategy: "fixed" }}
       >
         <Dropdown.Item
-          className={styles.DropdownItem}
+          className={`${styles.DropdownItem} d-block ml-4`}
           onClick={handleEdit}
           aria-label="edit"
         >
-          <i className="fas fa-edit" />
+          <i className="fas fa-edit" /> Edit
         </Dropdown.Item>
         <Dropdown.Item
-          className={styles.DropdownItem}
+          className={`${styles.DropdownItem} d-block ml-4`}
           onClick={handleDelete}
           aria-label="delete"
         >
-          <i className="fas fa-trash-alt" />
+          <i className="fas fa-trash-alt" /> Delete
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
