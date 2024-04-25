@@ -49,7 +49,7 @@ function QuestionPage() {
   const handleDeleteQuestion = async () => {
     try {
       await axiosReq.delete(`/questions/${id}`);
-      history.push("/questions");  // Redirect after delete
+      history.push("/questions");
     } catch (err) {
       console.error("Failed to delete the question:", err);
     }

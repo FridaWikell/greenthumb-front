@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import styles from "../styles/Answer.module.css";  // Ensure your styles are correctly imported
+import styles from "../styles/Answer.module.css";
 
 function Answer({ text, id, onSelectAnswer, isSelected }) {
   const handleSelect = () => {

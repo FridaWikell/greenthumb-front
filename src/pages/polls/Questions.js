@@ -126,7 +126,7 @@ function Questions({ message = "No questions found." }) {
                 loader={<Asset spinner />}
                 children={questions.results.map((question) => (
                   <Container key={question.id} className={`mb-4 py-4 px-4 ${appStyles.Content}`}>
-                    {question.owner_username === currentUser.username && ( // Ensure correct user comparison
+                    {question.owner_username === currentUser.username && (
                       <QuestionOptionsDropdown handleDelete={() => handleDeleteQuestion(question.id)} />
                     )}
                     <Link to={`/questions/${question.id}`}>

@@ -22,13 +22,12 @@ function QuestionForm() {
   });
   const history = useHistory();
 
-  // Corrected handleChange to properly update the state based on input name
   const handleChange = (event) => {
     const { name, value } = event.target;
     if (name === "questionText") {
       setQuestionData(prev => ({ ...prev, questionText: value }));
     } else {
-      const index = parseInt(name.split("-")[1]); // Assuming names are "answer-0", "answer-1", etc.
+      const index = parseInt(name.split("-")[1]);
       const newAnswers = [...questionData.answers];
       newAnswers[index] = value;
       setQuestionData(prev => ({ ...prev, answers: newAnswers }));
@@ -48,7 +47,7 @@ function QuestionForm() {
     try {
       const formData = {
         text: questionText,
-        answers: answers.map(answer => ({ text: answer.trim() })) // Ensuring it's an array of objects
+        answers: answers.map(answer => ({ text: answer.trim() }))
       };
       const { data } = await axiosReq.post("/questions/", formData);
       history.push(`/questions/${data.id}`);
@@ -87,7 +86,7 @@ function QuestionForm() {
                 <Form.Label>Answer {index + 1}</Form.Label>
                 <Form.Control
                   type="text"
-                  name={`answer-${index}`}  // Corrected name to ensure unique handling per answer
+                  name={`answer-${index}`}
                   value={answer}
                   onChange={handleChange}
                   placeholder="Enter an answer option"

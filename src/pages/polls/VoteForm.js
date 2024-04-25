@@ -1,4 +1,3 @@
-// VoteForm.js
 import React, { useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import Button from "react-bootstrap/Button";
@@ -36,7 +35,7 @@ function VoteForm({ questionId, selectedAnswerId, onVoteSuccess }) {
       if (err.response && err.response.data) {
         setModalContent({
           title: "Voting error",
-          message: "Oops! Our vote-o-meter says you’ve already hit the button. No double-dipping allowed!"
+          message: "Oops! Our vote-o-meter says you've already hit the button. No double-dipping allowed!"
         });
         setShowModal(true);
       }
