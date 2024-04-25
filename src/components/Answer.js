@@ -2,7 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import styles from "../styles/Answer.module.css";
 
-function Answer({ text, id, onSelectAnswer, isSelected }) {
+const Answer = ({ text, id, onSelectAnswer, isSelected }) => {
   const handleSelect = () => {
     onSelectAnswer(id);
   };
@@ -17,6 +17,6 @@ function Answer({ text, id, onSelectAnswer, isSelected }) {
       </Card.Body>
     </Card>
   );
-}
+};
 
 export default Answer;
