@@ -1,6 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
+import { useCurrentUser } from "./CurrentUserContext";
 import { followHelper, unfollowHelper } from "../utils/utils";
 
 const ProfileDataContext = createContext();
@@ -38,7 +38,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err)
     }
   };
 
@@ -54,14 +54,13 @@ export const ProfileDataProvider = ({ children }) => {
           ),
         },
         popularProfiles: {
-          ...prevState.popularProfiles,
           results: prevState.popularProfiles.results.map((profile) =>
             unfollowHelper(profile, clickedProfile)
           ),
         },
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err)
     }
   };
 
@@ -76,16 +75,22 @@ export const ProfileDataProvider = ({ children }) => {
           popularProfiles: data,
         }));
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
     handleMount();
   }, [currentUser]);
 
+  const value = useMemo(() => ({
+    setProfileData,
+    handleFollow,
+    handleUnfollow
+  }), []);
+
   return (
     <ProfileDataContext.Provider value={profileData}>
-      <SetProfileDataContext.Provider value={{ setProfileData, handleFollow, handleUnfollow }}>
+      <SetProfileDataContext.Provider value={value}>
         {children}
       </SetProfileDataContext.Provider>
     </ProfileDataContext.Provider>
