@@ -73,7 +73,7 @@ function QuestionForm() {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-      return; // Stop the form submission if there are errors
+      return;
     }
 
     try {
