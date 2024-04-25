@@ -9,6 +9,7 @@ import Media from "react-bootstrap/Media";
 import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
+import ConfirmModal from "../../components/ConfirmModal";
 
 const Comment = (props) => {
   const {
@@ -23,6 +24,7 @@ const Comment = (props) => {
   } = props;
 
   const [showEditForm, setShowEditForm] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
@@ -42,6 +44,7 @@ const Comment = (props) => {
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
+      setShowConfirmModal(false);
     } catch (err) {}
   };
 
@@ -71,10 +74,17 @@ const Comment = (props) => {
         {is_owner && !showEditForm && (
           <MoreDropdown
             handleEdit={() => setShowEditForm(true)}
-            handleDelete={handleDelete}
+            handleDelete={() => setShowConfirmModal(true)}
           />
         )}
       </Media>
+      <ConfirmModal
+        show={showConfirmModal}
+        handleClose={() => setShowConfirmModal(false)}
+        handleConfirm={handleDelete}
+        title="Confirm deletion"
+        message="Are you sure you want to delete this comment?"
+      />
     </>
   );
 };
