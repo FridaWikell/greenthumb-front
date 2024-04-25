@@ -2,7 +2,7 @@
   background-color: #a7b3a4;
   color: #222222;
   border: #9daf99;
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .StandardBtn:hover {
@@ -20,7 +20,7 @@
   border: transparent;
   color: #222222;
   width: fit-content;
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .SubmitBtn:hover {
@@ -32,7 +32,7 @@
   border: transparent;
   color: #222222;
   width: fit-content;
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .CancelBtn:hover {
@@ -53,7 +53,7 @@
   background-color: #82d889;
   border: transparent;
   color: #222222;
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .FollowBtn:hover {
@@ -65,7 +65,7 @@
   background-color: #caa9a9;
   color: #222222;
   border: transparent;
-  transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .UnfollowBtn:hover {
