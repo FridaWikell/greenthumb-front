@@ -41,6 +41,15 @@ function QuestionForm() {
     }));
   };
 
+  const removeAnswer = () => {
+    if (questionData.answers.length > 1) {
+      setQuestionData(prev => ({
+        ...prev,
+        answers: prev.answers.slice(0, -1)
+      }));
+    }
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { questionText, answers } = questionData;
@@ -64,7 +73,7 @@ function QuestionForm() {
       <Row>
         <Col className="py-2 p-0 p-md-2" md={12} lg={12}>
           <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-start pt-4`}
           >
             <Col className="mx-auto" lg={8}>
             <Form.Group>
@@ -91,27 +100,30 @@ function QuestionForm() {
                   onChange={handleChange}
                   placeholder="Enter an answer option"
                 />
-                {index + 1 === questionData.answers.length && (
-                  <Button onClick={addAnswer} className={`${btnStyles.AddAnswer} mt-2`}>
-                    <i class="fa-regular fa-square-plus"></i>
-                  </Button>
-                )}
               </Form.Group>
             ))}
+            <Button onClick={addAnswer} className={`${btnStyles.AddAnswer} mt-2 mr-2`}>
+              <i className="fa-regular fa-square-plus"></i>
+            </Button>
+            {questionData.answers.length > 1 && (
+              <Button onClick={removeAnswer} className={`${btnStyles.AddAnswer} mt-2`}>
+                <i className="fa-regular fa-square-minus"></i>
+              </Button>
+            )}
             </Col>
             <div className="d-flex justify-content-center">
-            <Button
-              className={`${btnStyles.CancelBtn} px-3 py-2 mt-3 mx-2`}
-              onClick={() => history.goBack()}
-            >
-              Cancel
-            </Button>
-            <Button
-              className={`${btnStyles.SubmitBtn} px-3 py-2 mt-3 mx-2`}
-              type="submit"
-            >
-              Submit
-            </Button>
+              <Button
+                className={`${btnStyles.CancelBtn} px-3 py-2 mt-3 mx-2`}
+                onClick={() => history.goBack()}
+              >
+                Cancel
+              </Button>
+              <Button
+                className={`${btnStyles.SubmitBtn} px-3 py-2 mt-3 mx-2`}
+                type="submit"
+              >
+                Submit
+              </Button>
             </div>
           </Container>
         </Col>
