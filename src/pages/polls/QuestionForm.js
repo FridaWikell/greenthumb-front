@@ -53,6 +53,29 @@ function QuestionForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { questionText, answers } = questionData;
+    let newErrors = {};
+
+    if (!questionText.trim()) {
+      newErrors.questionText = ["The question cannot be left blank."];
+    }
+
+    let answerErrors = false;
+    answers.forEach((answer, index) => {
+      if (!answer.trim()) {
+        newErrors[`answer-${index}`] = "Answer cannot be left blank.";
+        answerErrors = true;
+      }
+    });
+
+    if (answers.length < 2 || answerErrors) {
+      newErrors.answers = "At least two answers are required and none can be left blank.";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return; // Stop the form submission if there are errors
+    }
+
     try {
       const formData = {
         text: questionText,
@@ -62,7 +85,7 @@ function QuestionForm() {
       history.push(`/questions/${data.id}`);
     } catch (err) {
       console.log(err);
-      if (err.response) {
+      if (err.response && err.response.data) {
         setErrors(err.response.data);
       }
     }
@@ -84,11 +107,16 @@ function QuestionForm() {
                 value={questionData.questionText}
                 onChange={handleChange}
                 placeholder="Enter your question"
+                isInvalid={!!errors.questionText}
               />
-              {errors?.questionText?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>{message}</Alert>
-              ))}
+              {errors.questionText && (
+                <Alert className="mt-1" variant="warning">{errors.questionText}</Alert>
+              )}
             </Form.Group>
+
+            {errors.answers && (
+              <Alert className="mt-1" variant="warning">{errors.answers}</Alert>
+            )}
 
             {questionData.answers.map((answer, index) => (
               <Form.Group key={index}>
@@ -99,9 +127,14 @@ function QuestionForm() {
                   value={answer}
                   onChange={handleChange}
                   placeholder="Enter an answer option"
+                  isInvalid={!!errors[`answer-${index}`]}
                 />
+                {errors[`answer-${index}`] && (
+                  <Alert className="mt-1" variant="warning">{errors[`answer-${index}`]}</Alert>
+                )}
               </Form.Group>
             ))}
+
             <Button onClick={addAnswer} className={`${btnStyles.AddAnswer} mt-2 mr-2`}>
               <i className="fa-regular fa-square-plus"></i>
             </Button>
