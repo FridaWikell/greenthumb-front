@@ -4,8 +4,7 @@ import Button from "react-bootstrap/Button";
 
 import btnStyles from "../styles/Button.module.css";
 
-function CloseModal({ show, title, message, handleClose }) {
-  return (
+const CloseModal = ({ show, title, message, handleClose }) => (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>{title}</Modal.Title>
@@ -15,7 +14,6 @@ function CloseModal({ show, title, message, handleClose }) {
         <Button className={btnStyles.StandardBtn} onClick={handleClose}>Close</Button>
       </Modal.Footer>
     </Modal>
-  );
-}
+  )
 
 export default CloseModal;

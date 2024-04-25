@@ -4,8 +4,7 @@ import Button from "react-bootstrap/Button";
 
 import btnStyles from "../styles/Button.module.css";
 
-function ConfirmModal({ show, handleClose, handleConfirm, title, message, action }) {
-  return (
+const ConfirmModal = ({ show, handleClose, handleConfirm, title, message }) => (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>{title}</Modal.Title>
@@ -20,7 +19,6 @@ function ConfirmModal({ show, handleClose, handleConfirm, title, message, action
         </Button>
       </Modal.Footer>
     </Modal>
-  );
-}
+  )
 
 export default ConfirmModal;

@@ -12,11 +12,14 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
-    if (this.state.hasError) {
+    const { hasError } = this.state; 
+    const { children } = this.props;
+
+    if (hasError) {
       return <InternalServerErrorPage />;
     }
 
-    return this.props.children;
+    return children;
   }
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
-import styles from "../styles/MoreDropdown.module.css";
 import { useHistory } from "react-router-dom";
+import styles from "../styles/MoreDropdown.module.css";
 import ConfirmModal from "./ConfirmModal";
 
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
@@ -12,11 +12,20 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
       e.preventDefault();
       onClick(e);
     }}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onClick(e);
+      }
+    }}
+    tabIndex="0"
+    role="button"
+    aria-label="More options" 
   />
 ));
 
-export const MoreDropdown = ({ handleEdit, handleDelete }) => {
-  return (
+
+export const MoreDropdown = ({ handleEdit, handleDelete }) => (
     <Dropdown className="ml-auto" drop="left">
       <Dropdown.Toggle as={ThreeDots} />
       <Dropdown.Menu
@@ -40,7 +49,6 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
       </Dropdown.Menu>
     </Dropdown>
   );
-};
 
 export const ProfileEditDropdown = ({ id }) => {
   const history = useHistory();
@@ -58,7 +66,7 @@ export const ProfileEditDropdown = ({ id }) => {
           onClick={() => history.push(`/profiles/${id}/edit/username`)}
           aria-label="edit-username"
         >
-          <i class="fa-solid fa-user-pen" /> Change username
+          <i className="fa-solid fa-user-pen" /> Change username
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit/password`)}
