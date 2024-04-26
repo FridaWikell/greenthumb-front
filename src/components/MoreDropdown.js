@@ -26,21 +26,18 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
 
 
 export const MoreDropdown = ({ handleEdit, handleDelete }) => (
-  <Dropdown className="ml-auto" drop="left">
+  <Dropdown className={`ml-auto px-3 ${styles.Absolute}`} drop="left">
     <Dropdown.Toggle as={ThreeDots} />
     <Dropdown.Menu
-      className="text-center"
       popperConfig={{ strategy: "fixed" }}
     >
       <Dropdown.Item
-        className={`${styles.DropdownItem} d-block ml-4`}
         onClick={handleEdit}
         aria-label="edit"
       >
         <i className="fas fa-edit" /> Edit
       </Dropdown.Item>
       <Dropdown.Item
-        className={`${styles.DropdownItem} d-block ml-4`}
         onClick={handleDelete}
         aria-label="delete"
       >

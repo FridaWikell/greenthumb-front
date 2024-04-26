@@ -114,7 +114,7 @@ const Post = (props) => {
               {owner}
             </Link>
             <div className="d-flex align-items-center">
-              <span className={styles.SmallerText}>{updatedAt}</span>
+              <span className={`${styles.SmallerText} mr-4`}>{updatedAt}</span>
               {isOwner && postPage && (
                 <MoreDropdown
                   handleEdit={handleEdit}
