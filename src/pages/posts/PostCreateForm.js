@@ -76,15 +76,20 @@ const PostCreateForm = () => {
           onChange={handleChange}
           required
         >
-          <option value="">Choose a zone</option>
-          {Array.from({ length: 9 }, (_, i) => i).map((zone) => (
-            <option key={`zone-${zone}`} value={zone}>Zone {zone}</option>
-          ))}
+          <option value="" disabled defaultValue>Choose a zone</option>
+          <option value="1">Zone 1</option>
+          <option value="2">Zone 2</option>
+          <option value="3">Zone 3</option>
+          <option value="4">Zone 4</option>
+          <option value="5">Zone 5</option>
+          <option value="6">Zone 6</option>
+          <option value="7">Zone 7</option>
+          <option value="8">Zone 8</option>
           <option value="0">Not applicable</option>
         </Form.Control>
       </Form.Group>
-      {errors.hardinessZone?.map((message, idx) => (
-        <Alert key={`hardinessZone-error-${idx}`} variant="warning">{message}</Alert>
+      {errors?.hardinessZone?.map((message, idx) => (
+        <Alert key={`hardinessZone-error-${idx}`} variant="warning" className="mt-1">{message}</Alert>
       ))}
     </>
   );
@@ -100,8 +105,8 @@ const PostCreateForm = () => {
           onChange={handleChange}
           isInvalid={!!errors.title}
         />
-        {errors.title?.map((message, idx) => (
-          <Alert key={`title-error-${idx}`} variant="warning">{message}</Alert>
+        {errors?.title?.map((message, idx) => (
+          <Alert key={`title-error-${idx}`} variant="warning" className="mt-1">{message}</Alert>
         ))}
       </Form.Group>
 
@@ -115,8 +120,10 @@ const PostCreateForm = () => {
           onChange={handleChange}
           isInvalid={!!errors.content}
         />
-        {errors.map(error => (
-          <Alert key={error.id} variant="warning">{error.message}</Alert>
+        {errors?.content?.map((message, idx) => (
+          <Alert variant="warning" key={idx} className="mt-1">
+            {message}
+          </Alert>
         ))}
       </Form.Group>
 
@@ -146,7 +153,7 @@ const PostCreateForm = () => {
                 <Image className={appStyles.Image} src={image} rounded />
               ) : (
                 <Asset
-                  src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713789452/download_pfp4hn.webp"
+                  src="https://res.cloudinary.com/dihkuau3v/image/upload/v1714137937/download-small_bj3345.webp"
                   message="Click or tap to upload an image"
                 />
               )}
@@ -157,8 +164,8 @@ const PostCreateForm = () => {
                 ref={imageInput}
               />
             </Form.Group>
-            {errors.image?.map((message, idx) => (
-              <Alert key={`image-error-${idx}`} variant="warning">{message}</Alert>
+            {errors?.image?.map((message, idx) => (
+              <Alert key={`image-error-${idx}`} variant="warning" className="mt-1">{message}</Alert>
             ))}
             <div className="d-md-none">{textFields}</div>
           </Container>
