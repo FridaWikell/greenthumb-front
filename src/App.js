@@ -35,7 +35,13 @@ const App = () => {
       <Container className={styles.Main}>
         <ErrorBoundary>
           <Switch>
-          <Route
+            <Route
+                exact path="/"
+                render={() => (
+                  <PostsPage message="No results found. Adjust the search keyword." />
+                )}
+              />
+            <Route
               exact path="/feed"
               render={() => (
                 <PostsPage
