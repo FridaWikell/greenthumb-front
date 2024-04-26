@@ -7,36 +7,46 @@ export const fetchMoreData = async (resource, setResource) => {
     setResource((prevResource) => ({
       ...prevResource,
       next: data.next,
-      results: data.results.reduce((acc, cur) => acc.some((accResult) => accResult.id === cur.id)
-          ? acc
-          : [...acc, cur], prevResource.results),
+      results: [...new Set([...prevResource.results, ...data.results.filter((item) =>
+        !prevResource.results.some((res) => res.id === item.id)
+      )])]
     }));
-  } catch (err) {}
+  } catch (err) {
+    // console.log(err);
+  }
 };
 
-export const followHelper = (profile, clickedProfile, following_id) => profile.id === clickedProfile.id
-    ? {
-        ...profile,
-        followers_count: profile.followers_count + 1,
-        following_id,
-      }
-    : profile.is_owner
-    ? { ...profile, following_count: profile.following_count + 1 }
-    : profile;
+export const followHelper = (profile, clickedProfile, followingId) => {
+  if (profile.id === clickedProfile.id) {
+    return {
+      ...profile,
+      followersCount: profile.followersCount + 1,
+      followingId,
+    };
+  }
+  if (profile.isOwner) {
+    return { ...profile, followingCount: profile.followingCount + 1 };
+  }
+  return profile;
+};
 
-export const unfollowHelper = (profile, clickedProfile) => profile.id === clickedProfile.id
-    ? {
-        ...profile,
-        followers_count: profile.followers_count - 1,
-        following_id: null,
-      }
-    : profile.is_owner
-    ? { ...profile, following_count: profile.following_count - 1 }
-    : profile;
+export const unfollowHelper = (profile, clickedProfile) => {
+  if (profile.id === clickedProfile.id) {
+    return {
+      ...profile,
+      followersCount: profile.followersCount - 1,
+      followingId: null,
+    };
+  }
+  if (profile.isOwner) {
+    return { ...profile, followingCount: profile.followingCount - 1 };
+  }
+  return profile;
+};
 
 export const setTokenTimestamp = (data) => {
   const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
-  localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp);
+  localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp.toString());
 };
 
 export const shouldRefreshToken = () => !!localStorage.getItem("refreshTokenTimestamp");
