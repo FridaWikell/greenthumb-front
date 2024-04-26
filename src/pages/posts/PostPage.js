@@ -4,95 +4,90 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import InfiniteScroll from "react-infinite-scroll-component";
-import appStyles from "../../App.module.css";
-import { axiosReq } from "../../api/axiosDefaults";
+import Asset from "../../components/Asset";
 import Post from "./Post";
 import Comment from "../comments/Comment";
 import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import Asset from "../../components/Asset";
+import { axiosReq } from "../../api/axiosDefaults";
 import { fetchMoreData } from "../../utils/utils";
+import appStyles from "../../App.module.css";
 
 const PostPage = () => {
   const { id } = useParams();
-  const [post, setPost] = useState({});
-  const [comments, setComments] = useState({ results: [], next: null });
-
+  const [post, setPost] = useState({ results: [] });
+  const [comments, setComments] = useState({ results: [] });
   const currentUser = useCurrentUser();
-  const profileImage = currentUser?.profile_image;
+  const { profile_image: profileImage } = currentUser || {};
 
   useEffect(() => {
-    const fetchContent = async () => {
+    const handleMount = async () => {
       try {
-        const [{ data: fetchedPost }, { data: fetchedComments }] = await Promise.all([
+        const [{ data: postData }, { data: commentsData }] = await Promise.all([
           axiosReq.get(`/posts/${id}`),
           axiosReq.get(`/comments/?post=${id}`),
         ]);
-        setPost(fetchedPost);
-        setComments(fetchedComments);
+        setPost({ results: [postData] });
+        setComments(commentsData);
       } catch (err) {
-        // console.error("Failed to load post or comments:", err);
+        // console.log(err);
       }
     };
 
-    fetchContent();
+    handleMount();
   }, [id]);
 
-  const renderCommentsSection = () => {
-    if (!comments.results.length) {
-      return currentUser ? (
-        <div className="px-3 py-2">Looks like the comment section is fresh out of the oven - be the first to serve up some thoughts!</div>
-      ) : (
-        <div className="px-3 py-2">No comments...Do you want to be the first?</div>
-      );
-    }
+  const renderCommentList = () => (
+    <InfiniteScroll
+      dataLength={comments.results.length}
+      loader={<Asset spinner />}
+      hasMore={!!comments.next}
+      next={() => fetchMoreData(comments, setComments)}
+    >
+      {comments.results.map((comment) => (
+        <Comment
+          key={comment.id}
+          {...comment}
+          setPost={setPost}
+          setComments={setComments}
+        />
+      ))}
+    </InfiniteScroll>
+  );
 
-    return (
-      <InfiniteScroll
-        dataLength={comments.results.length}
-        loader={<Asset spinner />}
-        hasMore={!!comments.next}
-        next={() => fetchMoreData(comments, setComments)}
-      >
-        {comments.results.map(comment => (
-          <Comment
-            key={comment.id}
-            id={comment.id}
-            author={comment.author}
-            text={comment.text}
-            createdAt={comment.createdAt}
+  const renderNoComments = () => (
+    <div className="px-3 py-2">Looks like the comment section is fresh out of the oven - be the first to serve up some thoughts!</div>
+  );
+
+  const renderComments = () => {
+    if (currentUser) {
+      return (
+        <>
+          <CommentCreateForm
+            profile_id={currentUser.profile_id}
+            profileImage={profileImage}
+            post={id}
+            setPost={setPost}
             setComments={setComments}
           />
-        ))}
-      </InfiniteScroll>
-    );
+          {comments.results.length ? renderCommentList() : renderNoComments()}
+        </>
+      );
+    } 
+      return comments.results.length ? renderCommentList() : <div className="px-3 py-2">No comments...Do you want to be the first?</div>;
+    
   };
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2 mx-auto" lg={8}>
-        <Post 
-          id={post.id}
-          title={post.title}
-          content={post.content}
-          image={post.image}
-          setPosts={setPost}
-          postPage
-        />
+        <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container className={appStyles.Content}>
-          {currentUser && (
-            <CommentCreateForm
-              profileId={currentUser.profile_id}
-              profileImage={profileImage}
-              postId={id}
-              setComments={setComments}
-            />
-          )}
-          {renderCommentsSection()}
+          {renderComments()}
         </Container>
       </Col>
     </Row>
   );
-}
+};
 
 export default PostPage;
