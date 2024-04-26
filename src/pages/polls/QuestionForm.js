@@ -118,22 +118,22 @@ const QuestionForm = () => {
               <Alert className="mt-1" variant="warning">{errors.answers}</Alert>
             )}
 
-            {questionData.answers.map((answer, index) => (
-              <Form.Group>
-                <Form.Label>Answer {index + 1}</Form.Label>
-                <Form.Control
-                  type="text"
-                  name={`answer-${index}`}
-                  value={answer}
-                  onChange={handleChange}
-                  placeholder="Enter an answer option"
-                  isInvalid={!!errors[`answer-${index}`]}
-                />
-                {errors[`answer-${index}`] && (
-                  <Alert className="mt-1" variant="warning">{errors[`answer-${index}`]}</Alert>
-                )}
-              </Form.Group>
-            ))}
+          {questionData.answers.map((answer, index) => (
+            <Form.Group key={`answer-${index}`}>
+              <Form.Label>Answer {index + 1}</Form.Label>
+              <Form.Control
+                type="text"
+                name={`answer-${index}`}
+                value={answer}
+                onChange={handleChange}
+                placeholder="Enter an answer option"
+                isInvalid={!!errors[`answer-${index}`]}
+              />
+              {errors[`answer-${index}`] && (
+                <Alert className="mt-1" variant="warning">{errors[`answer-${index}`]}</Alert>
+              )}
+            </Form.Group>
+          ))}
 
             <Button onClick={addAnswer} className={`${btnStyles.AddAnswer} mt-2 mr-2`}>
               <i className="fa-regular fa-square-plus" />
