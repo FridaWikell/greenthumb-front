@@ -19,8 +19,8 @@ const NotFoundPage = () => {
       <Col className="py-2 p-0 p-lg-2 mx-auto" lg={8}>
         <div className="d-flex justify-content-center mb-4">
           <Container className={`mb-4 py-4 px-3 px-md-5 ${appStyles.Content}`}>
-            <h1 className={`${styles.Header} mt-4`}>Oops! This page must've taken a stroll in the garden...</h1>
-            <p>We can't find the page you're looking for. It might be lost among the flowers!</p>
+            <h1 className={`${styles.Header} mt-4`}>Oops! This page must&apos;ve taken a stroll in the garden...</h1>
+            <p>We can&apos;t find the page you&apos;re looking for. It might be lost among the flowers!</p>
             <div className="d-flex justify-content-center my-4">
               <Button className={`${btnStyles.StandardBtn} px-3 py-2 mx-2`} onClick={() => history.goBack()}>
                 Go back
