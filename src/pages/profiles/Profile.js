@@ -1,18 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 import styles from "../../styles/Profile.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
-import Button from "react-bootstrap/Button";
 import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 const Profile = (props) => {
   const { profile, mobile, imageSize = 55 } = props;
-  const { id, following_id, image, owner } = profile;
+  const { id, following_id: followingId, image, owner } = profile;
 
   const currentUser = useCurrentUser();
-  const is_owner = currentUser?.username === owner;
+  const isOwner = currentUser?.username === owner;
 
   const { handleFollow, handleUnfollow } = useSetProfileData();
 
@@ -31,8 +31,8 @@ const Profile = (props) => {
       <div className={`text-right ${!mobile && "ml-auto"}`}>
         {!mobile &&
           currentUser &&
-          !is_owner &&
-          (following_id ? (
+          !isOwner && // Use camelCase variable
+          (followingId ? ( // Use camelCase variable
             <Button
               className={`${btnStyles.UnfollowBtn} px-3 py-1`}
               onClick={() => handleUnfollow(profile)}

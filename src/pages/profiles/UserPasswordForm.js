@@ -20,17 +20,21 @@ const UserPasswordForm = () => {
   const currentUser = useCurrentUser();
 
   const [userData, setUserData] = useState({
-    new_password1: "",
-    new_password2: "",
+    newPassword1: "",
+    newPassword2: "",
   });
-  const { new_password1, new_password2 } = userData;
+  // Destructuring using camelCase
+  const { newPassword1, newPassword2 } = userData;
 
   const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
+    const { name, value } = event.target;
+    // Adjust name to match state variable names if they come as snake_case from inputs
+    const formattedName = name.replace(/_\w/g, (m) => m[1].toUpperCase());
     setUserData({
       ...userData,
-      [event.target.name]: event.target.value,
+      [formattedName]: value,
     });
   };
 
@@ -43,10 +47,14 @@ const UserPasswordForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axiosRes.post("/dj-rest-auth/password/change/", userData);
+      const submitData = {
+        new_password1: newPassword1,
+        new_password2: newPassword2,
+      };
+      await axiosRes.post("/dj-rest-auth/password/change/", submitData);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
     }
   };
@@ -61,9 +69,9 @@ const UserPasswordForm = () => {
               <Form.Control
                 placeholder="New password"
                 type="password"
-                value={new_password1}
+                value={newPassword1}
                 onChange={handleChange}
-                name="new_password1"
+                name="newPassword1"
               />
             </Form.Group>
             {errors?.new_password1?.map((message, idx) => (
@@ -76,9 +84,9 @@ const UserPasswordForm = () => {
               <Form.Control
                 placeholder="Confirm new password"
                 type="password"
-                value={new_password2}
+                value={newPassword2}
                 onChange={handleChange}
-                name="new_password2"
+                name="newPassword2"
               />
             </Form.Group>
             {errors?.new_password2?.map((message, idx) => (
