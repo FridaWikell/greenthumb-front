@@ -1,28 +1,33 @@
-import styles from "./App.module.css";
-import NavBar from "./components/NavBar";
-import Container from "react-bootstrap/Container";
+import React from "react";
 import { Route, Switch } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+
+import { useCurrentUser } from "./contexts/CurrentUserContext";
+import NavBar from "./components/NavBar";
 import ErrorBoundary from "./components/ErrorBoundary";
-import "./api/axiosDefaults";
-import SignUpForm from "./pages/auth/SignUpForm";
+
 import SignInForm from "./pages/auth/SignInForm";
+import SignUpForm from "./pages/auth/SignUpForm";
 import PostCreateForm from "./pages/posts/PostCreateForm";
+import PostEditForm from "./pages/posts/PostEditForm";
 import PostPage from "./pages/posts/PostPage";
 import PostsPage from "./pages/posts/PostsPage";
-import { useCurrentUser } from "./contexts/CurrentUserContext";
-import PostEditForm from "./pages/posts/PostEditForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
+import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
-import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import Questions from "./pages/polls/Questions";
 import QuestionForm from "./pages/polls/QuestionForm";
 import QuestionPage from "./pages/polls/QuestionPage";
 import NotFoundPage from "./pages/errors/NotFoundPage";
 
-function App() {
+import styles from "./App.module.css";
+
+import "./api/axiosDefaults";
+
+const App = () => {
   const currentUser = useCurrentUser();
-  const profile_id = currentUser?.profile_id || "";
+  const profileId = currentUser?.profile_id || "";
 
   return (
     <div className={styles.App}>
@@ -30,18 +35,12 @@ function App() {
       <Container className={styles.Main}>
         <ErrorBoundary>
           <Switch>
-            <Route
-              exact path="/"
-              render={() => (
-                <PostsPage message="No results found. Adjust the search keyword." />
-              )}
-            />
-            <Route
+          <Route
               exact path="/feed"
               render={() => (
                 <PostsPage
                   message="No results found. Adjust the search keyword or follow a user."
-                  filter={`owner__followed__owner__profile=${profile_id}&`}
+                  filter={`owner__followed__owner__profile=${profileId}&`}
                 />
               )}
             />
@@ -50,7 +49,7 @@ function App() {
               render={() => (
                 <PostsPage
                   message="No results found. Adjust the search keyword or like a post."
-                  filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+                  filter={`likes__owner__profile=${profileId}&ordering=-likes__created_at&`}
                 />
               )}
             />
