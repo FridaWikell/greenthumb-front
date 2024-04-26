@@ -7,12 +7,14 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import InfiniteScroll from "react-infinite-scroll-component";
+
 import Post from "./Post";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import btnStyles from "../../styles/Button.module.css";
+
 import { axiosReq } from "../../api/axiosDefaults";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
@@ -32,24 +34,26 @@ const PostsPage = ({ message, filter = "" }) => {
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        // console.error("Failed to fetch posts:", err);
+        // console.log(err);
       }
     };
 
     setHasLoaded(false);
-    const timer = setTimeout(fetchPosts, 1000);
-    return () => clearTimeout(timer);
+
+    const timer = setTimeout(() => {
+      fetchPosts();
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [filter, query, pathname, currentUser]);
 
   const renderContent = () => {
     if (!hasLoaded) {
-      return (
-        <Container className={appStyles.Content}>
-          <Asset spinner />
-        </Container>
-      );
+      return <Container className={appStyles.Content}><Asset spinner /></Container>;
     }
-    
+
     if (posts.results.length) {
       return (
         <InfiniteScroll
@@ -58,19 +62,19 @@ const PostsPage = ({ message, filter = "" }) => {
           hasMore={!!posts.next}
           next={() => fetchMoreData(posts, setPosts)}
         >
-          {posts.results.map(post => (
-            <Post key={post.id} id={post.id} setPosts={setPosts} />
+          {posts.results.map((post) => (
+            <Post key={post.id} {...post} setPosts={setPosts} />
           ))}
         </InfiniteScroll>
       );
-    }
-  
-    return (
-      <Container className={appStyles.Content}>
-        <Asset src="https://res.cloudinary.com/dihkuau3v/image/upload/v1712912063/no-result_ugwawx.jpg" message={message} />
-      </Container>
-    );
-  };  
+    } 
+      return (
+        <Container className={appStyles.Content}>
+          <Asset src="https://res.cloudinary.com/dihkuau3v/image/upload/v1712912063/no-result_ugwawx.jpg" message={message} />
+        </Container>
+      );
+    
+  };
 
   return (
     <Row className="h-100">
@@ -98,6 +102,6 @@ const PostsPage = ({ message, filter = "" }) => {
       </Col>
     </Row>
   );
-}
+};
 
 export default PostsPage;
