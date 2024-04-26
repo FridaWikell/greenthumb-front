@@ -1,94 +1,107 @@
 import React, { useState } from "react";
-import styles from "../../styles/Post.module.css";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
+import { Link, useHistory } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-
-import { Link, useHistory } from "react-router-dom";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Avatar from "../../components/Avatar";
-import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import ConfirmModal from "../../components/ConfirmModal";
+import styles from "../../styles/Post.module.css";
+import { axiosRes } from "../../api/axiosDefaults";
 
 const Post = (props) => {
   const {
     id,
     owner,
-    profile_id,
-    profile_image,
-    comments_count,
-    likes_count,
-    like_id,
+    profile_id: profileId,
+    profile_image: profileImage,
+    comments_count: commentsCount,
+    likes_count: likesCount,
+    like_id: likeId,
     title,
     content,
     image,
-    updated_at,
+    updated_at: updatedAt,
     postPage,
     setPosts,
-    hardiness_zone
+    hardiness_zone: hardinessZone
   } = props;
 
   const currentUser = useCurrentUser();
-  const is_owner = currentUser?.username === owner;
+  const isOwner = currentUser?.username === owner;
   const history = useHistory();
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
-  const handleEdit = () => {
-    history.push(`/posts/${id}/edit`);
-  };
-
-  const handleDelete = () => {
-      setShowConfirmModal(true);
-  };
+  const handleEdit = () => history.push(`/posts/${id}/edit`);
+  const handleDelete = () => setShowConfirmModal(true);
 
   const confirmDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
-      history.goBack(); 
+      history.goBack();
       setShowConfirmModal(false);
     } catch (err) {
-      console.error("Failed to delete post:", err);
+      // console.error("Failed to delete post:", err);
       setShowConfirmModal(false);
     }
   };
 
-  const cancelDelete = () => {
-    setShowConfirmModal(false);
-  };
+  const cancelDelete = () => setShowConfirmModal(false);
 
-  const handleLike = async () => {
+  const handleLikeInteraction = async (shouldLike) => {
     try {
-      const { data } = await axiosRes.post("/likes/", { post: id });
-      setPosts((prevPosts) => ({
-        ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-            : post;
-        }),
-      }));
+      if (shouldLike) {
+        const { data } = await axiosRes.post("/likes/", { post: id });
+        setPosts(prev => ({
+          ...prev,
+          results: prev.results.map(p => p.id === id ? {...p, likes_count: p.likes_count + 1, like_id: data.id} : p)
+        }));
+      } else {
+        await axiosRes.delete(`/likes/${likeId}/`);
+        setPosts(prev => ({
+          ...prev,
+          results: prev.results.map(p => p.id === id ? {...p, likes_count: p.likes_count - 1, like_id: null} : p)
+        }));
+      }
     } catch (err) {
-      console.log(err);
+      // console.error(err);
     }
   };
 
-  const handleUnlike = async () => {
-    try {
-      await axiosRes.delete(`/likes/${like_id}/`);
-      setPosts((prevPosts) => ({
-        ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-            : post;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
+  const renderLikeButton = () => {
+    if (isOwner) {
+      return (
+        <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>You can`&apos;t like your own post!</Tooltip>}
+        >
+          <i className="far fa-heart" />
+        </OverlayTrigger>
+      );
+    } if (likeId) {
+      return (
+        <button onClick={() => handleLikeInteraction(false)} className="icon-button" type="button" aria-label="Unlike button">
+          <i className={`fas fa-heart ${styles.Heart}`} />
+        </button>
+      );
+    } if (currentUser) {
+      return (
+        <button onClick={() => handleLikeInteraction(true)} className="icon-button" type="button" aria-label="Like button">
+          <i className={`far fa-heart ${styles.HeartOutline}`} />
+        </button>
+      );
+    } 
+      return (
+        <OverlayTrigger
+          placement="top"
+          overlay={<Tooltip>Log in to like posts!</Tooltip>}
+        >
+          <i className="far fa-heart" />
+        </OverlayTrigger>
+      );
+    
   };
 
   return (
@@ -96,13 +109,13 @@ const Post = (props) => {
       <Card className={styles.Post}>
         <Card.Body>
           <Media className="align-items-center justify-content-between">
-            <Link to={`/profiles/${profile_id}`}>
-              <Avatar src={profile_image} height={55} />
+            <Link to={`/profiles/${profileId}`}>
+              <Avatar src={profileImage} height={55} />
               {owner}
             </Link>
             <div className="d-flex align-items-center">
-              <span className={styles.SmallerText}>{updated_at}</span>
-              {is_owner && postPage && (
+              <span className={styles.SmallerText}>{updatedAt}</span>
+              {isOwner && postPage && (
                 <MoreDropdown
                   handleEdit={handleEdit}
                   handleDelete={handleDelete}
@@ -119,38 +132,16 @@ const Post = (props) => {
             {title && <Card.Title className="text-center mb-4">{title}</Card.Title>}
             {content && <Card.Text className="mb-4">{content}</Card.Text>}
             <hr className={styles.Line}/>
-            <div className={`${styles.SmallerText} mb-2`}>Hardiness zone {hardiness_zone}</div>
+            <div className={`${styles.SmallerText} mb-2`}>Hardiness zone {hardinessZone}</div>
           </Link>
           <hr className={styles.Line}/>
           <div className={styles.PostBar}>
-            {is_owner ? (
-              <OverlayTrigger
-                placement="top"
-                overlay={<Tooltip>You can't like your own post!</Tooltip>}
-              >
-                <i className="far fa-heart" />
-              </OverlayTrigger>
-            ) : like_id ? (
-              <span onClick={handleUnlike}>
-                <i className={`fas fa-heart ${styles.Heart}`} />
-              </span>
-            ) : currentUser ? (
-              <span onClick={handleLike}>
-                <i className={`far fa-heart ${styles.HeartOutline}`} />
-              </span>
-            ) : (
-              <OverlayTrigger
-                placement="top"
-                overlay={<Tooltip>Log in to like posts!</Tooltip>}
-              >
-                <i className="far fa-heart" />
-              </OverlayTrigger>
-            )}
-            {likes_count}
+            {renderLikeButton()}
+            {likesCount}
             <Link to={`/posts/${id}`}>
               <i className="far fa-comments" />
             </Link>
-            {comments_count}
+            {commentsCount}
           </div>
         </Card.Body>
       </Card>

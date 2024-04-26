@@ -1,32 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
-
+import InfiniteScroll from "react-infinite-scroll-component";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
-
-import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-function PostsPage({ message, filter = "" }) {
+const PostsPage = ({ message, filter = "" }) => {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const currentUser = useCurrentUser();
-
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -36,35 +32,57 @@ function PostsPage({ message, filter = "" }) {
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.error("Failed to fetch posts:", err);
       }
     };
 
     setHasLoaded(false);
-    
-    const timer = setTimeout(() => {
-      fetchPosts();
-    }, 1000);
-
-    return () => {
-      clearTimeout(timer);
-    };
+    const timer = setTimeout(fetchPosts, 1000);
+    return () => clearTimeout(timer);
   }, [filter, query, pathname, currentUser]);
+
+  const renderContent = () => {
+    if (!hasLoaded) {
+      return (
+        <Container className={appStyles.Content}>
+          <Asset spinner />
+        </Container>
+      );
+    }
+    
+    if (posts.results.length) {
+      return (
+        <InfiniteScroll
+          dataLength={posts.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!posts.next}
+          next={() => fetchMoreData(posts, setPosts)}
+        >
+          {posts.results.map(post => (
+            <Post key={post.id} id={post.id} setPosts={setPosts} />
+          ))}
+        </InfiniteScroll>
+      );
+    }
+  
+    return (
+      <Container className={appStyles.Content}>
+        <Asset src="https://res.cloudinary.com/dihkuau3v/image/upload/v1712912063/no-result_ugwawx.jpg" message={message} />
+      </Container>
+    );
+  };  
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <div className="d-flex justify-content-center mb-3">
           <Link to="/posts/create">
-            <Button className={btnStyles.StandardBtn}><i className="fa-regular fa-square-plus"></i>Add post</Button>
+            <Button className={btnStyles.StandardBtn}><i className="fa-regular fa-square-plus" />Add post</Button>
           </Link>
         </div>
         <PopularProfiles mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
-        <Form
-          className={styles.SearchBar}
-          onSubmit={(event) => event.preventDefault()}
-        >
+        <Form className={styles.SearchBar} onSubmit={(event) => event.preventDefault()}>
           <Form.Control
             value={query}
             onChange={(event) => setQuery(event.target.value)}
@@ -73,29 +91,7 @@ function PostsPage({ message, filter = "" }) {
             placeholder="Search posts"
           />
         </Form>
-        {hasLoaded ? (
-          <>
-            {posts.results.length ? (
-              <InfiniteScroll
-              children={posts.results.map((post) => (
-                <Post key={post.id} {...post} setPosts={setPosts} />
-              ))}
-              dataLength={posts.results.length}
-              loader={<Asset spinner />}
-              hasMore={!!posts.next}
-              next={() => fetchMoreData(posts, setPosts)}
-            />
-            ) : (
-              <Container className={appStyles.Content}>
-                <Asset src="https://res.cloudinary.com/dihkuau3v/image/upload/v1712912063/no-result_ugwawx.jpg" message={message} />
-              </Container>
-            )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}
+        {renderContent()}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />

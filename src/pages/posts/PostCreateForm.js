@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-
+import { useHistory } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -7,28 +7,23 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
-
 import Asset from "../../components/Asset";
-
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
-import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import useRedirect from "../../hooks/useRedirect";
 
-function PostCreateForm() {
+const PostCreateForm = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
-
   const [postData, setPostData] = useState({
     title: "",
     content: "",
     image: "",
-    hardiness_zone: "",
+    hardinessZone: "",
   });
-  const { title, content, image, hardiness_zone } = postData;
+  const { title, content, image, hardinessZone } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -53,10 +48,9 @@ function PostCreateForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("hardiness_zone", hardiness_zone);
+    formData.append("hardiness_zone", hardinessZone);
     if (imageInput.current.files[0]) {
       formData.append("image", imageInput.current.files[0]);
     }
@@ -65,7 +59,6 @@ function PostCreateForm() {
       const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
     } catch (err) {
-      console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
@@ -78,27 +71,20 @@ function PostCreateForm() {
         <Form.Label>Hardiness zone</Form.Label>
         <Form.Control
           as="select"
-          name="hardiness_zone"
-          value={hardiness_zone}
+          name="hardinessZone"
+          value={hardinessZone}
           onChange={handleChange}
           required
         >
-          <option value="" disabled selected>Choose a zone</option>
-          <option value="1">Zone 1</option>
-          <option value="2">Zone 2</option>
-          <option value="3">Zone 3</option>
-          <option value="4">Zone 4</option>
-          <option value="5">Zone 5</option>
-          <option value="6">Zone 6</option>
-          <option value="7">Zone 7</option>
-          <option value="8">Zone 8</option>
+          <option value="">Choose a zone</option>
+          {Array.from({ length: 9 }, (_, i) => i).map((zone) => (
+            <option key={`zone-${zone}`} value={zone}>Zone {zone}</option>
+          ))}
           <option value="0">Not applicable</option>
         </Form.Control>
       </Form.Group>
-      {errors?.hardiness_zone?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
+      {errors.hardinessZone?.map((message, idx) => (
+        <Alert key={`hardinessZone-error-${idx}`} variant="warning">{message}</Alert>
       ))}
     </>
   );
@@ -112,13 +98,12 @@ function PostCreateForm() {
           name="title"
           value={title}
           onChange={handleChange}
+          isInvalid={!!errors.title}
         />
+        {errors.title?.map((message, idx) => (
+          <Alert key={`title-error-${idx}`} variant="warning">{message}</Alert>
+        ))}
       </Form.Group>
-      {errors?.title?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
 
       <Form.Group>
         <Form.Label>Content</Form.Label>
@@ -128,13 +113,12 @@ function PostCreateForm() {
           name="content"
           value={content}
           onChange={handleChange}
+          isInvalid={!!errors.content}
         />
+        {errors.map(error => (
+          <Alert key={error.id} variant="warning">{error.message}</Alert>
+        ))}
       </Form.Group>
-      {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
 
       {hardinessZoneDropdown}
 
@@ -159,31 +143,13 @@ function PostCreateForm() {
           >
             <Form.Group className="text-center">
               {image ? (
-                <>
-                  <figure>
-                    <Image className={appStyles.Image} src={image} rounded />
-                  </figure>
-                  <div>
-                    <Form.Label
-                      className={`${btnStyles.StandardBtn} btn`}
-                      htmlFor="image-upload"
-                    >
-                      Change the image
-                    </Form.Label>
-                  </div>
-                </>
+                <Image className={appStyles.Image} src={image} rounded />
               ) : (
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <Asset
-                    src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713789452/download_pfp4hn.webp"
-                    message="Click or tap to upload an image"
-                  />
-                </Form.Label>
+                <Asset
+                  src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713789452/download_pfp4hn.webp"
+                  message="Click or tap to upload an image"
+                />
               )}
-
               <Form.File
                 id="image-upload"
                 accept="image/*"
@@ -191,12 +157,9 @@ function PostCreateForm() {
                 ref={imageInput}
               />
             </Form.Group>
-            {errors?.image?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
+            {errors.image?.map((message, idx) => (
+              <Alert key={`image-error-${idx}`} variant="warning">{message}</Alert>
             ))}
-            
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
@@ -206,6 +169,6 @@ function PostCreateForm() {
       </Row>
     </Form>
   );
-}
+};
 
 export default PostCreateForm;

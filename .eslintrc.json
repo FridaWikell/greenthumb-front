@@ -28,15 +28,18 @@
             }
         ],
         "react/jsx-filename-extension": [
-            1, 
+            1,
             { "extensions": [".js", ".jsx"] }
         ],
-        "react/jsx-no-bind": ["error", {
-            "ignoreRefs": true,
-            "allowArrowFunctions": true,
-            "allowFunctions": true,
-            "allowBind": false
-          }
-        ]
+        "react/jsx-no-bind": [
+            "error", 
+            {
+                "ignoreRefs": true,
+                "allowArrowFunctions": true,
+                "allowFunctions": true,
+                "allowBind": false
+            }
+        ],
+        "react/no-array-index-key": "off"
     }
 }
