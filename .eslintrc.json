@@ -1,45 +1,47 @@
 {
     "env": {
-        "browser": true,
-        "es2021": true
+      "browser": true,
+      "es2021": true,
+      "jest": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "airbnb",
-        "prettier"
+      "plugin:react/recommended",
+      "airbnb",
+      "prettier"
     ],
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
     },
     "plugins": [
-        "react"
+      "react"
     ],
     "rules": {
-        "react/prop-types": 0,
-        "react/function-component-definition": [
-            "error",
-            {
-                "namedComponents": "arrow-function",
-                "unnamedComponents": "arrow-function"
-            }
-        ],
-        "react/jsx-filename-extension": [
-            1,
-            { "extensions": [".js", ".jsx"] }
-        ],
-        "react/jsx-no-bind": [
-            "error", 
-            {
-                "ignoreRefs": true,
-                "allowArrowFunctions": true,
-                "allowFunctions": true,
-                "allowBind": false
-            }
-        ],
-        "react/no-array-index-key": "off"
+      "react/prop-types": 0,
+      "react/function-component-definition": [
+        "error",
+        {
+          "namedComponents": "arrow-function",
+          "unnamedComponents": "arrow-function"
+        }
+      ],
+      "react/jsx-filename-extension": [
+        1,
+        { "extensions": [".js", ".jsx"] }
+      ],
+      "react/jsx-no-bind": [
+        "error",
+        {
+          "ignoreRefs": true,
+          "allowArrowFunctions": true,
+          "allowFunctions": true,
+          "allowBind": false
+        }
+      ],
+      "react/no-array-index-key": "off",
+      "react/react-in-jsx-scope": "off"
     }
-}
+  }  
