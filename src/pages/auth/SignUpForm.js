@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import styles from "../../styles/SignInUpForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -14,7 +11,10 @@ import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 
 import axios from "axios";
-import { useRedirect } from "../../hooks/useRedirect";
+import appStyles from "../../App.module.css";
+import btnStyles from "../../styles/Button.module.css";
+import styles from "../../styles/SignInUpForm.module.css";
+import useRedirect from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
   useRedirect("loggedIn");
@@ -63,8 +63,8 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.username?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
+            {errors.username?.map((message) => (
+              <Alert variant="warning" key={`username-${message}`}>
                 {message}
               </Alert>
             ))}
@@ -80,8 +80,8 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.password1?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
+            {errors.password1?.map((message) => (
+              <Alert key={`password1-${message}`} variant="warning">
                 {message}
               </Alert>
             ))}
@@ -97,8 +97,8 @@ const SignUpForm = () => {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.password2?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
+            {errors.password2?.map((message) => (
+              <Alert key={`password2-${message}`} variant="warning">
                 {message}
               </Alert>
             ))}
@@ -109,8 +109,8 @@ const SignUpForm = () => {
             >
               Sign up
             </Button>
-            {errors.non_field_errors?.map((message, idx) => (
-              <Alert key={idx} variant="warning" className="mt-3">
+            {errors.non_field_errors?.map((message) => (
+              <Alert key={`non-field-${message}`} variant="warning" className="mt-3">
                 {message}
               </Alert>
             ))}
@@ -129,7 +129,7 @@ const SignUpForm = () => {
       >
         <Image
           className={`${appStyles.FillerImage} ${styles.OverflowImage}`}
-          src={"https://res.cloudinary.com/dihkuau3v/image/upload/v1713793275/vecteezy_gardening-png-graphic-clipart-design_23743657_1_nzcncc.webp"}
+          src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713793275/vecteezy_gardening-png-graphic-clipart-design_23743657_1_nzcncc.webp"
         />
       </Col>
     </Row>

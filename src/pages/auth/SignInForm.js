@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
@@ -8,18 +7,15 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-
 import { Link, useHistory } from "react-router-dom";
-
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
-import { useRedirect } from "../../hooks/useRedirect";
+import useRedirect from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
 
-function SignInForm() {
+const SignInForm = () => {
   const setCurrentUser = useSetCurrentUser();
   useRedirect("loggedIn");
 
@@ -54,7 +50,7 @@ function SignInForm() {
   return (
     <Row className={styles.Row}>
       <Col className="my-auto p-0 p-md-2" md={6}>
-        <Container className={`${appStyles.Content} p-4 `}>
+        <Container className={`${appStyles.Content} p-4`}>
           <h1 className={styles.Header}>Welcome back!</h1>
           <Form onSubmit={handleSubmit} className="d-flex flex-column">
             <Form.Group controlId="username">
@@ -68,12 +64,9 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.username?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
-                {message}
-              </Alert>
+            {errors.username?.map((message) => (
+              <Alert key={message} variant="warning">{message}</Alert>
             ))}
-
             <Form.Group controlId="password">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
@@ -85,10 +78,8 @@ function SignInForm() {
                 onChange={handleChange}
               />
             </Form.Group>
-            {errors.password?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
-                {message}
-              </Alert>
+            {errors.password?.map((message) => (
+              <Alert key={message} variant="warning">{message}</Alert>
             ))}
             <Button
               className={`${btnStyles.StandardBtn} px-3 py-2 mx-auto`}
@@ -96,16 +87,14 @@ function SignInForm() {
             >
               Sign in
             </Button>
-            {errors.non_field_errors?.map((message, idx) => (
-              <Alert key={idx} variant="warning" className="mt-3">
-                {message}
-              </Alert>
+            {errors.non_field_errors?.map((message) => (
+              <Alert key={message} variant="warning" className="mt-3">{message}</Alert>
             ))}
           </Form>
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
-            Don't have an account yet? <span>Sign up now!</span>
+            Don&apos;t have an account yet? Sign up now!
           </Link>
         </Container>
       </Col>
@@ -115,7 +104,8 @@ function SignInForm() {
       >
         <Image
           className={`${appStyles.FillerImage} ${styles.OverflowImage}`}
-          src={"https://res.cloudinary.com/dihkuau3v/image/upload/v1713790789/sign-in_ij6uzg.webp"}
+          src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713790789/sign-in_ij6uzg.webp"
+          alt="Flower girl"
         />
       </Col>
     </Row>
