@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Media from "react-bootstrap/Media";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import CommentEditForm from "./CommentEditForm";
-
-import Media from "react-bootstrap/Media";
-
 import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -13,10 +11,10 @@ import ConfirmModal from "../../components/ConfirmModal";
 
 const Comment = (props) => {
   const {
-    profile_id,
-    profile_image,
+    profile_id: profileId,
+    profile_image: profileImage,
     owner,
-    updated_at,
+    updated_at: updatedAt,
     content,
     id,
     setPost,
@@ -26,7 +24,7 @@ const Comment = (props) => {
   const [showEditForm, setShowEditForm] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const currentUser = useCurrentUser();
-  const is_owner = currentUser?.username === owner;
+  const isOwner = currentUser?.username === owner;
 
   const handleDelete = async () => {
     try {
@@ -45,25 +43,27 @@ const Comment = (props) => {
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
       setShowConfirmModal(false);
-    } catch (err) {}
+    } catch (err) {
+      // console.log(err);
+    }
   };
 
   return (
     <>
       <hr />
       <Media>
-        <Link to={`/profiles/${profile_id}`}>
-          <Avatar src={profile_image} />
+        <Link to={`/profiles/${profileId}`}>
+          <Avatar src={profileImage} />
         </Link>
         <Media.Body className="align-self-center ml-2">
           <span className={styles.Owner}>{owner}</span>
-          <span className={styles.Date}>{updated_at}</span>
+          <span className={styles.Date}>{updatedAt}</span>
           {showEditForm ? (
             <CommentEditForm
               id={id}
-              profile_id={profile_id}
+              profile_id={profileId}
               content={content}
-              profileImage={profile_image}
+              profileImage={profileImage}
               setComments={setComments}
               setShowEditForm={setShowEditForm}
             />
@@ -71,7 +71,7 @@ const Comment = (props) => {
             <p>{content}</p>
           )}
         </Media.Body>
-        {is_owner && !showEditForm && (
+        {isOwner && !showEditForm && (
           <MoreDropdown
             handleEdit={() => setShowEditForm(true)}
             handleDelete={() => setShowConfirmModal(true)}

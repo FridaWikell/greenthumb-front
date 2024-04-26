@@ -6,7 +6,7 @@ import { axiosRes } from "../../api/axiosDefaults";
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-function CommentEditForm(props) {
+const CommentEditForm = (props) => {
   const { id, content, setShowEditForm, setComments } = props;
 
   const [formContent, setFormContent] = useState(content);
@@ -23,19 +23,17 @@ function CommentEditForm(props) {
       });
       setComments((prevComments) => ({
         ...prevComments,
-        results: prevComments.results.map((comment) => {
-          return comment.id === id
+        results: prevComments.results.map((comment) => comment.id === id
             ? {
                 ...comment,
                 content: formContent.trim(),
                 updated_at: "now",
               }
-            : comment;
-        }),
+            : comment),
       }));
       setShowEditForm(false);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
