@@ -112,7 +112,7 @@ const Questions = ({ message = "No questions found." }) => {
               <QuestionOptionsDropdown handleDelete={() => handleDeleteQuestion(question.id)} />
             )}
             <Link to={`/questions/${question.id}`}>
-              <h4>{question.text}</h4>
+              <h4 className="px-2">{question.text}</h4>
             </Link>
             <div className="mb-2">
               <small>Asked by <Link to={`/profiles/${question.owner}`}>{question.owner_username}</Link>, at {question.created_at}</small>
