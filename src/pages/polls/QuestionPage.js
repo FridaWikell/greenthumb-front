@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { axiosReq } from "../../api/axiosDefaults";
 
 import appStyles from "../../App.module.css";
 import Answer from "../../components/Answer";
 import VoteForm from "./VoteForm";
 import { QuestionOptionsDropdown } from "../../components/MoreDropdown";
 
-function QuestionPage() {
+const QuestionPage = () => {
   const { id } = useParams();
   const [question, setQuestion] = useState(null);
   const [selectedAnswerId, setSelectedAnswerId] = useState(null);
@@ -27,7 +27,7 @@ function QuestionPage() {
         const { data } = await axiosReq.get(`/questions/${id}`);
         setQuestion(data);
       } catch (err) {
-        console.error("Error fetching question:", err);
+        // console.error("Error fetching question:", err);
       }
     };
 
@@ -51,7 +51,7 @@ function QuestionPage() {
       await axiosReq.delete(`/questions/${id}`);
       history.push("/questions");
     } catch (err) {
-      console.error("Failed to delete the question:", err);
+      // console.error("Failed to delete the question:", err);
     }
   };
 

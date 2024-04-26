@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { axiosReq } from "../../api/axiosDefaults";
-import VoteForm from "./VoteForm";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../../utils/utils";
-import Answer from "../../components/Answer";
 import { Link, useHistory } from "react-router-dom";
-import { QuestionOptionsDropdown } from "../../components/MoreDropdown";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { QuestionOptionsDropdown } from "../../components/MoreDropdown";
+import Answer from "../../components/Answer";
+import { fetchMoreData } from "../../utils/utils";
+import VoteForm from "./VoteForm";
+import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
 
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Questions.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-function Questions({ message = "No questions found." }) {
+const Questions = ({ message = "No questions found." }) => {
   const [questions, setQuestions] = useState({ results: [], next: null });
   const [hasLoaded, setHasLoaded] = useState(false);
   const [query, setQuery] = useState("");
@@ -36,7 +36,7 @@ function Questions({ message = "No questions found." }) {
         setQuestions(data);
         setHasLoaded(true);
       } catch (err) {
-        console.error("Failed to fetch questions:", err);
+        // console.error("Failed to fetch questions:", err);
       }
     };
 
@@ -49,17 +49,11 @@ function Questions({ message = "No questions found." }) {
   }, [query]);
 
   const handleSelectAnswer = (questionId, answerId) => {
-    setSelectedAnswers((prev) => ({
-      ...prev,
-      [questionId]: answerId
-    }));
+    setSelectedAnswers(prev => ({ ...prev, [questionId]: answerId }));
   };
 
   const toggleResults = (questionId) => {
-    setShowResults(prev => ({
-      ...prev,
-      [questionId]: !prev[questionId]
-    }));
+    setShowResults(prev => ({ ...prev, [questionId]: !prev[questionId] }));
   };
 
   function handleAddQuestion() {
@@ -69,12 +63,12 @@ function Questions({ message = "No questions found." }) {
   const handleDeleteQuestion = async (questionId) => {
     try {
       await axiosReq.delete(`/questions/${questionId}`);
-      setQuestions((prevQuestions) => ({
-        ...prevQuestions,
-        results: prevQuestions.results.filter((question) => question.id !== questionId),
+      setQuestions(prev => ({
+        ...prev,
+        results: prev.results.filter(question => question.id !== questionId),
       }));
     } catch (error) {
-      console.error("Failed to delete the question:", error);
+      // console.error("Failed to delete the question:", error);
     }
   };
 
@@ -87,7 +81,7 @@ function Questions({ message = "No questions found." }) {
             ...question,
             answers: question.answers.map(answer => {
               if (answer.id === answerId) {
-                return { ...answer, votes_count: answer.votes_count ? answer.votes_count + 1 : 1 };
+                return { ...answer, votes_count: answer.votes_count + 1 };
               }
               return answer;
             })
@@ -98,11 +92,65 @@ function Questions({ message = "No questions found." }) {
     }));
   };
 
+  let content;
+
+  if (!hasLoaded) {
+    content = <Asset spinner />;
+  } else if (!questions.results.length) {
+    content = <Asset message={message} />;
+  } else {
+    content = (
+      <InfiniteScroll
+        dataLength={questions.results.length}
+        next={() => fetchMoreData(questions, setQuestions)}
+        hasMore={!!questions.next}
+        loader={<Asset spinner />}
+      >
+        {questions.results.map(question => (
+          <Container key={question.id} className={`mb-4 py-4 px-4 ${appStyles.Content}`}>
+            {question.owner_username === currentUser.username && (
+              <QuestionOptionsDropdown handleDelete={() => handleDeleteQuestion(question.id)} />
+            )}
+            <Link to={`/questions/${question.id}`}>
+              <h4>{question.text}</h4>
+            </Link>
+            <div className="mb-2">
+              <small>Asked by <Link to={`/profiles/${question.owner}`}>{question.owner_username}</Link>, at {question.created_at}</small>
+            </div>
+            {question.answers.map(answer => (
+              <div key={answer.id} className="d-flex justify-content-between align-items-center">
+                <Answer
+                  id={answer.id}
+                  text={answer.text}
+                  isSelected={selectedAnswers[question.id] === answer.id}
+                  onSelectAnswer={() => handleSelectAnswer(question.id, answer.id)}
+                />
+                {showResults[question.id] && <span className="ml-2">{answer.votes_count || 0} votes</span>}
+              </div>
+            ))}
+            <div className="d-flex justify-content-between align-items-center">
+              <VoteForm 
+                questionId={question.id}
+                selectedAnswerId={selectedAnswers[question.id]}
+                onVoteSuccess={() => handleVoteSuccess(question.id, selectedAnswers[question.id])}
+              />
+              <Button variant="link" onClick={() => toggleResults(question.id)} className="text-muted">
+                {showResults[question.id] ? "Hide results" : "See results"}
+              </Button>
+            </div>
+          </Container>
+        ))}
+      </InfiniteScroll>
+    );
+  }
+
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2 mx-auto" lg={8}>
         <div className="d-flex justify-content-center mb-4">
-          <Button onClick={handleAddQuestion} className={btnStyles.StandardBtn}><i className="fa-regular fa-square-plus"></i>Add question</Button>
+          <Button onClick={handleAddQuestion} className={btnStyles.StandardBtn}>
+            <i className="fa-regular fa-square-plus" />Add question
+          </Button>
         </div>
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
@@ -116,66 +164,10 @@ function Questions({ message = "No questions found." }) {
             placeholder="Search questions"
           />
         </Form>
-        {hasLoaded ? (
-          <>
-            {questions.results.length ? (
-              <InfiniteScroll
-                dataLength={questions.results.length}
-                next={() => fetchMoreData(questions, setQuestions)}
-                hasMore={!!questions.next}
-                loader={<Asset spinner />}
-                children={questions.results.map((question) => (
-                  <Container key={question.id} className={`mb-4 py-4 px-4 ${appStyles.Content}`}>
-                    {question.owner_username === currentUser.username && (
-                      <QuestionOptionsDropdown handleDelete={() => handleDeleteQuestion(question.id)} />
-                    )}
-                    <Link to={`/questions/${question.id}`}>
-                      <h4>{question.text}</h4>
-                    </Link>
-                    <div className="mb-2">
-                      <small>
-                        Asked by <Link to={`/profiles/${question.owner}`}>{question.owner_username}</Link>, at {question.created_at}
-                      </small>
-                    </div>
-                    {question.answers.map((answer) => (
-                      <div key={answer.id} className="d-flex justify-content-between align-items-center">
-                        <Answer
-                          key={answer.id}
-                          id={answer.id}
-                          text={answer.text}
-                          isSelected={selectedAnswers[question.id] === answer.id}
-                          onSelectAnswer={() => handleSelectAnswer(question.id, answer.id)}
-                        />
-                        {showResults[question.id] && <span className="ml-2">{answer.votes_count || 0} votes</span>}
-                      </div>
-                    ))}
-                    <div className="d-flex justify-content-between align-items-center">
-                      <VoteForm 
-                        questionId={question.id}
-                        selectedAnswerId={selectedAnswers[question.id]}
-                        onVoteSuccess={handleVoteSuccess}
-                      />
-                      <Button variant="link" onClick={() => toggleResults(question.id)} className="text-muted">
-                        {showResults[question.id] ? "Hide results" : "See results"}
-                      </Button>
-                    </div>
-                  </Container>
-                ))}
-              />
-            ) : (
-              <Container className={appStyles.Content}>
-                <Asset src="https://res.cloudinary.com/dihkuau3v/image/upload/v1712912063/no-result_ugwawx.jpg" message={message} />
-              </Container>
-            )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}
+        {content}
       </Col>
     </Row>
   );
-}
+};
 
 export default Questions;

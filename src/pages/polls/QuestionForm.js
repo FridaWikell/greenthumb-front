@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
-import useRedirect from "../../hooks/useRedirect";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
+import useRedirect from "../../hooks/useRedirect";
+import { axiosReq } from "../../api/axiosDefaults";
 
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-function QuestionForm() {
+const QuestionForm = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [questionData, setQuestionData] = useState({
@@ -27,7 +27,7 @@ function QuestionForm() {
     if (name === "questionText") {
       setQuestionData(prev => ({ ...prev, questionText: value }));
     } else {
-      const index = parseInt(name.split("-")[1]);
+      const index = parseInt(name.split("-")[1], 10);
       const newAnswers = [...questionData.answers];
       newAnswers[index] = value;
       setQuestionData(prev => ({ ...prev, answers: newAnswers }));
@@ -53,7 +53,7 @@ function QuestionForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { questionText, answers } = questionData;
-    let newErrors = {};
+    const newErrors = {};
 
     if (!questionText.trim()) {
       newErrors.questionText = ["The question cannot be left blank."];
@@ -84,7 +84,7 @@ function QuestionForm() {
       const { data } = await axiosReq.post("/questions/", formData);
       history.push(`/questions/${data.id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response && err.response.data) {
         setErrors(err.response.data);
       }
@@ -119,7 +119,7 @@ function QuestionForm() {
             )}
 
             {questionData.answers.map((answer, index) => (
-              <Form.Group key={index}>
+              <Form.Group>
                 <Form.Label>Answer {index + 1}</Form.Label>
                 <Form.Control
                   type="text"
@@ -136,11 +136,11 @@ function QuestionForm() {
             ))}
 
             <Button onClick={addAnswer} className={`${btnStyles.AddAnswer} mt-2 mr-2`}>
-              <i className="fa-regular fa-square-plus"></i>
+              <i className="fa-regular fa-square-plus" />
             </Button>
             {questionData.answers.length > 1 && (
               <Button onClick={removeAnswer} className={`${btnStyles.AddAnswer} mt-2`}>
-                <i className="fa-regular fa-square-minus"></i>
+                <i className="fa-regular fa-square-minus" />
               </Button>
             )}
             </Col>

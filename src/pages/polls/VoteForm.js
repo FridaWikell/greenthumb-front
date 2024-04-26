@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { axiosReq } from "../../api/axiosDefaults";
 import Button from "react-bootstrap/Button";
+import { axiosReq } from "../../api/axiosDefaults";
 import CloseModal from "../../components/CloseModal";
 
 import btnStyles from "../../styles/Button.module.css";
 
-function VoteForm({ questionId, selectedAnswerId, onVoteSuccess }) {
+const VoteForm = ({ questionId, selectedAnswerId, onVoteSuccess }) => {
   const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState({
     title: "",
@@ -31,7 +31,7 @@ function VoteForm({ questionId, selectedAnswerId, onVoteSuccess }) {
       });
       setShowModal(true);
     } catch (err) {
-      console.error("Error submitting vote:", err);
+      // console.error("Error submitting vote:", err);
       if (err.response && err.response.data) {
         setModalContent({
           title: "Voting error",
