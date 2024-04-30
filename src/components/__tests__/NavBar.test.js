@@ -5,8 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import NavBar from "../NavBar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-// Mock hooks and modules
-jest.mock('../../contexts/CurrentUserContext', () => ({
+jest.mock("../../contexts/CurrentUserContext", () => ({
   useCurrentUser: jest.fn(),
   useSetCurrentUser: jest.fn()
 }));
