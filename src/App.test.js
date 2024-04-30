@@ -49,6 +49,4 @@ describe("App Routing", () => {
     );
     expect(screen.getByText("NotFoundPage")).toBeInTheDocument();
   });
-
-  // Add more tests for other routes as necessary
 });
