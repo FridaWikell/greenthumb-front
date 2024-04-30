@@ -135,11 +135,11 @@ const QuestionForm = () => {
             </Form.Group>
           ))}
 
-            <Button onClick={addAnswer} className={`${btnStyles.AddAnswer} mt-2 mr-2`}>
+            <Button onClick={addAnswer} aria-label="Add answer" className={`${btnStyles.AddAnswer} mt-2 mr-2`}>
               <i className="fa-regular fa-square-plus" />
             </Button>
             {questionData.answers.length > 1 && (
-              <Button onClick={removeAnswer} className={`${btnStyles.AddAnswer} mt-2`}>
+              <Button onClick={removeAnswer} aria-label="Remove answer" className={`${btnStyles.AddAnswer} mt-2`}>
                 <i className="fa-regular fa-square-minus" />
               </Button>
             )}
