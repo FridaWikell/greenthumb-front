@@ -55,19 +55,19 @@ export const ProfileEditDropdown = ({ id }) => {
       <Dropdown.Menu>
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit`)}
-          aria-label="edit-profile"
+          aria-label="edit profile"
         >
           <i className="fas fa-edit" /> Edit profile
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit/username`)}
-          aria-label="edit-username"
+          aria-label="edit username"
         >
           <i className="fa-solid fa-user-pen" /> Change username
         </Dropdown.Item>
         <Dropdown.Item
           onClick={() => history.push(`/profiles/${id}/edit/password`)}
-          aria-label="edit-password"
+          aria-label="edit password"
         >
           <i className="fa-solid fa-lock" /> Change password
         </Dropdown.Item>
@@ -93,7 +93,7 @@ export const QuestionOptionsDropdown = ({ questionId, handleDelete }) => {
     <Dropdown className={`ml-auto pr-3 ${styles.Absolute}`} drop="left">
       <Dropdown.Toggle as={ThreeDots} />
       <Dropdown.Menu className="text-center" popperConfig={{ strategy: "fixed" }}>
-          <Dropdown.Item className={styles.DeleteItem} onClick={handleDeleteClick} aria-label="delete-question">
+          <Dropdown.Item className={styles.DeleteItem} onClick={handleDeleteClick} aria-label="delete question">
             <i className="fas fa-trash-alt" /> Delete
           </Dropdown.Item>
         </Dropdown.Menu>
