@@ -210,11 +210,19 @@ Several features can be added in the future.
 
 #### HTML
 
+Since the project was created with React and uses JSX, the HTML validation is included in the JavaScript validation.
+
 #### CSS
+
+The validation of all CSS files at [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/validator.html.en) resulted without any errors.
+
+![Screenshot of CSS validation](doc/valid-css.webp)
 
 #### JavaScript
 
-Insert screenshots of HTML, CSS and any other code files being tested in the relevant code validator - CSS validator might not validate newer CSS syntax - be careful to read and fully understand why it is giving you an error.
+Validation of JavaScript was done with [ESLint](https://eslint.org/) in Gitpod. It resulted without any errors.
+
+![Screenshot of JavaScript validation](doc/valid-js.webp)
 
 ### Lighthouse
 You can perform a test of your website for performance, accessibility, best practices and SEO through the google chrome lighthouse test - it is in your Dev tools. Bear in mind that your internet connection speed plays a part in the performance figures obtained. Where it scores low, it will give you suggestions on how to improve the site - read the suggestions and think about how to implement them - it could be a good idea.
