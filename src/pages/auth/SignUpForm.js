@@ -59,6 +59,7 @@ const SignUpForm = () => {
                 type="text"
                 placeholder="Username"
                 name="username"
+                aria-label="username"
                 value={username}
                 onChange={handleChange}
               />
@@ -76,6 +77,7 @@ const SignUpForm = () => {
                 type="password"
                 placeholder="Password"
                 name="password1"
+                aria-label="password"
                 value={password1}
                 onChange={handleChange}
               />
@@ -93,6 +95,7 @@ const SignUpForm = () => {
                 type="password"
                 placeholder="Confirm password"
                 name="password2"
+                aria-label="confirm password"
                 value={password2}
                 onChange={handleChange}
               />
@@ -130,6 +133,7 @@ const SignUpForm = () => {
         <Image
           className={`${appStyles.FillerImage} ${styles.OverflowImage}`}
           src="https://res.cloudinary.com/dihkuau3v/image/upload/v1713793275/vecteezy_gardening-png-graphic-clipart-design_23743657_1_nzcncc.webp"
+          alt="Smiling gardener with two plants"
         />
       </Col>
     </Row>

@@ -68,11 +68,11 @@ const PostCreateForm = () => {
   const hardinessZoneDropdown = (
     <>
       <Form.Group>
-        <Form.Label htmlFor="hardiness-zone">Hardiness zone</Form.Label>
+        <Form.Label>Hardiness zone</Form.Label>
         <Form.Control
           as="select"
           name="hardinessZone"
-          id="hardiness-zone"
+          aria-label="hardiness zone"
           value={hardinessZone}
           onChange={handleChange}
           required
@@ -97,11 +97,12 @@ const PostCreateForm = () => {
 
   const textFields = (
     <div className="text-center">
-      <Form.Group controlId="title">
+      <Form.Group>
         <Form.Label>Title</Form.Label>
         <Form.Control
           type="text"
           name="title"
+          aria-label="title text"
           value={title}
           onChange={handleChange}
           isInvalid={!!errors.title}
@@ -112,12 +113,12 @@ const PostCreateForm = () => {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label htmlFor="content-field">Content</Form.Label>
+        <Form.Label>Content</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
+          aria-label="content text area"
           name="content"
-          id="content-field"
           value={content}
           onChange={handleChange}
           isInvalid={!!errors.content}

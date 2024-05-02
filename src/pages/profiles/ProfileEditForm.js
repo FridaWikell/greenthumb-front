@@ -116,6 +116,7 @@ const ProfileEditForm = () => {
                 <Form.Control
                   type="text"
                   name="profileName"
+                  aria-label="profile name"
                   value={profileName}
                   onChange={handleChange}
                 />
@@ -126,6 +127,7 @@ const ProfileEditForm = () => {
                   as="textarea"
                   rows={7}
                   name="profileContent"
+                  aria-label="content"
                   value={profileContent}
                   onChange={handleChange}
                 />
@@ -140,6 +142,7 @@ const ProfileEditForm = () => {
               <Form.Control
                 type="text"
                 name="profileName"
+                aria-label="profile name"
                 value={profileName}
                 onChange={handleChange}
               />
@@ -150,6 +153,7 @@ const ProfileEditForm = () => {
                 as="textarea"
                 rows={7}
                 name="profileContent"
+                aria-label="content"
                 value={profileContent}
                 onChange={handleChange}
               />

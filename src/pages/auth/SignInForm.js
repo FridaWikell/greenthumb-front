@@ -59,6 +59,7 @@ const SignInForm = () => {
                 type="text"
                 placeholder="Username"
                 name="username"
+                aria-label="username"
                 className={styles.Input}
                 value={username}
                 onChange={handleChange}
@@ -73,6 +74,7 @@ const SignInForm = () => {
                 type="password"
                 placeholder="Password"
                 name="password"
+                aria-label="password"
                 className={styles.Input}
                 value={password}
                 onChange={handleChange}
