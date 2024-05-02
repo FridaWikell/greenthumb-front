@@ -42,12 +42,14 @@ const CommentCreateForm = (props) => {
 
   return (
     <Form className="mt-2" onSubmit={handleSubmit}>
-      <Form.Group>
+      <Form.Group controlId="comment">
         <InputGroup>
           <Link to={`/profiles/${profileId}`}>
             <Avatar src={profileImage} />
           </Link>
+          <Form.Label className="sr-only">New comment</Form.Label>
           <Form.Control
+            id="comment"
             className={styles.Form}
             placeholder="Spill the beans! What's buzzing in your brain?"
             as="textarea"

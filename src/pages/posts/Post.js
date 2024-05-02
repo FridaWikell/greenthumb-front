@@ -93,15 +93,14 @@ const Post = (props) => {
         </button>
       );
     } 
-      return (
-        <OverlayTrigger
-          placement="top"
-          overlay={<Tooltip>Log in to like posts!</Tooltip>}
-        >
-          <i className="far fa-heart" />
-        </OverlayTrigger>
-      );
-    
+    return (
+      <OverlayTrigger
+        placement="top"
+        overlay={<Tooltip>Log in to like posts!</Tooltip>}
+      >
+        <i className="far fa-heart" />
+      </OverlayTrigger>
+    );
   };
 
   return (
