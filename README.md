@@ -232,6 +232,24 @@ Do this for both Desktop and Mobile.
 
 All pages were tested at the [Wave Webaim](https://wave.webaim.org/) extension for Chrome. It resulted without any errors or contrast errors at all pages.
 
+The result for the index page:
+
+![Screenshot of wave webaim for index page without errors](doc/wave-index.webp)
+
+The rest of the Wave Webaim validation can be found in the doc folder.
+
+- [404 page](doc/wave-404.webp)
+- [Add post](doc/wave-add-post.webp)
+- [Add question](doc/wave-add-question.webp)
+- [Change username](doc/wave-change-username.webp)
+- [Edit profile](doc/wave-edit-profile.webp)
+- [Plant friends](doc/wave-plant-friends.webp)
+- [Profile page](doc/wave-profile.webp)
+- [Question page](doc/wave-question-page.webp)
+- [Questions page](doc/wave-questions.webp)
+- [Sign in](doc/wave-signin.webp)
+- [Sign up](doc/wave-signup.webp)
+
 ### Contrast Grid
 
 ### Manual Testing
