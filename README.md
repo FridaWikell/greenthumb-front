@@ -194,8 +194,15 @@ Description of the value this feature has for the users
 Repeat for each feature
 
 ## Features to be Added
-Describe some additional features you could potentially add to the project that would increase user value - could be things linked to technologies not yet covered by the course but would be a benefit to the user for example, the ability to save an article, or add an article to the site, leave a review.
 
+Several features can be added in the future.
+
+| Feature | Explanation and benefits |
+| ---------- | ------------- |
+| Sending private messages | If the users can send private messages to each other they can communicate and have deeper discussions about their plant interest. |
+| Receive notifications | When a comment is posted at your post, a notification would appear. The notifications could also expand and cover if a user like your image, if a followed user publish a post or questions and so on. If the user receives notification can be a way to make the user more interest and more involved in the webpage and what's happening there. |
+| Plant exchange page | If a user has a plant they don't want anymore, they can post it at a plant exchange page and other users can express interest at the plant. This can enhance the community feeling and at the same time avoid plants being thrown away when someone else can have use for them. |
+| Sign in with social media and Google credentials | Instead of the user signing in with username and password, the user can select to sign in with their social media account or Google account. This makes it easier for the user to sign in since they don't need to remember another username and password. |
 
 ## Testing
 
