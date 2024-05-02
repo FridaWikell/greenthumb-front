@@ -157,9 +157,10 @@ const Questions = ({ message = "No questions found." }) => {
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
         >
-          <Form.Label className="sr-only">Search questions</Form.Label>
+          <Form.Label htmlFor="search-questions" className="sr-only">Search questions</Form.Label>
           <Form.Control
             value={query}
+            id="search-questions"
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             placeholder="Search questions"
