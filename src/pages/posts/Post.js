@@ -124,7 +124,7 @@ const Post = (props) => {
             </div>
           </Media>
         </Card.Body>
-        {!image?.includes('default-image_r3k7wr') && (
+        {!image?.includes("default-image_r3k7wr") && (
           <Card.Img className="mb-4" src={image} alt={title} />
         )}
         <Card.Body className="pt-0">
@@ -140,6 +140,7 @@ const Post = (props) => {
             {likesCount}
             <Link to={`/posts/${id}`}>
               <i className="far fa-comments" />
+              <span class="sr-only">View comments</span>
             </Link>
             {commentsCount}
           </div>

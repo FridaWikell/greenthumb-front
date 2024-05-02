@@ -87,6 +87,7 @@ const PostsPage = ({ message, filter = "" }) => {
         <PopularProfiles mobile />
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form className={styles.SearchBar} onSubmit={(event) => event.preventDefault()}>
+          <Form.Label className="sr-only">Search posts</Form.Label>
           <Form.Control
             value={query}
             onChange={(event) => setQuery(event.target.value)}
