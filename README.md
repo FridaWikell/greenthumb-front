@@ -328,20 +328,33 @@ Link to deployed website: https://greenthumb-hub-front-343e45db93a6.herokuapp.co
 
 ## Credits
 
-You need to credit where you got anything for your site from.. where are the images from, are they all from the same site? where did you get the content from, if you wrote it yourself, did you fact check anywhere? did you get code from anywhere? if so, it needs to be clearly marked in both the code and the readme.
+| Page | Used for |
+| -------- | ----------- |
+| [Mr Fibonacci at Github](https://github.com/mr-fibonacci/moments) | GreenThumb Hub is based at Moments |
+| [Canva](https://www.canva.com/) | Create logo |
+| [removebg](https://www.remove.bg/) | Remove background at logo |
+| [Favicon](https://favicon.io/) | Create favicon |
+| [BeFunky](https://www.befunky.com/) | Change the size and crop the image |
+| [Pixelied](https://pixelied.com/) | Convert images to webp file format |
+| [Lottiefiles](https://lottiefiles.com/animations/loader-UGK4UTb3fo) | Loading spinner |
+| [npm](https://www.npmjs.com/package/lottie-react) | Knowledge about Lottie in react |
+| [React Bootstrap](https://react-bootstrap-v4.netlify.app/) | Knowledge about React Bootstrap |
+| [Medium](https://medium.com/@Tunmise/set-up-eslint-with-airbnb-style-guide-in-5-minutes-d7b4cc5707f8) | Setting up ESLint |
 
 ### Images
 
+All images are stored at [Cloudinary](https://cloudinary.com/).
+
 | Page | Used for |
 | --------- | ---------- |
-| [arunika.std at Vecteezy.com](https://www.vecteezy.com/vector-art/4892158-cute-farmer-carrying-plant-in-pot) | Default profile image |
+| [arunika.std at Vecteezy](https://www.vecteezy.com/vector-art/4892158-cute-farmer-carrying-plant-in-pot) | Default profile image |
 | [Pixabay](https://pixabay.com/vectors/download-icon-cloud-symbol-web-1873539/) | Upload image placeholder in Add post |
-| [pisuttardging180463 at Vecteezy.com](https://www.vecteezy.com/png/23743657-gardening-png-graphic-clipart-design) | Image at sign up page |
-| [pisuttardging180463 at Vecteezy.com](https://www.vecteezy.com/png/23743665-gardening-png-graphic-clipart-design) | Image at sign in page |
-| [anomaria at Vecteezy.com](https://www.vecteezy.com/png/22811989-hand-drawn-abstract-leaf-and-branch) | Default post image |
-| [myurapoo338993 at Vecteezy.com](https://www.vecteezy.com/vector-art/35556360-search-no-result-concept-icon-flat-design-on-white-background) | No result image |
-| [pisuttardging180463 at Vecteezy.com](https://www.vecteezy.com/png/23743658-gardening-png-graphic-clipart-design) | Image at 404 page |
-| [imachiziart at Vecteezy.com](https://www.vecteezy.com/png/24984418-cute-cactus-cartoon) | Image at 500 page |
+| [pisuttardging180463 at Vecteezy](https://www.vecteezy.com/png/23743657-gardening-png-graphic-clipart-design) | Image at sign up page |
+| [pisuttardging180463 at Vecteezy](https://www.vecteezy.com/png/23743665-gardening-png-graphic-clipart-design) | Image at sign in page |
+| [anomaria at Vecteezy](https://www.vecteezy.com/png/22811989-hand-drawn-abstract-leaf-and-branch) | Default post image |
+| [myurapoo338993 at Vecteezy](https://www.vecteezy.com/vector-art/35556360-search-no-result-concept-icon-flat-design-on-white-background) | No result image |
+| [pisuttardging180463 at Vecteezy](https://www.vecteezy.com/png/23743658-gardening-png-graphic-clipart-design) | Image at 404 page |
+| [imachiziart at Vecteezy](https://www.vecteezy.com/png/24984418-cute-cactus-cartoon) | Image at 500 page |
 
 ## Acknowledgements
 Any special acknowledgements you'd like to leave
