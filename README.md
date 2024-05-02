@@ -244,6 +244,7 @@ The rest of the Wave Webaim validation can be found in the doc folder.
 - [Change username](doc/wave-change-username.webp)
 - [Edit profile](doc/wave-edit-profile.webp)
 - [Plant friends](doc/wave-plant-friends.webp)
+- [Post page](doc/wave-post-page.webp)
 - [Profile page](doc/wave-profile.webp)
 - [Question page](doc/wave-question-page.webp)
 - [Questions page](doc/wave-questions.webp)
