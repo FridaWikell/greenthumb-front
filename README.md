@@ -1,4 +1,4 @@
-# Site Title
+# GreenThumb  - Frontend
 
 ![image of site](link to image) - use an image from AmIResponsive that shows the site on multiple devices
 
@@ -330,10 +330,23 @@ Link to deployed website: https://greenthumb-hub-front-343e45db93a6.herokuapp.co
 
 You need to credit where you got anything for your site from.. where are the images from, are they all from the same site? where did you get the content from, if you wrote it yourself, did you fact check anywhere? did you get code from anywhere? if so, it needs to be clearly marked in both the code and the readme.
 
+### Images
+
+| Page | Used for |
+| --------- | ---------- |
+| [arunika.std at Vecteezy.com](https://www.vecteezy.com/vector-art/4892158-cute-farmer-carrying-plant-in-pot) | Default profile image |
+| [Pixabay](https://pixabay.com/vectors/download-icon-cloud-symbol-web-1873539/) | Upload image placeholder in Add post |
+| [pisuttardging180463 at Vecteezy.com](https://www.vecteezy.com/png/23743657-gardening-png-graphic-clipart-design) | Image at sign up page |
+| [pisuttardging180463 at Vecteezy.com](https://www.vecteezy.com/png/23743665-gardening-png-graphic-clipart-design) | Image at sign in page |
+| [anomaria at Vecteezy.com](https://www.vecteezy.com/png/22811989-hand-drawn-abstract-leaf-and-branch) | Default post image |
+| [myurapoo338993 at Vecteezy.com](https://www.vecteezy.com/vector-art/35556360-search-no-result-concept-icon-flat-design-on-white-background) | No result image |
+| [pisuttardging180463 at Vecteezy.com](https://www.vecteezy.com/png/23743658-gardening-png-graphic-clipart-design) | Image at 404 page |
+| [imachiziart at Vecteezy.com](https://www.vecteezy.com/png/24984418-cute-cactus-cartoon) | Image at 500 page |
+
 ## Acknowledgements
 Any special acknowledgements you'd like to leave
 
-Back to top link to return to the top of the readme.
+[Back to top](#greenthumb---frontend)
 
 | Follow user - button change | When the follow button is pressed, it changes to become an unfollow button | Find a user, press follow and watch the button content change |
 | Unfollow user | When the unfollow button is pressed, the user is unfollowed and its post isn’t visible in “plant friends” | Find a user, press unfollow and view to be sure its posts aren’t visible in plant friends | 
