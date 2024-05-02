@@ -31,8 +31,8 @@ const Profile = (props) => {
       <div className={`text-right ${!mobile && "ml-auto"}`}>
         {!mobile &&
           currentUser &&
-          !isOwner && // Use camelCase variable
-          (followingId ? ( // Use camelCase variable
+          !isOwner &&
+          (followingId ? (
             <Button
               className={`${btnStyles.UnfollowBtn} px-3 py-1`}
               onClick={() => handleUnfollow(profile)}
