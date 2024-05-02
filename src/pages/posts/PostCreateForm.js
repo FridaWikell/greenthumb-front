@@ -97,12 +97,11 @@ const PostCreateForm = () => {
 
   const textFields = (
     <div className="text-center">
-      <Form.Group>
-        <Form.Label htmlFor="title-field">Title</Form.Label>
+      <Form.Group controlId="title">
+        <Form.Label>Title</Form.Label>
         <Form.Control
           type="text"
           name="title"
-          id="title-field"
           value={title}
           onChange={handleChange}
           isInvalid={!!errors.title}
