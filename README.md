@@ -207,6 +207,13 @@ Several features can be added in the future.
 ## Testing
 
 ### Validation of Code
+
+#### HTML
+
+#### CSS
+
+#### JavaScript
+
 Insert screenshots of HTML, CSS and any other code files being tested in the relevant code validator - CSS validator might not validate newer CSS syntax - be careful to read and fully understand why it is giving you an error.
 
 ### Lighthouse
