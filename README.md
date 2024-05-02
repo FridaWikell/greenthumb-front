@@ -292,8 +292,39 @@ Detail what technologies you used. So what code languages, what frameworks, libr
 
 ## Deployment
 
-Detail how to clone the repository, how to fork the repository - how to run the site locally and how to deploy it.
+### Fork repository in GitHub
 
+- Open the chosen repository in GitHub
+- Click on the "Fork" button
+- A copy of the repository is now located in your own account
+
+### Clone repository in GitHub
+
+- Open the chosen repository in GitHub
+- Click on "Code" button
+- Copy the URL
+- Open your command line interface
+- Navigate to the directory you want to clone the repository to
+- Use 'git clone', followed by the earlier copied URL
+- Move into the newly created directory
+- Install the dependencies using 'npm install'
+- Run the application with 'npm start'
+
+### Deployment to Heroku
+
+- Open Heroku and log in
+- Click on "New" and choose the option "Create new app"
+- Choose an app name and which region (Europe or United States) you are located in
+- Press "Create app"
+- When the app is created, choose the Settings tab
+- Under "Config Vars", press "Reveal Config Vars"
+- Change tab to the Deploy tab
+- Choose deploy method - GitHub
+- Search for the correct repository name at your connected GitHub account
+- Press "Connect"
+- Under "Manual deploy", choose which branch to deploy and press "Deploy Branch"
+
+Link to deployed website: https://greenthumb-hub-front-343e45db93a6.herokuapp.com/
 
 ## Credits
 
