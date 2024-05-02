@@ -253,6 +253,10 @@ The rest of the Wave Webaim validation can be found in the doc folder.
 
 ### Contrast Grid
 
+A test at [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=&foreground-colors=%23222222%2C%20Text%0D%0A%23a7b3a4%2C%20Navigation%20bar%20%26%20Standard%20button%0D%0A%23ffffff%2C%20Content%20background%0D%0A%239bcf8e%2C%20%20Submit%20button%0D%0A%23d6a0a0%2C%20Cancel%20button%0D%0A%2382d889%2C%20Follow%20button%0D%0A%23caa9a9%2C%20Unfollow%20button&es-color-form__tile-size=compact&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) was made with the most common colors. All used combinations have a value above 7 (AAA-value).
+
+![Screenshot of contrast grid](doc/contrast-grid.webp)
+
 ### Manual Testing
 
 You need to perform, and document everything you did to manually test your site.
