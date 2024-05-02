@@ -257,7 +257,7 @@ You should have tests for every section of every page.. individually.
 
 Several bugs were discovered during the development process.
 
-During the Wave Webaim validation it was discovered that several forms (example search bar, edit profile, add post). These were fixed by connecting form and label with htmlFor in the label.
+During the Wave Webaim validation it was discovered that several forms (example search bar, edit profile, add post). These were fixed by connecting form and label with htmlFor in the label. This didn't work at all pages, it was then solved by adding aria-label. 
 
 None known bug were left unfixed.
 
