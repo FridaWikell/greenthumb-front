@@ -195,7 +195,7 @@ Repeat for each feature
 
 ## Features to be Added
 
-Several features can be added in the future.
+Several features can be added in the future. Some of them are listed below.
 
 | Feature | Explanation and benefits |
 | ---------- | ------------- |
@@ -288,7 +288,26 @@ None known bug were left unfixed.
 
 ## Technologies Used
 
-Detail what technologies you used. So what code languages, what frameworks, libraries, what software did you use to develop the site - Balsamic for your wireframes, Figma for a mockup?
+The repository is generated from [Code Institute React template](https://github.com/Code-Institute-Org/react-ci-template) at [GitHub](https://github.com/) All code is written in [GitPod](https://gitpod.io/). The languages used are HTML, CSS and JavaScript. The main library used is [React Bootstrap](https://react-bootstrap.netlify.app/).
+
+| Package / library | Used for |
+| ----------- | ------------- |
+| [React](https://reactjs.org/) | A JavaScript library for building user interfaces | 
+| [React DOM](https://reactjs.org/docs/react-dom.html) | React package for working with the DOM |
+| [React Router](https://reactrouter.com/) | DOM bindings for React Router |
+| [React Bootstrap](https://react-bootstrap.github.io/) | Frontend framework built for React |
+| [Bootstrap](https://getbootstrap.com/) | Open source toolkit for developing with HTML, CSS, and JavaScript |
+| [Axios](https://axios-http.com/) | Promise based HTTP client for the browser and node.js |
+| [JWT Decode](https://www.npmjs.com/package/jwt-decode) | Library that helps decoding JWTs token |
+| [Lottie React](https://www.npmjs.com/package/lottie-react) | A React wrapper for Lottie animations |
+| [React Infinite Scroll Component](https://www.npmjs.com/package/react-infinite-scroll-component) | An infinite scroll component for React |
+| [Jest](https://jestjs.io/) | JavaScript testing framework |
+| [Prettier](https://prettier.io/) | A code formatter |
+| [ESLint](https://eslint.org/) | Pluggable JavaScript linter |
+| [MSW](https://mswjs.io/) | An API mocking library for browser and Node.js |
+| [Web Vitals](https://web.dev/vitals/) | Essential metrics for a healthy site |
+
+The wireframes are made in [Balsamiq](https://balsamiq.com/).
 
 ## Deployment
 
