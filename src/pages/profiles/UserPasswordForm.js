@@ -65,10 +65,11 @@ const UserPasswordForm = () => {
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
-              <Form.Label>New password</Form.Label>
+              <Form.Label htmlFor="password">New password</Form.Label>
               <Form.Control
                 placeholder="New password"
                 type="password"
+                id="password"
                 value={newPassword1}
                 onChange={handleChange}
                 name="newPassword1"
@@ -80,10 +81,11 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Form.Group>
-              <Form.Label>Confirm password</Form.Label>
+              <Form.Label htmlFor="confirm-password">Confirm password</Form.Label>
               <Form.Control
                 placeholder="Confirm new password"
                 type="password"
+                id="confirm-password"
                 value={newPassword2}
                 onChange={handleChange}
                 name="newPassword2"

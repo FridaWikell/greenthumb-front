@@ -123,20 +123,34 @@ const PostEditForm = () => {
           <Container className={appStyles.Content}>
             <div className="text-center">
               <Form.Group>
-                <Form.Label>Title</Form.Label>
-                <Form.Control type="text" name="title" value={title} onChange={handleChange} />
+                <Form.Label htmlFor="title">Title</Form.Label>
+                <Form.Control 
+                  type="text" 
+                  name="title" 
+                  id="title"
+                  value={title} 
+                  onChange={handleChange} 
+                />
                 {errors.title?.map((error, idx) => <Alert key={idx} variant="warning">{error}</Alert>)}
               </Form.Group>
               <Form.Group>
-                <Form.Label>Content</Form.Label>
-                <Form.Control as="textarea" rows={6} name="content" value={content} onChange={handleChange} />
+                <Form.Label htmlFor="content">Content</Form.Label>
+                <Form.Control 
+                  as="textarea"
+                  rows={6}
+                  name="content"
+                  id="content"
+                  value={content}
+                  onChange={handleChange}
+                />
                 {errors.content?.map((error, idx) => <Alert key={idx} variant="warning">{error}</Alert>)}
               </Form.Group>
               <Form.Group>
-                <Form.Label>Hardiness Zone</Form.Label>
+                <Form.Label htmlFor="hardiness-zone">Hardiness Zone</Form.Label>
                 <Form.Control
                   as="select"
                   name="hardinessZone"
+                  id="hardiness-zone"
                   value={hardinessZone}
                   onChange={handleChange}
                 >

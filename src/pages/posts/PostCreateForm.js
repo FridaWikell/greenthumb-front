@@ -68,10 +68,11 @@ const PostCreateForm = () => {
   const hardinessZoneDropdown = (
     <>
       <Form.Group>
-        <Form.Label>Hardiness zone</Form.Label>
+        <Form.Label htmlFor="hardiness-zone">Hardiness zone</Form.Label>
         <Form.Control
           as="select"
           name="hardinessZone"
+          id="hardiness-zone"
           value={hardinessZone}
           onChange={handleChange}
           required
@@ -97,10 +98,11 @@ const PostCreateForm = () => {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label htmlFor="title">Title</Form.Label>
         <Form.Control
           type="text"
           name="title"
+          id="title"
           value={title}
           onChange={handleChange}
           isInvalid={!!errors.title}
@@ -111,11 +113,12 @@ const PostCreateForm = () => {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label htmlFor="content">Content</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
           name="content"
+          id="content"
           value={content}
           onChange={handleChange}
           isInvalid={!!errors.content}
@@ -149,6 +152,7 @@ const PostCreateForm = () => {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
+              <Form.Label className="sr-only">Upload image</Form.Label>
               {image ? (
                 <Image className={appStyles.Image} src={image} rounded />
               ) : (

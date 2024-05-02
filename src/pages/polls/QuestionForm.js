@@ -100,10 +100,11 @@ const QuestionForm = () => {
           >
             <Col className="mx-auto" lg={8}>
             <Form.Group>
-              <Form.Label>Question</Form.Label>
+              <Form.Label htmlFor="question">Question</Form.Label>
               <Form.Control
                 type="text"
                 name="questionText"
+                id="question"
                 value={questionData.questionText}
                 onChange={handleChange}
                 placeholder="Enter your question"
@@ -120,10 +121,11 @@ const QuestionForm = () => {
 
           {questionData.answers.map((answer, index) => (
             <Form.Group key={`answer-${index}`}>
-              <Form.Label>Answer {index + 1}</Form.Label>
+              <Form.Label htmlFor={`answer-${index}`}>Answer {index + 1}</Form.Label>
               <Form.Control
                 type="text"
                 name={`answer-${index}`}
+                id={`answer-${index}`}
                 value={answer}
                 onChange={handleChange}
                 placeholder="Enter an answer option"

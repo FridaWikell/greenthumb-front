@@ -157,6 +157,7 @@ const Questions = ({ message = "No questions found." }) => {
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
         >
+          <Form.Label className="sr-only">Search questions</Form.Label>
           <Form.Control
             value={query}
             onChange={(event) => setQuery(event.target.value)}

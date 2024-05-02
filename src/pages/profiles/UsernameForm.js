@@ -55,10 +55,11 @@ const UsernameForm = () => {
         <Container className={appStyles.Content}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
-              <Form.Label>Change username</Form.Label>
+              <Form.Label htmlFor="change-username">Change username</Form.Label>
               <Form.Control
                 placeholder="username"
                 type="text"
+                id="change-username"
                 value={username}
                 onChange={(event) => setUsername(event.target.value)}
               />
