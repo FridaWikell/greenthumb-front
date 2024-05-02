@@ -170,9 +170,19 @@ When they navigate through the site
 Then all content is accessible via the screen reader, with all images having alt text and all actionable items being screen-reader friendly  
 
 ## Design
-### Colour Scheme
+
+### Color Scheme
+
+The colors at the website are chosen to be earthy and calming. The main colors are green and brown to get the thoughts to plants and soil. All the colors are subtly faded, enhancing the calming impression. The first color which everything else is based at is the color of the navigation bar. It was chosen by deciding on a green color and then testing numerous colors selected from a color palette.
+
 ### Typography
+
+The typography is selected to be easy to read but at the same time be playful. It was selected by scrolling through fonts at Google fonts after selecting to only show the "Sans Serif" fonts.
+
 ### Imagery
+
+The images are all styled as cartoons and selected to give the website a unified feeling by maintaining consistency in style wherever users browse on the site. The number of images is kept low to ensure that users' published images really pop and draw the most attention.
+
 ### Wireframes
 
 ## Features
@@ -198,6 +208,8 @@ Do this for both Desktop and Mobile.
 
 ### Wave Webaim - accessibility testing
 You can test your site for accessibility through the wave.webaim site - it needs to be deployed in order for it to test it. Fix any errors that it gives
+
+### Contrast Grid
 
 ### Manual Testing
 
