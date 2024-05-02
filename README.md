@@ -250,6 +250,16 @@ To write up the tests you can use a table,
 
 You should have tests for every section of every page.. individually.
 
+### Automated Testing
+
+### Bugs
+
+Several bugs were discovered during the development process.
+
+During the Wave Webaim validation it was discovered that several forms (example search bar, edit profile, add post). These were fixed by connecting form and label with htmlFor in the label.
+
+None known bug were left unfixed.
+
 ## Technologies Used
 
 Detail what technologies you used. So what code languages, what frameworks, libraries, what software did you use to develop the site - Balsamic for your wireframes, Figma for a mockup?
