@@ -82,13 +82,13 @@ const Post = (props) => {
       );
     } if (likeId) {
       return (
-        <button onClick={() => handleLikeInteraction(false)} className="icon-button" type="button" aria-label="Unlike button">
+        <button onClick={() => handleLikeInteraction(false)} className={`${styles.HeartButton} icon-button px-0`} type="button" aria-label="Unlike button">
           <i className={`fas fa-heart ${styles.Heart}`} />
         </button>
       );
     } if (currentUser) {
       return (
-        <button onClick={() => handleLikeInteraction(true)} className="icon-button" type="button" aria-label="Like button">
+        <button onClick={() => handleLikeInteraction(true)} className={`${styles.HeartButton} icon-button px-0`} type="button" aria-label="Like button">
           <i className={`far fa-heart ${styles.HeartOutline}`} />
         </button>
       );

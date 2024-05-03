@@ -23,6 +23,11 @@ h5 {
   color: #f85032;
 }
 
+.HeartButton {
+  background-color: transparent;
+  border: none;
+}
+
 .SmallerText {
   font-size: smaller;
 }
