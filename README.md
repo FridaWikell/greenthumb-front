@@ -300,7 +300,19 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Sign in page
 
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Username field | The field is writable | Write "abc123" | The field was writable and the text was presented as it was written | Pass |
+| Username field empty - message | A message appear if you try to sign in without entering a username | Leave username empty and sign in | A message appeared below the Sign in button "Must include "username" and "password"." | Pass |
+| Password field | The field is writable and showing black dots instead of characters | Write "123abc" | The field was writable and the text was presented as black dots | Pass |
+| Password field empty - message | A message appear if you try to sign in without entering a password | Leave password empty and sign in | A message appeared below the password field "This field may not be blank." | Pass |
+| Incorrect credentials | A message appear if the user enter incorrect username or password | Enter incorrect credentials and sign in | A message appeared below the Sign in button "Unable to log in with provided credentials." | Pass |
+| Sign in button | Pressing the Sign in button makes the user to be logged in and directed to the home page | Enter correct credentials, press Sign in | The user got signed in and directed to the home page | Pass |
+| Sign up link | The "Don't have an account yet? Sign up now!" text directs the user to the sign up page | Press the text | The user got directed to the sign up page | Pass |
+
 #### Home page
+
+#### Post page
 
 #### Add post page
 
@@ -310,6 +322,7 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Profile page
 
+#### 404 page
 
 You should have tests for every section of every page.. individually.
 
