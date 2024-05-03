@@ -113,7 +113,7 @@ const PostEditForm = () => {
               />
             </Form.Group>
             {errors?.image?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
+              <Alert variant="warning" className="mt-1" key={idx}>
                 {message}
               </Alert>
             ))}
@@ -131,7 +131,7 @@ const PostEditForm = () => {
                   value={title} 
                   onChange={handleChange} 
                 />
-                {errors.title?.map((error, idx) => <Alert key={idx} variant="warning">{error}</Alert>)}
+                {errors.title?.map((error, idx) => <Alert key={idx} variant="warning" className="mt-1">{error}</Alert>)}
               </Form.Group>
               <Form.Group>
                 <Form.Label htmlFor="content">Content</Form.Label>
@@ -143,7 +143,7 @@ const PostEditForm = () => {
                   value={content}
                   onChange={handleChange}
                 />
-                {errors.content?.map((error, idx) => <Alert key={idx} variant="warning">{error}</Alert>)}
+                {errors.content?.map((error, idx) => <Alert key={idx} variant="warning" className="mt-1">{error}</Alert>)}
               </Form.Group>
               <Form.Group>
                 <Form.Label htmlFor="hardiness-zone">Hardiness Zone</Form.Label>
@@ -166,7 +166,7 @@ const PostEditForm = () => {
                 </Form.Control>
               </Form.Group>
               {errors.hardinessZone?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
+                <Alert variant="warning" className="mt-1" key={idx}>
                   {message}
                 </Alert>
               ))}
