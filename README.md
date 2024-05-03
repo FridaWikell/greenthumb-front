@@ -265,7 +265,6 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 - HP 250 G4 Notebook PC (1366 x 768)
 - HP 2309v LCD Screen (1920 x 1080)
 
-
 #### Navigation bar 
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
@@ -284,6 +283,20 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | Toggle menu - close when clicked outside | All icons disappear when clicked outside of the toggle menu when it is open | Select a small device in DevTools to trigger the toggle menu, open the menu, click outside of the toggle menu to close it | The menu closed and all the icons disppeared | Pass |
 
 #### Sign up page
+
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Username field | The field is writable | Write "123abc" | The field was writable and the text was presented as it was written | Pass |  
+| Username already exist - message | A message appear if you try to sign up with a username already in use | Try to sign up with a username already in use | A message appeared below the username field "A user with that username already exists." | Pass |
+| Username field empty - message | A message appear if you try to sign up without entering a username | Leave username empty and sign up | A message appeared below the username field "This field may not be blank." | Pass |
+| Password field | The field is writable and showing black dots instead of characters | Write "123abc" | The field was writable and the text was presented as black dots | Pass |
+| Password field empty - message | A message appear if you try to sign up without entering a password | Leave password empty and sign up | A message appeared below the password field "This field may not be blank." | Pass |
+| Password field too short - message | A message appear if you try to sign up with a password shorter then eight characters | Enter a password containing seven characters and sign up | A message appeared below the password field "This password is too short. It must contain at least 8 characters." | Pass |
+| Confirm password field | The field is writable and showing black dots instead of characters | Write "123abc" | The field was writable and the text was presented as black dots | Pass |
+| Confirm password field empty - message | A message appear if you try to sign up without entering a confirm password | Leave confirm password empty and sign up | A message appeared below the confirm password field "This field may not be blank." | Pass |
+| Password not match - message | A message appear if you try to sign up with password not matching each other | Sign up with two password not matching each other | A message appeared below the Sign up button "The two password fields didn't match." | Pass |
+| Sign up button | If the data in the fields are valid, the Sign up button register the user and directs the user to the Sign in page | Enter valid information in the fields, press Sign up | A new user was registred and got directed to the Sign in page | Pass |
+| Sign in link | The "Already have an account? Sign in" text directs the user to the sign in page | Press the text | The user got directed to the sign in page | Pass |
 
 #### Sign in page
 
