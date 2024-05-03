@@ -332,6 +332,34 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Post page
 
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Three dots menu at post - not visible | If the user isn't the author to the post, the three dots menu isn't visible | Visit a post that isn't written by the logged in user | The three dots weren't visible | Pass |
+| Three dots menu at post - visible | If the user is the author of the post, the three dots menu is visible | Visit a post written by the logged in user | The three dots were visible | Pass |
+| Edit post | When Edit is clicked at, the user gets directed to the Edit post page | Press three dots, press Edit | The user got directed to the Edit post page | Pass |
+| Delete post - Confirmation modal |  A confirmation modal is triggered when delete is pressed | Click at three dots, press delete | A confirmation modal is triggered | Pass |
+| Delete post - Confirmation modal - Cancel | The modal closes without deleting the post when Cancel is pressed | Trigger the confirmation modal, press Cancel, see if the post still is published | The post is still published when Cancel is pressed | Pass |
+| Delete post - Confirmation modal - X | The modal closes without deleting the post when X is pressed | Trigger the confirmation modal, press X, see if the post still is published | The post is still published when X is pressed | Pass |
+| Delete post - Confirmation modal - Confirm | The modal closes and delete the post when Confirm is pressed | Trigger the confirmation modal, press Confirm, see if the post still is published | The post is deleted when Confirm is pressed | Pass |
+| Like - not logged in | When the user tries to like a post, a tooltip appears "Log in to like posts!" and it is not possible to like a post | Sign out, try to like a post | A tooltip appeared and it was not possible to like the post | Pass |
+| Like - logged in | When the user like a post, the heart change color and number of likes are increased by one | Sign in, like a post | The heart changed color and the number of likes increased by one | Pass |
+| Like own post - logged in | When the user tries to like their own post, a tooltip appears "You can't like your own post!" and it is not possible to like the post | Sign in, try to like one of your own post | A tooltip appeared and it was not possible to like the post | Pass |
+| Unlike | When the user unlike a post, the heart change color and number of likes are decreased by one | Sign in, find a post you already like, unlike the post | The heart changed color and the number of likes decreased by one | Pass |
+| Comment field not showing | When a user isn't logged in, the comment field isn't showing | Sign out, visit a post and look for the comment field | The comment field wasn't showing | Pass |
+| Comment field - logged in | The field is writable | Write "This is it!" | The field was writable and the text was presented as it was written | Pass |
+| Post button - disabled | When nothing is written in the comment field, the post button is disabled and not clickable | Visit a post, click at the post button without writing anything in the comment field | The post button was disabled and wasn't clickable | Pass |
+| Post button - enabled | When something is written in the comment field, the post button is enabled and clickable | Visit a post, write a comment, observe and press post button | When one character or more was written, the post button became enabled and clickable | Pass |
+| Post comment | When a comment is written and post button pressed, the comment is presented under the post | Write a comment at a post, press the post button and see the comment get published under the post | The comment got published and presented under the post | Pass |
+| Three dots menu at comment - not visible | If the user isn't the author of the comment, the three dots menu isn't visible | Visit a post with a comment that isn't written by the logged in user | The three dots weren't visible | Pass |
+| Three dots menu at comment - visible | If the user is the author of the comment, the three dots menu is visible | Visit a post with a comment written by the logged in user | The three dots were visible | Pass |
+| Edit comment | When Edit is clicked at, the comment field become editable | Press three dots, press Edit | The comment field became editable | Pass |
+| Edit comment - Cancel | The comment returns to its original state when Cancel is clicked at | Edit a comment, press Cancel | The edit mode is closed and the comment return to its original state | Pass | 
+| Edit comment - Save | The published comment updates to the edited version | Edit a comment, press Save | The edit mode is closed and the comment is updated | Pass |
+| Delete comment - Confirmation modal | A confirmation modal is triggered when delete is pressed | Click at three dots, press delete | A confirmation modal is triggered | Pass |
+| Delete comment - Confirmation modal - Cancel | The modal closes without deleting the comment when Cancel is pressed | Trigger the confirmation modal, press Cancel, see if the comment still is published | The comment is still published when Cancel is pressed | Pass |
+| Delete comment - Confirmation modal - X | The modal closes without deleting the comment when X is pressed | Trigger the confirmation modal, press X, see if the comment still is published | The comment is still published when X is pressed | Pass |
+| Delete comment - Confirmation modal - Confirm | The modal closes and delete the comment when Confirm is pressed | Trigger the confirmation modal, press Confirm, see if the comment still is published | The comment is deleted when Confirm is pressed | Pass |
+
 #### Add post page
 
 #### Question page
