@@ -276,7 +276,7 @@ You should have tests for every section of every page.. individually.
 
 ### Automated Testing
 
-A total of 46 tests was run in 16 different test suites. All tests has been written with Jest. The tests have been focused at pages and components that isn't based at [CI Moments](https://github.com/mr-fibonacci/moments)
+A total of 46 tests was run in 16 different test suites. All tests has been written with Jest. The tests have been focused at pages and components that aren't based at [CI Moments](https://github.com/mr-fibonacci/moments)
 
 ![Screenshot of all test suites](doc/tests-all.webp)
 
