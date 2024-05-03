@@ -152,15 +152,16 @@ const PostCreateForm = () => {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
-              <Form.Label htmlFor="image-upload" className="sr-only">Upload image</Form.Label>
-              {image ? (
-                <Image className={appStyles.Image} src={image} rounded />
-              ) : (
-                <Asset
-                  src="https://res.cloudinary.com/dihkuau3v/image/upload/v1714137937/download-small_bj3345.webp"
-                  message="Click or tap to upload an image"
-                />
-              )}
+              <Form.Label htmlFor="image-upload">
+                {image ? (
+                  <Image className={appStyles.Image} src={image} rounded />
+                ) : (
+                  <Asset
+                    src="https://res.cloudinary.com/dihkuau3v/image/upload/v1714137937/download-small_bj3345.webp"
+                    message="Click or tap to upload an image"
+                  />
+                )}
+              </Form.Label>
               <Form.File
                 id="image-upload"
                 accept="image/*"
