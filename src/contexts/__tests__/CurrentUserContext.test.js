@@ -36,7 +36,7 @@ const renderWithRouter = (ui, { route = "/" } = {}) => {
 };
 
 describe("CurrentUserProvider", () => {
-  it("Fetches and sets the current user on mount", async () => {
+  it("fetches and sets the current user on mount", async () => {
     const { getByText } = renderWithRouter(
       <CurrentUserProvider>
         <CurrentUserContext.Consumer>
@@ -48,7 +48,7 @@ describe("CurrentUserProvider", () => {
     await waitFor(() => expect(getByText("Current User: none")).toBeInTheDocument());
   });
 
-  it("Redirects to sign-in page on token expiration", async () => {
+  it("redirects to sign-in page on token expiration", async () => {
     const { history } = renderWithRouter(
       <CurrentUserProvider>
         <div>Test Component</div>

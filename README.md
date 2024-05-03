@@ -276,6 +276,17 @@ You should have tests for every section of every page.. individually.
 
 ### Automated Testing
 
+A total of 46 tests was run in 16 different test suites. All tests has been written with Jest. The tests have been focused at pages and components that isn't based at [CI Moments](https://github.com/mr-fibonacci/moments)
+
+
+
+The tests can be found here:
+
+- [Components](https://github.com/FridaWikell/greenthumb-front/tree/main/src/components/__tests__)
+- [Contexts](https://github.com/FridaWikell/greenthumb-front/tree/main/src/contexts/__tests__)
+- [Pages / errors](https://github.com/FridaWikell/greenthumb-front/tree/main/src/pages/errors/__tests__)
+- [Pages / polls](https://github.com/FridaWikell/greenthumb-front/tree/main/src/pages/polls/__tests__)
+
 ### Bugs
 
 Several bugs were discovered during the development process.
