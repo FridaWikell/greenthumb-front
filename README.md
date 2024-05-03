@@ -259,18 +259,44 @@ A test at [Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&b
 
 ### Manual Testing
 
-You need to perform, and document everything you did to manually test your site.
-At a minimum - you need to check every link on every page works as intended.
-So that is check every link in the nav bar (do this on every single page because its a link in a different file) and any other links that appear on your site.
-Test the responsiveness of the site - you can do this in the dev tools in responsive mode.
-You should also load the site once deployed on as many devices you have access to. What is different from one device to the next? why is it different?
+Every page at the website has been manually tested. It is done in Google Chrome DevTools and on different devices. The devices used were one mobile phone, one laptop and one external screen:
 
-Test the user stories that you created earlier in the readme - did you satisfy the goal, how?
+- Samsung Galaxy A52s (1080 x 2400)
+- HP 250 G4 Notebook PC (1366 x 768)
+- HP 2309v LCD Screen (1920 x 1080)
 
-To write up the tests you can use a table,
+
+#### Navigation bar 
+
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| enter details here | enter details here | enter details here | enter details here | enter details here |
+| Home link	| When clicked, directs the user to the home page	| Click at "Home"	| Got directed to the home page	| Pass |
+| Logo	| When clicked, directs the user to the home page	| Click at the logo	| Got directed to the home page	| Pass |
+| Sign up link	| When clicked, directs the user to the sign up page	| Click at "Sign up"	| Got directed to the sign up page	| Pass |
+| Sign in link	| When clicked, directs the user to the sign in page	| Click at "Sign in"	| Got directed to the sign in page	| Pass |
+| Plant friends link	| When clicked, directs the user to the plant friend page	| Click at "Plant friends"	| Got directed to the plant friends page	| Pass |
+| Profile link	| When clicked, directs the user to the profile page	| Click at "Profile"	| Got directed to the profile page	| Pass |
+| Sign out link	| When clicked, the user get signed out and directed to the home page	| Click at "Sign out"	| Got signed out and directed to the home page	| Pass |
+| Responsive design | The navigation bar changes so the content fit at the smallest to the largest screens without scrolling sideways | In DevTools, select the smallest device and make it larger step by step | The navigation bar was responsive and changed depending on screen size | Pass |
+| Toggle menu | On devices smaller than 768 px, a toggle menu appears instead of icons and text | In DevTools, select 768 px as width, change to 767 px | The icons and text were replaced with a toggle menu when the width changed to 767 px | Pass |
+| Toggle menu - open | The toggle menu opens and all icons become visible when clicked at | Select a small device in DevTools to trigger the toggle menu, click at it | All icons became visible | Pass |
+| Toggle menu - close | All icons disappear when clicked at the toggle menu when it is open | Select a small device in DevTools to trigger the toggle menu, open the menu, click at the toggle menu to close it | The menu closed and all the icons disppeared | Pass |
+| Toggle menu - close when clicked outside | All icons disappear when clicked outside of the toggle menu when it is open | Select a small device in DevTools to trigger the toggle menu, open the menu, click outside of the toggle menu to close it | The menu closed and all the icons disppeared | Pass |
+
+#### Sign up page
+
+#### Sign in page
+
+#### Home page
+
+#### Add post page
+
+#### Question page
+
+#### Add question page
+
+#### Profile page
+
 
 You should have tests for every section of every page.. individually.
 
