@@ -131,7 +131,9 @@ const Post = (props) => {
             {title && <Card.Title className="text-center mb-4">{title}</Card.Title>}
             {content && <Card.Text className="mb-4">{content}</Card.Text>}
             <hr className={styles.Line}/>
-            <div className={`${styles.SmallerText} mb-2`}>Hardiness zone {hardinessZone}</div>
+            <div className={`${styles.SmallerText} mb-2`}>
+              Hardiness zone {hardinessZone === 0 ? "not applicable" : hardinessZone}
+            </div>
           </Link>
           <hr className={styles.Line}/>
           <div className={styles.PostBar}>
