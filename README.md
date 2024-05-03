@@ -312,6 +312,24 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Home page
 
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Add post button - not logged in | When clicked at, the user gets directed back to the home page | Sign out, click at Add post button | The user gets directed back to the homepage | Pass |
+| Add post button - logged in | When clicked at, the user get directed to the create post page | Sign in, click at Add post button | The user gets directed to the create post page | Pass |
+| Search field | When entering a search string, the results presented includes the search string | Enter the search string "hard" | The post presented are all post including the frase "hard" | Pass |
+| Profile image and name in post | The profile image and name links to the profile page | Click at the profile information | The user gets directed to the profile page | Pass |
+| Post text | The post text (title and content) links to the post page | Click at the post text | The user gets directed to the post page | Pass |
+| Like - not logged in | When the user tries to like a post, a tooltip appears "Log in to like posts!" and it is not possible to like a post | Sign out, try to like a post | A tooltip appeared and it was not possible to like the post | Pass |
+| Like - logged in | When the user like a post, the heart change color and number of likes are increased by one | Sign in, like a post | The heart changed color and the number of likes increased by one | Pass |
+| Like own post - logged in | When the user tries to like their own post, a tooltip appears "You can't like your own post!" and it is not possible to like the post | Sign in, try to like one of your own post | A tooltip appeared and it was not possible to like the post | Pass |
+| Unlike | When the user unlike a post, the heart change color and number of likes are decreased by one | Sign in, find a post you already like, unlike the post | The heart changed color and the number of likes decreased by one | Pass |
+| Comment | When the comment icon is pressed, the user gets directed to the post page | Press comment icon | Got directed to the post page | Pass |
+| Most followed profiles - not logged in | The most followed profiles are listed | Sign out, view the section "Most followed profiles" | The most followed profiles are listed | Pass |
+| Most followed profiles - logged in | After each profile (except your own), a follow/unfollow button is located | Log in, view Most followed profiles | After each profile, it was a follow/unfollow button | Pass |
+| Most followed profiles (logged in) - follow button | After a profile the user isn't following, it is a Follow button | Log in, view Most followed profiles and compare to which you have been following | A follow button was present after the profiles not followed | Pass |
+| Most followed profiles (logged in) - unfollow button | After a profile the user is following, it is a Unfollow button | Log in, view Most followed profiles and compare to which you have been following | A unfollow button was present after the profiles followed | Pass |
+| Most followed profiles - profile image | The profile image links to the profile page | Click at the profile image | The user gets directed to the profile page | Pass |
+
 #### Post page
 
 #### Add post page
