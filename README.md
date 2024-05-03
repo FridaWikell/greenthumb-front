@@ -370,7 +370,7 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | Title field - preoccupied | The text is preoccupied with the title from the post | Read the title in the post, compare to the title when edit is pressed | The preoccupied text is the same as in the original post | Pass |
 | Content field - preoccupied | The text is preoccupied with the content from the post | Read the content in the post, compare to the content when edit is pressed | The preoccupied text is the same as in the original post | Pass |
 | Hardiness zone - preoccupied | The hardiness zone dropdown is preoccupied with the hardiness zone from the post | Read the hardiness zone in the post, compare to the hardiness zone when edit is pressed | The preoccupied hardiness zone is the same as in the original post | Pass |
-| Title field - message | If the title field are left blank, a message appears | Edit a post, delete the title, press Save | A message below the title field appeared, "This field may not be blank." | Pass |
+| Title field - message | If the title field is left blank, a message appears | Edit a post, delete the title, press Save | A message below the title field appeared, "This field may not be blank." | Pass |
 | Image preview | The image preview holds the image in the post | Look at the image in the post, compare to the image when edit is pressed | The image in the post and the preview is the same | Pass |
 | Change the image - trigger upload | When "Change the image" is pressed, a upload menu is triggered | Click on "Change the image" | A upload menu is triggered | Pass |
 | Image preview - after change | The image preview views the new image when a new image has been uploaded | Upload a new image | The new image are previewed after uploading it | Pass |
@@ -378,9 +378,26 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | Image upload - height message | A message appear if the user tries to upload an image with a height over 4096 px | Upload an image with a height over 4096 px | A message appeared, "Image height larger than 4096px!" | Pass |
 | Image upload - width message | A message appear if the user tries to upload an image with a width over 4096 px | Upload an image with a width over 4096 px | A message appeared, "Image width larger than 4096px!" | Pass |
 | Cancel button | When Cancel button is pressed, the changes are discarded and the user gets redirected back to the original post | Make changes in a post, press Cancel | Got directed back to the original post page, without any changes made | Pass |
-| Save button | When Save button is pressed, the changes are saved and the user gets directed to the post page with the new edits in the post | Edit the post, press Save | The user got directed to the post page with the new edits published |
+| Save button | When Save button is pressed, the changes are saved and the user gets directed to the post page with the new edits in the post | Edit the post, press Save | The user got directed to the post page with the new edits published | Pass |
 
 #### Add post page
+
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Title field | The field is writable | Write "Title123" | The field was writable and the text was presented as it was written | Pass |
+| Content field | The field is writable | Write "Content123" | The field was writable and the text was presented as it was written | Pass |
+| Hardiness zone dropdown | The dropdown allows changes | Change hardiness zone in the dropdown | It was possible to change the hardiness zone | Pass |
+| Hardiness zone dropdown - placeholder | Once a choice is selected, the placeholder isn't possible to choose | Select hardiness zone 4, try to select back to the placeholder | It wasn't possible to select the placeholder | Pass |
+| Title - message | If the title field is left blank, a message appears | Fill out a hardiness zone, leave everything else blank, press Save | A message below the title field appeared, "This field may not be blank." | Pass |
+| Hardiness zone - message | If a hardiness zone isn't chosen, a message appear | Try to post a post without choosing the hardiness zone | A message appeared prompting the user to select one option | Pass |
+| Image preview | The image preview holds the image in the post | Look at the image in the post, compare to the image when edit is pressed | The image in the post and the preview is the same | Pass |
+| Change the image - trigger upload | When "Click or tap to upload an image" is pressed, a upload menu is triggered | Click on "Click or tap to upload an image" | A upload menu is triggered | Pass |
+| Image preview - after change | The image preview shows the new image when a new image has been uploaded | Upload a new image | The new image are previewed after uploading it | Pass |
+| Image upload - size message | A message appear if the user tries to upload an image larger than 2 MB | Upload an image larger than 2 MB | A message appeared, "Image size larger than 2 MB!" | Pass |
+| Image upload - height message | A message appear if the user tries to upload an image with a height over 4096 px | Upload an image with a height over 4096 px | A message appeared, "Image height larger than 4096px!" | Pass |
+| Image upload - width message | A message appear if the user tries to upload an image with a width over 4096 px | Upload an image with a width over 4096 px | A message appeared, "Image width larger than 4096px!" | Pass |
+| Cancel button | The draft to the post get discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the draft isn't published by checking the profile page and look for the draft | The draft was discarded and wasn't published and the user got directed to the former 
+| Create button | The draft get published when Create button is pressed and user gets directed to the post page | Fill out all required fields, press Create | The draft get published and user get directed to the post page | Pass |
 
 #### Question page
 
