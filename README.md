@@ -278,7 +278,7 @@ You should have tests for every section of every page.. individually.
 
 A total of 46 tests was run in 16 different test suites. All tests has been written with Jest. The tests have been focused at pages and components that isn't based at [CI Moments](https://github.com/mr-fibonacci/moments)
 
-
+![Screenshot of all test suites](doc/tests-all.webp)
 
 The tests can be found here:
 
@@ -286,6 +286,38 @@ The tests can be found here:
 - [Contexts](https://github.com/FridaWikell/greenthumb-front/tree/main/src/contexts/__tests__)
 - [Pages / errors](https://github.com/FridaWikell/greenthumb-front/tree/main/src/pages/errors/__tests__)
 - [Pages / polls](https://github.com/FridaWikell/greenthumb-front/tree/main/src/pages/polls/__tests__)
+
+![Screenshot of test at Answer](doc/tests-answer.webp)
+
+![Screenshot of test at App](doc/tests-app.webp)
+
+![Screenshot of test at Asset](doc/tests-asset.webp)
+
+![Screenshot of test at Avatar](doc/tests-avatar.webp)
+
+![Screenshot of test at CloseModal](doc/tests-close-modal.webp)
+
+![Screenshot of test at ConfirmModal](doc/tests-confirm-modal.webp)
+
+![Screenshot of test at CurrentUserContext](doc/tests-current-user-context.webp)
+
+![Screenshot of test at ErrorBoundary](doc/tests-error-boundary.webp)
+
+![Screenshot of test at InternalServerError](doc/tests-internal-server-error.webp)
+
+![Screenshot of test at MoreDropdown](doc/tests-more-dropdown.webp)
+
+![Screenshot of test at NavBar](doc/tests-navbar.webp)
+
+![Screenshot of test at NotFoundPage](doc/tests-not-found-page.webp)
+
+![Screenshot of test at QuestionForm](doc/tests-question-form.webp)
+
+![Screenshot of test at QuestionPage](doc/tests-question-page.webp)
+
+![Screenshot of test at Questions](doc/tests-questions.webp)
+
+![Screenshot of test at VoteForm](doc/tests-vote-form.webp)
 
 ### Bugs
 
