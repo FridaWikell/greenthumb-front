@@ -21,7 +21,7 @@ export const followHelper = (profile, clickedProfile, followingId) => {
     return {
       ...profile,
       followersCount: profile.followersCount + 1,
-      followingId,
+      following_id: followingId,
     };
   }
   if (profile.isOwner) {
@@ -35,7 +35,7 @@ export const unfollowHelper = (profile, clickedProfile) => {
     return {
       ...profile,
       followersCount: profile.followersCount - 1,
-      followingId: null,
+      following_id: null,
     };
   }
   if (profile.isOwner) {
