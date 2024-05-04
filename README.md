@@ -513,9 +513,7 @@ The wireframes are made in [Balsamiq](https://balsamiq.com/).
 - Click on "New" and choose the option "Create new app"
 - Choose an app name and which region (Europe or United States) you are located in
 - Press "Create app"
-- When the app is created, choose the Settings tab
-- Under "Config Vars", press "Reveal Config Vars"
-- Change tab to the Deploy tab
+- When the app is created, go to the Deploy tab
 - Choose deploy method - GitHub
 - Search for the correct repository name at your connected GitHub account
 - Press "Connect"
