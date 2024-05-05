@@ -427,6 +427,20 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Add question page
 
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Question field | The field is writable | Write "This is my question" | The field was writable and the text was presented as it was written | Pass |
+| Answer field | The field is writable | Write "Hello world" | The field was writable and the text was presented as it was written | Pass |
+| Add answer button | When add answer button is pressed, another answer field is presented | Press add answer button | Another add answer field was presented | Pass |
+| Remove answer button - not visible | When there is one answer field, remove answer button isn't visible | Make sure only one answer field is present, look for remove answer button | Remove answer button wasn't visible | Pass |
+| Remove answer button - visible | When it is more than two answer fields, remove answer button is visible | Add an answer field to have two answer fields | The remove answer button appears next to the add answer button | Pass |
+| Remove answer button | When remove answer button is pressed, the last answer field is removed | Press remove answer button | The last answer field was removed | Pass |
+| Question field - not blank | When a question is submitted without anything written in the question field, a message appear | Submit a question without writing anything in the question field | A message appeared below the question field "The question cannot be left blank." | Pass |
+| Answer field - not blank | When a question is submitted without anything written in the answer field, a message appear | Submit a question without writing anything in the answer field | A message appeared below the answer field "Answer cannot be left blank." | Pass |
+| At least two answers | When a question is submitted with only one answer filled out, a message appear | Submit a question with only written in one answer field | A message appeared below the question field "At least two answers are required and none can be left blank." | Pass |
+| Cancel button | When Cancel is pressed, the question draft is discarded and the user gets directed to the last visited page | Press Cancel, view questions page to make sure the question wasn't published | The question wasn't published and the user got directed to the last visited page | Pass |
+| Submit button | When Submit is pressed, the question is published and is viewed to the user | Enter valid information in the create question form, press Submit | The question is published and is presented to the user at the individual question page | Pass |
+
 #### Profile page
 
 #### Edit profile page
