@@ -469,6 +469,14 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Change username page
 
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Username field - preoccupied | The text is preoccupied with the username of the logged in user | Read the username in the profile, compare to the username in the field | The preoccupied username is the same as in the profile | Pass |
+| Username field - not blank | When a username change is submitted without anything written in the username field, a message appear | Submit a username change without writing anything in the username field | A message appeared below the username field, "This field may not be blank." | Pass |
+| Username already exist | When a username change is submitted to a username already in use, a message appear | Submit a username change to an already existing username | A message appeared below the username field, "A user with that username already exists." | Pass |
+| Cancel button | The changes get discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the changes aren't published by checking the profile page | The changes were discarded and weren't published and the user got directed to the last visited page | Pass |
+| Save button | The username changes when Save button is pressed and the user gets directed to the profile page | Make changes, press Save | The changes get published and user get directed to the profile page | Pass |
+
 #### Change password page
 
 #### 404 page
