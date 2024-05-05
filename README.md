@@ -479,9 +479,21 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Change password page
 
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| New password field | The field is writable | Write "Password" | The field was writable and the text was presented as black dots | Pass |
+| Confirm new password field | The field is writable | Write "Password" | The field was writable and the text was presented as black dots | Pass |
+| Password too short | If the new password is shorter than eight characters, a message appear | Select a password shorter than eight characters and press Save | A message appeared, "This password is too short. It must contain at least 8 characters." | Pass |
+| Passwords not matching | If the two passwords don't match, a message appear | Write to different passwords and press Save | A message appeared, "The two password fields didn’t match." | Pass |
+| Cancel button | The changes get discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the password isn't changed by sign out and sign in again | The password wasn't changed and the user got directed to the last visited page | Pass |
+| Save button | The password changes when Save button is pressed and the user gets directed to the profile page | Write the new password twice, press Save, sign out and sign in again | The password get changed and the user get directed to the profile page | Pass |
+
 #### 404 page
 
-You should have tests for every section of every page.. individually.
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Go back button | The user get directed to the last visited page | Enter an invalid url, press Go back button | The user got directed back to the last visited page | Pass |
+| Home page button | The user get directed to the home page | Enter an invalid url, press Home page button | The user got directed to the home page | Pass |
 
 ### Automated Testing
 
