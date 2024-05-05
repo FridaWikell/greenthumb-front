@@ -401,6 +401,12 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Question page
 
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Add question button | When clicked at, the user get directed to the create question page | Sign in, click at Add question button | The user gets directed to the create question page | Pass |
+| Search field | When entering a search string, the results presented includes the search string | Enter the search string "pota" | The post presented are all post including the frase "pota" | Pass |
+| Title link | When pre
+
 #### Add question page
 
 #### Profile page
@@ -461,6 +467,8 @@ Several bugs were discovered during the development process.
 During the JavaScript validation, over 100 errors were discovered. Some of the errors were the use of snake case when constants were taken from the backend. This was solved by renaming them to camel case when they were imported in the JavaScript. Some other reaccuring notes were to change ' to &apos;. All console.log did also throw errors, which was resolved by commenting out all console.log which were in try-catch block. These were kept to make it easier to troubleshoot later on, in future versions. All console.log outside of try-catch blocks were deleted.
 
 During the Wave Webaim validation it was discovered that several forms (example search bar, edit profile, add post). These were fixed by connecting form and label with htmlFor in the label. This didn't work at all pages, it was then solved by adding aria-label. 
+
+When the manual testing was performed, two bugs where discovered. The first bug was that the user couldn't upload an image when they were creating a post. When they clicked at the image area, nothing happened. The bug was caused by a form label controlling the form for uploading an image was set to screen readers only. The second bug was the text in the follow button didn't change to unfollow when you pressed follow. The user had to refresh the page to see the change. The bug was caused by the change from snake case to camel case in the JavaScript file. It was forgotten to declare a snake case value to camel case.
 
 None known bug were left unfixed.
 
