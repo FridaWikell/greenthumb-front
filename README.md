@@ -405,11 +405,31 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | Add question button | When clicked at, the user get directed to the create question page | Sign in, click at Add question button | The user gets directed to the create question page | Pass |
 | Search field | When entering a search string, the results presented includes the search string | Enter the search string "pota" | The post presented are all post including the frase "pota" | Pass |
-| Title link | When pre
+| Title link | When the title is clicked at, the user gets directed to the individual question page | Click at the title at one question | The user got directed to the individual question page | Pass |
+| Profile link | When the profile who asked the question is clicked at, the user gets directed to the profile page | Click at the user who asked the question | The user got directed to the profile page | Pass |
+| Three dots menu - not visible | If the user isn't the author of the question, the three dots menu isn't visible | View a question not written by the logged in user | The three dots weren't visible | Pass |
+| Three dots menu - visible | If the user is the author of the question, the three dots menu is visible | View a question written by the logged in user | The three dots were visible | Pass |
+| Delete question - Confirmation modal |  A confirmation modal is triggered when delete is pressed | Click at three dots, press delete | A confirmation modal is triggered | Pass |
+| Delete question - Confirmation modal - Cancel | The modal closes without deleting the question when Cancel is pressed | Trigger the confirmation modal, press Cancel, see if the question still is published | The question is still published when Cancel is pressed | Pass |
+| Delete question - Confirmation modal - X | The modal closes without deleting the question when X is pressed | Trigger the confirmation modal, press X, see if the question still is published | The question is still published when X is pressed | Pass |
+| Delete question - Confirmation modal - Confirm | The modal closes and delete the question when Confirm is pressed | Trigger the confirmation modal, press Confirm, see if the question still is published | The question is deleted when Confirm is pressed | Pass |
+| Submit button - disabled | If the user hasn't selected an answer option, the submit button is disabled | Try to press Submit without choosing an option | The Submit button had disabled colors and wasn't clickable | Pass |
+| Submit button - enabled | If the user has selected an answer option, the submit button is enabled | Try to press Submit when an option is selected | The Submit button had enabled colors and was clickable | Pass |
+| Submit button - trigger modal | When an option is selected and Submit is pressed, a thank you for voting modal is triggered | Select an option, press Submit | A modal is triggered to confirm the vote | Pass |
+| Thank you for voting modal - Cancel | The modal closes when Cancel is pressed | Trigger the thank you for voting modal, press Cancel | The modal closes when Cancel is pressed | Pass |
+| Thank you for voting modal - X | The modal closes when X is pressed | Trigger the thank you for voting modal, press X | The modal closes when X is pressed | Pass |
+| Votes update | When a user submits a vote, number of votes are increased by one | View how many votes an answer has, submit a vote | Number of votes increased by one | Pass |
+| Already voted modal | When the user submit a vote in a question they have already voted at, a modal telling the user is triggered | Vote twice at the same question | At the second time, a modal is triggered telling the user they have already voted | Pass |
+| Already voted modal - Cancel | The modal closes when Cancel is pressed | Trigger the already voted modal, press Cancel | The modal closes when Cancel is pressed | Pass |
+| Already voted modal - X | The modal closes when X is pressed | Trigger the already voted modal, press X | The modal closes when X is pressed | Pass |
+| See results | When See results is pressed, number of votes at each answer is presented and the text changes to Hide results | Press See results | Number of votes at each answer is presented, text changed to Hide results | Pass |
+| Hide results | When Hide results is pressed, number of votes at each answer is hidden and the text changes to See results | Press Hide results | Number of votes at each answer is hidden, text changed to See results | Pass |
 
 #### Add question page
 
 #### Profile page
+
+#### Edit profile page
 
 #### 404 page
 
