@@ -456,6 +456,17 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Edit profile page
 
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Name field | The field is writable | Write "My name" | The field was writable and the text was presented as it was written | Pass |
+| Content field | The field is writable | Write "My content" | The field was writable and the text was presented as it was written | Pass |
+| Content field - preoccupied | The text is preoccupied with the content from the profile | Read the content in the profile, compare to the content in edit mode | The preoccupied text is the same as in the original profile | Pass |
+| Image preview | The image preview holds the image in the profile | Look at the image in the profile, compare to the image in edit mode | The image in the profile and the preview is the same | Pass |
+| Change the image - trigger upload | When "Ready for a new image?" is pressed, a upload menu is triggered | Click on "Ready for a new image?" | A upload menu is triggered | Pass |
+| Image preview - after change | The image preview views the new image when a new image has been uploaded | Upload a new image | The new image are previewed after uploading it | Pass |
+| Cancel button | The changes get discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the changes aren't published by checking the profile page | The changes were discarded and weren't published and the user got directed to the last visited page | Pass |
+| Save button | The changes get published when Save button is pressed and the user gets directed to the profile page | Make changes, press Save | The changes get published and user get directed to the profile page | Pass |
+
 #### Change username page
 
 #### Change password page
