@@ -20,12 +20,12 @@ export const followHelper = (profile, clickedProfile, followingId) => {
   if (profile.id === clickedProfile.id) {
     return {
       ...profile,
-      followersCount: profile.followersCount + 1,
+      followers_count: profile.followers_count + 1,
       following_id: followingId,
     };
   }
-  if (profile.isOwner) {
-    return { ...profile, followingCount: profile.followingCount + 1 };
+  if (profile.is_owner) {
+    return { ...profile, following_count: profile.following_count + 1 };
   }
   return profile;
 };
@@ -34,12 +34,12 @@ export const unfollowHelper = (profile, clickedProfile) => {
   if (profile.id === clickedProfile.id) {
     return {
       ...profile,
-      followersCount: profile.followersCount - 1,
+      followers_count: profile.followers_count - 1,
       following_id: null,
     };
   }
-  if (profile.isOwner) {
-    return { ...profile, followingCount: profile.followingCount - 1 };
+  if (profile.is_owner) {
+    return { ...profile, following_count: profile.following_count - 1 };
   }
   return profile;
 };
