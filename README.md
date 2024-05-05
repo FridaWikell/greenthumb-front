@@ -443,7 +443,22 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 
 #### Profile page
 
+| Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
+| -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
+| Number of posts | The number telling how many posts the user has published are correct and the same as number of posts at the profile page | Note the number telling how many posts, count the users posts | The two numbers were the same | Pass |
+| Follow button | When the Follow button is pressed, number of followers are increased by one and the text changes to Unfollow | Press Follow button at the profile | Number of followers are increased by one and the text in the button changed to Unfollow | Pass |
+| Unfollow button | When the Unfollow button is pressed, number of followers are decreased by one and the text changes to Follow | Press Unfollow button at the profile | Number of followers are decreased by one and the text in the button changed to Follow | Pass |
+| Three dots menu - not visible | If the user isn't the owner of the profile, the three dots menu isn't visible | View a profile page of a user, not the logged in | The three dots weren't visible | Pass |
+| Three dots menu - visible | If the user is the owner of the profile, the three dots menu is visible | View the logged in users profile | The three dots were visible | Pass |
+| Edit profile | When Edit profile is pressed, the user gets redirected to Edit profile page | Click at the three dots, select Edit profile | The user got directed to Edit profile page | Pass |
+| Change username | When Change username is pressed, the user gets redirected to Change username page | Click at the three dots, select Change username | The user got directed to Change username page | Pass | 
+| Change password | When Change password is pressed, the user gets redirected to Change password page | Click at the three dots, select Change password | The user got directed to Change password page | Pass |
+
 #### Edit profile page
+
+#### Change username page
+
+#### Change password page
 
 #### 404 page
 
