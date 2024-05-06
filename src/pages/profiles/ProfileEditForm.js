@@ -68,7 +68,7 @@ const ProfileEditForm = () => {
   
     try {
       const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
-      setCurrentUser((prevUser) => ({ // Renamed from currentUser to prevUser
+      setCurrentUser((prevUser) => ({
         ...prevUser,
         profile_image: data.image,
       }));
@@ -132,6 +132,12 @@ const ProfileEditForm = () => {
                   onChange={handleChange}
                 />
               </Form.Group>
+              <Button className={`${btnStyles.CancelBtn} px-3 py-2 mx-2`} onClick={() => history.goBack()}>
+                Cancel
+              </Button>
+              <Button className={`${btnStyles.SubmitBtn} px-3 py-2 mx-2`} type="submit">
+                Save
+              </Button>
             </div>
           </Container>
         </Col>
