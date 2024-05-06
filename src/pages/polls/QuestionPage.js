@@ -68,7 +68,7 @@ const QuestionPage = () => {
               {currentUser?.username === question.owner_username && (
                 <QuestionOptionsDropdown handleDelete={handleDeleteQuestion} />
               )}
-              <h4>{question.text}</h4>
+              <h4 className="pr-3">{question.text}</h4>
               <div className="mb-2">
                 <small>
                   Asked by <Link to={`/profiles/${question.owner}`}>{question.owner_username}</Link>, at {question.created_at}
