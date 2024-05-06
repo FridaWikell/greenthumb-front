@@ -187,7 +187,14 @@ The images are all styled as cartoons and selected to give the website a unified
 
 ## Features
 
-### Feature title - e.g. Navigation
+### Navigation bar
+
+![Screenshot of navigation bar](doc/feature-navbar.webp)
+
+The navigation bar makes it easy for the user to navigate around at the website. Both the logo and the home icon brings the user back to the home page to view all posts. To have a home link in the logo makes it possible for the users using small devices (where only the logo and the menu icon is showing) easy navigate to the posts page (home page).
+
+### Post
+
 Screenshot of implemented feature
 Description of the value this feature has for the users
 
