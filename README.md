@@ -193,7 +193,39 @@ The images are all styled as cartoons and selected to give the website a unified
 
 The navigation bar makes it easy for the user to navigate around at the website. Both the logo and the home icon brings the user back to the home page to view all posts. To have a home link in the logo makes it possible for the users using small devices (where only the logo and the menu icon is showing) easy navigate to the posts page (home page).
 
-### Post
+### Post page
+
+**Post**
+
+![Screenshot of a post](doc/feature-post.webp)
+
+The post present all the information the user has filled out when they created a post. It contains username, when they published the post, title of the post, content of the post, image (if they have uploaded any), which hardiness zone the post is from, like button, number of likes, comment button and number of comments.
+
+**Like - not logged in**
+
+![Screenshot of like button, not logged in](doc/feature-liked-not-logged-in.webp)
+
+The user has to be logged in to like a post. If they aren't logged in, a tooltip appear "Log in to like post".
+
+**Like - logged in**
+
+![Screenshot of like button, logged in](doc/feature-liked-logged-in.webp)
+
+When the user is logged in and the user has liked a post, the like button become red and number of likes updates. This allows the user to like and unlike a post. Liked - the button is read, unliked - the button is white.
+
+**Dropdown menu - owner of the post**
+
+![Screenshot of the dropdown menu if the user is the owner of the post](doc/feature-edit-post.webp)
+
+If the user visit a post which they is the owner to, a more dropdown menu marked with three dots are visible. If they click at it, they get two selection. The first is to edit the post, if they press it they will be redirected to edit post page. The second is to delete the post, if they press it they will trigger a confirmation modal.
+
+**Confirmation modal - delete post**
+
+![Screenshot of confirmation modal when deleting a post](doc/feature-confirm-delete-post.webp)
+
+If the user presses delete, a confirmation modal is triggered. It gives the user a chance to change their mind if they really want to delete their post. It also gives the chance to save the user if they clicked at delete by mistake.
+
+### Edit post
 
 Screenshot of implemented feature
 Description of the value this feature has for the users
