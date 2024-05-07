@@ -227,6 +227,18 @@ The user has to be logged in to like a post. If they aren't logged in, a tooltip
 
 When the user is logged in and the user has liked a post, the like button become red and number of likes updates. This allows the user to like and unlike a post. Liked - the button is read, unliked - the button is white.
 
+**Comment - not logged in**
+
+![Screenshot of comment section, not logged in](doc/feature-comments-not-logged-in.webp)
+
+If the user isn't logged in, they don't get an opportunity to write a comment.
+
+**Comment - logged in**
+
+![Screenshot of comment section, logged in](doc/feature-comments-logged-in.webp)
+
+If the user is logged in, they can write a comment. Next to the comment field the logged in users' profile image is to mark that they are writing as the logged in user.
+
 **Dropdown menu - owner of the post**
 
 ![Screenshot of the dropdown menu if the user is the owner of the post](doc/feature-edit-post.webp)
@@ -238,6 +250,18 @@ If the user visit a post which they is the owner to, a more dropdown menu marked
 ![Screenshot of confirmation modal when deleting a post](doc/feature-confirm-delete-post.webp)
 
 If the user presses delete, a confirmation modal is triggered. It gives the user a chance to change their mind if they really want to delete their post. It also gives the chance to save the user if they clicked at delete by mistake.
+
+**Most followed profiles - not logged in**
+
+![Screenshot of most followed profiles, not logged in](doc/feature-most-followed-not-logged.webp)
+
+The most followed profiles list the profiles with most followers. If the user isn't logged in, they only see the profile image and the username.
+
+**Most followed profiles - logged in**
+
+![Screenshot of most followed profiles, logged in](doc/feature-most-followed-logged-in.webp)
+
+The most followed profiles list the profiles with most followers. If the user is logged in they see the profile image and the username. After that, they see a follow or unfollow button. Which of them they see depends on the logged in user follows the user in the list or not. If the user click at the button, it performs the action of the buton (follow/unfollow). If the logged in user is in the list, they don't see a button at all. 
 
 ### Edit post
 
