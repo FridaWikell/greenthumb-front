@@ -193,6 +193,20 @@ The images are all styled as cartoons and selected to give the website a unified
 
 The navigation bar makes it easy for the user to navigate around at the website. Both the logo and the home icon brings the user back to the home page to view all posts. To have a home link in the logo makes it possible for the users using small devices (where only the logo and the menu icon is showing) easy navigate to the posts page (home page).
 
+### Home page/Plant friends
+
+**Search field**
+
+![Screenshot of search post field](doc/feature-search-post.webp)
+
+The search field allows the user to filter the content they want to see. If they search for "tomato", only posts with the word "tomato" in it will show.
+
+**Add post button**
+
+![Screenshot of add post button](doc/feature-add-post-button.webp)
+
+The add post button directs the logged in user to create post page. If the user isn't logged in, it get redirected to the home page. 
+
 ### Post page
 
 **Post**
