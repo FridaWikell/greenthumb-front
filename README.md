@@ -263,7 +263,67 @@ The most followed profiles list the profiles with most followers. If the user is
 
 The most followed profiles list the profiles with most followers. If the user is logged in they see the profile image and the username. After that, they see a follow or unfollow button. Which of them they see depends on the logged in user follows the user in the list or not. If the user click at the button, it performs the action of the buton (follow/unfollow). If the logged in user is in the list, they don't see a button at all. 
 
-### Edit post
+### Edit post page
+
+![Screenshot of edit post page](doc/feature-edit-post-title.webp)
+
+The fields in the edit post page are prepopulated with the information from the post who is edited. It allows the user to change the title, content, image and hardiness zone. If the user wants to delete their changes, the press Cancel and no changes are saved. When they are happy with their changes, they press Save.
+
+### Questions page
+
+**Add question button**
+
+![Screenshot of add question button](doc/feature-add-question-button.webp)
+
+The add question button directs the logged in user to the add question page.
+
+**Search question field**
+
+![Screenshot of search question field](doc/feature-search-question.webp)
+
+The search field allows the user to filter the content they want to see. If they search for "green", only questions with the word "green" in it will show.
+
+**Question - not the owner**
+
+![Screenshot of a question, user not the owner](doc/feature-question-not-owner.webp)
+
+The question is presented in the title and the name of the user who asked the question and when they did it are below the title. The answers are listed below. The users can select the answer they think is the correct, and the press Submit. To give the user feedback when they vote has been submitted, a pop up modal is triggered. The user can see the results by pressing See results. They can see the results even though they haven't voted yet. This to make the community learn from each other without being required to do anything. If the voting user already has voted, a already voted pop up modal is triggered.
+
+**Question - the owner**
+
+![Screenshot of a question, user is the owner](doc/feature-question-is-owner.webp)
+
+If you are the owner to a question, you see everything as a user which isn't the owner but with one addition. The user who owns the question has the three dots dropdown menu as an addition to the right hand side.
+
+**Question dropdown**
+
+![Screenshot of dropdown menu in question](doc/feature-delete-question.webp)
+
+The dropdown is only visible for users who owns the question. It has one option, delete question. The user isn't able to edit the question since they aren't allowed to change the meaning of the question after people have voted. If you press the delete option, a confirm deletion modal is triggered.
+
+**Confirm deletion modal**
+
+![Screenshot of confirm deletion modal](doc/feature-delete-confirm-modal.webp)
+
+The confirm deletion modal gives the user a chance to change their mind, if they want to keep the question. It also gives the user a chance to save themselfs if they pressed at delete by mistake. If they don't want to delete the question, they press Cancel. If they still want to delete the question, they press Confirm.
+
+**Thank you for voting modal**
+
+![Screenshot of thank you for voting modal](doc/feature-vote-landed.webp)
+
+When the user has submitted a vote, a thank you for voting modal is trigged. It gives feedback to the user, letting them know everything has worked. The Close button allows the user go back to the website.
+
+**Already voted modal**
+
+![Screenshot of already voted modal](doc/feature-already-voted.webp)
+
+If the user already has made one successful vote at one question and they try to vote again, a already voted modal is triggered. It tells the user they already has voted. The Close button closes the modal.
+
+### Add question page
+
+![Screenshot of add question page](doc/feature-add-question.webp)
+
+The add question page has fields for question and answers. The plus button increases number of answer fields by one. The minus button decreases number of answer fields by one. The Cancel button discard the question draft. The Submit button create the question and the users can now vote.
 
 Screenshot of implemented feature
 Description of the value this feature has for the users
