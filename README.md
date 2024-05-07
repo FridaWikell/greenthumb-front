@@ -325,6 +325,20 @@ If the user already has made one successful vote at one question and they try to
 
 The add question page has fields for question and answers. The plus button increases number of answer fields by one. The minus button decreases number of answer fields by one. The Cancel button discard the question draft. The Submit button create the question and the users can now vote.
 
+### Profile page
+
+**Profile page - not the owner**
+
+![Screenshot of profile page when the user isn't the owner](doc/feature-profile-not-owner.webp)
+
+The profile page of a user who isn't the owner of the profile. It shows a Follow or Unfollow button (depending on the logged in user follow the profile or not). When you click the button it performs the action on the button (follow/unfollow). The title is the profile's username. To the left, the chosen profile image is shown. Number of published posts, followers and following are presented. 
+
+**Profile page - is the owner**
+
+![Screenshot of profile page when the user is the owner](doc/feature-profile-is-owner.webp)
+
+The difference between the profile page for a user who is the owner of the profile or not, is the Follow/Unfollow button and three dots menu. When the user is the owner, the Follow/Unfollow button isn't visible. Instead, a three dots dropdown menu is visible.
+
 Screenshot of implemented feature
 Description of the value this feature has for the users
 
