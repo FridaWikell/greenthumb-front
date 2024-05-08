@@ -1,6 +1,6 @@
 # GreenThumb  - Frontend
 
-![image of site](link to image) - use an image from AmIResponsive that shows the site on multiple devices
+![Screenshot of GreenThumb Hub site on multiple devices](doc/amiresponsive.webp)
 
 ## Introduction
 
@@ -799,6 +799,7 @@ Link to deployed website: https://greenthumb-hub-front-343e45db93a6.herokuapp.co
 | [Canva](https://www.canva.com/) | Create logo |
 | [removebg](https://www.remove.bg/) | Remove background at logo |
 | [Favicon](https://favicon.io/) | Create favicon |
+| [Am I Responsive?](https://ui.dev/amiresponsive) | Create image of the website at multiple devices |
 | [BeFunky](https://www.befunky.com/) | Change the size and crop the image |
 | [Pixelied](https://pixelied.com/) | Convert images to webp file format |
 | [Lottiefiles](https://lottiefiles.com/animations/loader-UGK4UTb3fo) | Loading spinner |
@@ -825,7 +826,3 @@ All images are stored at [Cloudinary](https://cloudinary.com/).
 Any special acknowledgements you'd like to leave
 
 [Back to top](#greenthumb---frontend)
-
-| Follow user - button change | When the follow button is pressed, it changes to become an unfollow button | Find a user, press follow and watch the button content change |
-| Unfollow user | When the unfollow button is pressed, the user is unfollowed and its post isn’t visible in “plant friends” | Find a user, press unfollow and view to be sure its posts aren’t visible in plant friends | 
-| Unfollow user - button change | When the unfollow button is pressed, it changes to become a follow button | Find a user, press unfollow and watch the button content change |
