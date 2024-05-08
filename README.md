@@ -823,6 +823,7 @@ All images are stored at [Cloudinary](https://cloudinary.com/).
 | [imachiziart at Vecteezy](https://www.vecteezy.com/png/24984418-cute-cactus-cartoon) | Image at 500 page |
 
 ## Acknowledgements
-Any special acknowledgements you'd like to leave
+
+Thanks to Gareth McGirr for pointing my project in the right direction. A deep bow to Linus Wikell for proofreading!
 
 [Back to top](#greenthumb---frontend)
