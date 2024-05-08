@@ -193,6 +193,18 @@ The images are all styled as cartoons and selected to give the website a unified
 
 The navigation bar makes it easy for the user to navigate around at the website. Both the logo and the home icon brings the user back to the home page to view all posts. To have a home link in the logo makes it possible for the users using small devices (where only the logo and the menu icon is showing) easy navigate to the posts page (home page).
 
+### Sign up page
+
+![Screenshot of sign up page](doc/feature-sign-up.webp)
+
+The sign up page allows a new user to sign up to the page. The password needs to be entered twice to make sure the user doesn't enter a misspelled password. If the user already has a profile, they can use the link to the sign in page.
+
+### Sign in page
+
+![Screenshot of sign in page](doc/feature-sign-in.webp)
+
+The sign in page lets the user to sign in by entering their selected username and password and press Sign in. If the user hasn't signed up yet, it is a link which will take them there.
+
 ### Home page/Plant friends
 
 **Search field**
