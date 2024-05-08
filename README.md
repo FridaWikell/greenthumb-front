@@ -351,10 +351,17 @@ The profile page of a user who isn't the owner of the profile. It shows a Follow
 
 The difference between the profile page for a user who is the owner of the profile or not, is the Follow/Unfollow button and three dots menu. When the user is the owner, the Follow/Unfollow button isn't visible. Instead, a three dots dropdown menu is visible.
 
-Screenshot of implemented feature
-Description of the value this feature has for the users
+**Edit profile dropdown**
 
-Repeat for each feature
+![Screenshot of three dots menu](doc/feature-edit-profile-dropdown.webp)
+
+If the logged in user is the owner of the profile, the three dots dropdown is visible. If the user presses it, it can choose from edit profile, change username or change password. This allows the user to enter more information about themself or correct information if they previously filled out wrong. To change the password is important to ensure the users security.
+
+### Edit profile page
+
+![Screenshot of edit profile page](doc/feature-edit-profile-page.webp)
+
+At the edit profile page the user can edit information about themselfs as real name and a small presentation about themself. The presentation is presented at the profile page. The user can also change the profile image. If the user already has filled out some information, it is prepopulating the fields. 
 
 ## Features to be Added
 
