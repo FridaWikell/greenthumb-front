@@ -363,6 +363,18 @@ If the logged in user is the owner of the profile, the three dots dropdown is vi
 
 At the edit profile page the user can edit information about themselfs as real name and a small presentation about themself. The presentation is presented at the profile page. The user can also change the profile image. If the user already has filled out some information, it is prepopulating the fields. 
 
+### Change username page
+
+![Screenshot of change username page](doc/feature-edit-username.webp)
+
+The current users' username are prepopulated when the user enters the edit username page. They can change the username to a name which isn't at use at the website.
+
+### Change password page
+
+![Screenshot of change password page](doc/feature-change-password.webp)
+
+The user can change their password by filling out their new password twice. This to ensure the user doesn't spell the new password wrong.
+
 ## Features to be Added
 
 Several features can be added in the future. Some of them are listed below.
