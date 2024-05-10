@@ -249,6 +249,28 @@ The images are all styled as cartoons and selected to give the website a unified
 
 ### Wireframes
 
+The wireframes are made in [Balsamiq](https://balsamiq.com/)
+
+![Screenshot of wireframes of index page](doc/wireframe-index.webp)
+
+Wireframes of index page and plant friends page.
+
+![Screenshot of wireframes of question page](doc/wireframe-questions.webp)
+
+Wireframes of question page.
+
+![Screenshot of wireframes of profile page](doc/wireframe-profile.webp)
+
+Wireframes of profile page.
+
+![Screenshot of wireframes of sign up page](doc/wireframe-sign-up.webp)
+
+Wireframes of sign up page.
+
+![Screenshot of wireframes of sign in page](doc/wireframe-sign-in.webp)
+
+Wireframes of sign in page.
+
 ## Features
 
 ### Navigation bar
