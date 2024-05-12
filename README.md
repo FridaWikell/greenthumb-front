@@ -249,8 +249,6 @@ The images are all styled as cartoons and selected to give the website a unified
 
 ### Wireframes
 
-The wireframes are made in [Balsamiq](https://balsamiq.com/)
-
 ![Screenshot of wireframes of index page](doc/wireframe-index.webp)
 
 Wireframes of index page and plant friends page.
@@ -493,8 +491,18 @@ Validation of JavaScript was done with [ESLint](https://eslint.org/) in Gitpod. 
 ![Screenshot of JavaScript validation](doc/valid-js.webp)
 
 ### Lighthouse
-You can perform a test of your website for performance, accessibility, best practices and SEO through the google chrome lighthouse test - it is in your Dev tools. Bear in mind that your internet connection speed plays a part in the performance figures obtained. Where it scores low, it will give you suggestions on how to improve the site - read the suggestions and think about how to implement them - it could be a good idea.
-Do this for both Desktop and Mobile.
+
+**Desktop**
+
+![Screenshot of Lighthouse test for desktop](doc/lighthouse-desktop.webp)
+
+The test för desktop resulted in 92 in performance and 100 in accessibility.
+
+**Mobile**
+
+![Screenshot of Lighthouse for mobile](doc/lighthouse-mobile.webp)
+
+The test for mobile resulted in 48 in performance and 100 in accessibility. The low result in performance were mainly due to the JavaScript. The two main things slowing the page down were "Largest Contentful Paint element" and "Minimize main-thread work". The largest contentful pain element was render delay the biggest part. To improve the speed all JavaScript code were looked through to see if any code were unnessecary or in big chunks. The finished code resulted in 48. Another reason to the low performance score could be a slow server where the code is performed from.
 
 ### Wave Webaim - accessibility testing
 
