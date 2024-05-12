@@ -1,4 +1,4 @@
-# GreenThumb  - Frontend
+# GreenThumb Hub - Frontend
 
 ![Screenshot of GreenThumb Hub site on multiple devices](doc/amiresponsive.webp)
 
@@ -10,7 +10,7 @@ The project is about creating a social media, a hub, for all gardeners. The purp
 
 ## Table of Contents
 
-- [GreenThumb  - Frontend](#greenthumb----frontend)
+- [GreenThumb Hub - Frontend](#greenthumb-hub---frontend)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [User Experience](#user-experience)
@@ -86,16 +86,16 @@ The site owner goal is to provide a place where the green fingers can grow and c
 
 ### User Stories
 
-A total of four epics and nine user stories were created. Two of the user stories were classified as "won't have" and haven't been fulfilled or worked at in this iteration. To view all epics and user stories for the frontend are collected at a project board [here](https://github.com/users/FridaWikell/projects/8).
+A total of four epics and nine user stories were created. Two of the user stories were classified as "won't have" and haven't been fulfilled or worked at in this iteration. To view all epics and user stories for the frontend, they are collected at a project board [here](https://github.com/users/FridaWikell/projects/8).
 
-All user stories are labeled with must have, should have, could have or won't have, depending on prioritization according to MoSCoW prioritization. Each of all user stories are also labeled with a point. The point is an estimate in how long time it will take to finish the acceptance criterias in the user story. All acceptance criterias are presented in each user story at the project board.
+All user stories are labeled with must have, should have, could have or won't have, depending on prioritization according to MoSCoW prioritization. Each of all user stories are also labeled with a point. The point is an estimate of how long time it will take to finish the acceptance criterias in the user story. All acceptance criterias are presented in each user story at the project board.
 
 | Class | Points | Percentage of total points |
 | -------- | ----- | ------------------------ |
-| Must have | 8 p | 17 % |
-| Should have | 4 p | 8 % |
-| Could have | 8 p | 17 % |
-| Won't have | 28 p | 58 % |
+| Won't have | 8 p | 17 % |
+| Could have | 4 p | 8 % |
+| Should have | 8 p | 17 % |
+| Must have | 28 p | 58 % |
 
 #### [Epic - Content creation and interaction](https://github.com/FridaWikell/greenthumb-front/issues/1)
 
@@ -237,7 +237,7 @@ Then all content is accessible via the screen reader, with all images having alt
 
 ### Color Scheme
 
-The colors at the website are chosen to be earthy and calming. The main colors are green and brown to get the thoughts to plants and soil. All the colors are subtly faded, enhancing the calming impression. The first color which everything else is based at is the color of the navigation bar. It was chosen by deciding on a green color and then testing numerous colors selected from a color palette.
+The colors at the website are chosen to be earthy and calming. The main colors are green and brown to get the thoughts to plants and soil. All the colors are subtly faded, enhancing the calming impression. The first color which everything else is based on is the color of the navigation bar. It was chosen by deciding on a green color and then testing numerous colors selected from a color palette.
 
 ### Typography
 
@@ -275,7 +275,7 @@ Wireframes of sign in page.
 
 ![Screenshot of navigation bar](doc/feature-navbar.webp)
 
-The navigation bar makes it easy for the user to navigate around at the website. Both the logo and the home icon brings the user back to the home page to view all posts. To have a home link in the logo makes it possible for the users using small devices (where only the logo and the menu icon is showing) easy navigate to the posts page (home page).
+The navigation bar makes it easy for the user to navigate the website. Both the logo and the home icon brings the user back to the home page to view all posts. To have a home link in the logo makes it possible for the users using small devices (where only the logo and the menu icon is showing) easy navigate to the posts page (home page).
 
 ### Sign up page
 
@@ -287,7 +287,7 @@ The sign up page allows a new user to sign up to the page. The password needs to
 
 ![Screenshot of sign in page](doc/feature-sign-in.webp)
 
-The sign in page lets the user to sign in by entering their selected username and password and press Sign in. If the user hasn't signed up yet, it is a link which will take them there.
+The sign in page lets the user sign in by entering their selected username and password and press Sign in. If the user hasn't signed up yet, there is a link which will take them to the sign up page.
 
 ### Home page/Plant friends
 
@@ -301,7 +301,7 @@ The search field allows the user to filter the content they want to see. If they
 
 ![Screenshot of add post button](doc/feature-add-post-button.webp)
 
-The add post button directs the logged in user to create post page. If the user isn't logged in, it get redirected to the home page. 
+The add post button directs the logged in user to create post page. If the user isn't logged in, it gets redirected to the home page. 
 
 ### Post page
 
@@ -315,13 +315,13 @@ The post present all the information the user has filled out when they created a
 
 ![Screenshot of like button, not logged in](doc/feature-liked-not-logged-in.webp)
 
-The user has to be logged in to like a post. If they aren't logged in, a tooltip appear "Log in to like post".
+The user has to be logged in to like a post. If they aren't logged in, a tooltip appear "Log in to like posts!".
 
 **Like - logged in**
 
 ![Screenshot of like button, logged in](doc/feature-liked-logged-in.webp)
 
-When the user is logged in and the user has liked a post, the like button become red and number of likes updates. This allows the user to like and unlike a post. Liked - the button is read, unliked - the button is white.
+When the user is logged in and the user has liked a post, the like button become red and number of likes updates. This allows the user to like and unlike a post. Liked - the button is red, unliked - the button is white.
 
 **Comment - not logged in**
 
@@ -333,37 +333,37 @@ If the user isn't logged in, they don't get an opportunity to write a comment.
 
 ![Screenshot of comment section, logged in](doc/feature-comments-logged-in.webp)
 
-If the user is logged in, they can write a comment. Next to the comment field the logged in users' profile image is to mark that they are writing as the logged in user.
+If the user is logged in, they can write a comment. Next to the comment field the logged in users' profile image appears to show that they are writing as the logged in user.
 
 **Dropdown menu - owner of the post**
 
 ![Screenshot of the dropdown menu if the user is the owner of the post](doc/feature-edit-post.webp)
 
-If the user visit a post which they is the owner to, a more dropdown menu marked with three dots are visible. If they click at it, they get two selection. The first is to edit the post, if they press it they will be redirected to edit post page. The second is to delete the post, if they press it they will trigger a confirmation modal.
+If the user visit a post which they is the owner to, a more dropdown menu marked with three dots is visible. If they click it, they get two selections. The first is to edit the post, if they press it they will be redirected to edit post page. The second is to delete the post, if they press it they will trigger a confirmation modal.
 
 **Confirmation modal - delete post**
 
 ![Screenshot of confirmation modal when deleting a post](doc/feature-confirm-delete-post.webp)
 
-If the user presses delete, a confirmation modal is triggered. It gives the user a chance to change their mind if they really want to delete their post. It also gives the chance to save the user if they clicked at delete by mistake.
+If the user presses delete, a confirmation modal is triggered. It gives the user a chance to change their mind if they really want to delete their post. It also gives the chance to save the user if they clicked delete by mistake.
 
 **Most followed profiles - not logged in**
 
 ![Screenshot of most followed profiles, not logged in](doc/feature-most-followed-not-logged.webp)
 
-The most followed profiles list the profiles with most followers. If the user isn't logged in, they only see the profile image and the username.
+The most followed profiles lists the profiles with most followers. If the user isn't logged in, they only see the profile image and the username.
 
 **Most followed profiles - logged in**
 
 ![Screenshot of most followed profiles, logged in](doc/feature-most-followed-logged-in.webp)
 
-The most followed profiles list the profiles with most followers. If the user is logged in they see the profile image and the username. After that, they see a follow or unfollow button. Which of them they see depends on the logged in user follows the user in the list or not. If the user click at the button, it performs the action of the buton (follow/unfollow). If the logged in user is in the list, they don't see a button at all. 
+The most followed profiles lists the profiles with most followers. If the user is logged in they see the profile image and the username. After that, they see a follow or unfollow button. Which of the buttons they see depends on if the logged in user follows the user in the list or not. If the user clicks the button, it performs the action of the button (follow/unfollow). If the logged in user is in the list, they don't see a button at all. 
 
 ### Edit post page
 
 ![Screenshot of edit post page](doc/feature-edit-post-title.webp)
 
-The fields in the edit post page are prepopulated with the information from the post who is edited. It allows the user to change the title, content, image and hardiness zone. If the user wants to delete their changes, the press Cancel and no changes are saved. When they are happy with their changes, they press Save.
+The fields in the edit post page are prepopulated with the information from the post which is edited. It allows the user to change the title, content, image and hardiness zone. If the user wants to delete their changes, they press Cancel and no changes are saved. When they are happy with their changes, they press Save.
 
 ### Questions page
 
@@ -383,13 +383,13 @@ The search field allows the user to filter the content they want to see. If they
 
 ![Screenshot of a question, user not the owner](doc/feature-question-not-owner.webp)
 
-The question is presented in the title and the name of the user who asked the question and when they did it are below the title. The answers are listed below. The users can select the answer they think is the correct, and the press Submit. To give the user feedback when they vote has been submitted, a pop up modal is triggered. The user can see the results by pressing See results. They can see the results even though they haven't voted yet. This to make the community learn from each other without being required to do anything. If the voting user already has voted, a already voted pop up modal is triggered.
+The question is presented in the title and the name of the user who asked the question and when they did it are below the title. The answers are listed below. The users can select the answer they think is correct, and the press Submit. To give the user feedback when their vote has been submitted, a pop up modal is triggered. The user can see the results by pressing See results. They can see the results even though they haven't voted yet. This to make the community learn from each other without being required to do anything. If the voting user already has voted, an already voted pop up modal is triggered.
 
 **Question - the owner**
 
 ![Screenshot of a question, user is the owner](doc/feature-question-is-owner.webp)
 
-If you are the owner to a question, you see everything as a user which isn't the owner but with one addition. The user who owns the question has the three dots dropdown menu as an addition to the right hand side.
+If you are the owner to a question, you see everything as a user which isn't the owner, but with one addition. The user who owns the question has the three dots dropdown menu as an addition at the right hand side.
 
 **Question dropdown**
 
@@ -401,25 +401,25 @@ The dropdown is only visible for users who owns the question. It has one option,
 
 ![Screenshot of confirm deletion modal](doc/feature-delete-confirm-modal.webp)
 
-The confirm deletion modal gives the user a chance to change their mind, if they want to keep the question. It also gives the user a chance to save themselfs if they pressed at delete by mistake. If they don't want to delete the question, they press Cancel. If they still want to delete the question, they press Confirm.
+The confirm deletion modal gives the user a chance to change their mind, if they want to keep the question. It also gives the user a chance to save themselves if they pressed delete by mistake. If they don't want to delete the question, they press Cancel. If they still want to delete the question, they press Confirm.
 
 **Thank you for voting modal**
 
 ![Screenshot of thank you for voting modal](doc/feature-vote-landed.webp)
 
-When the user has submitted a vote, a thank you for voting modal is trigged. It gives feedback to the user, letting them know everything has worked. The Close button allows the user go back to the website.
+When the user has submitted a vote, a thank you for voting modal is triggered. It gives feedback to the user, letting them know everything has worked. The Close button allows the user to go back to the website.
 
 **Already voted modal**
 
 ![Screenshot of already voted modal](doc/feature-already-voted.webp)
 
-If the user already has made one successful vote at one question and they try to vote again, a already voted modal is triggered. It tells the user they already has voted. The Close button closes the modal.
+If the user already has made one successful vote at the question and they try to vote again, an already voted modal is triggered. It tells the user they already have voted. The Close button closes the modal.
 
 ### Add question page
 
 ![Screenshot of add question page](doc/feature-add-question.webp)
 
-The add question page has fields for question and answers. The plus button increases number of answer fields by one. The minus button decreases number of answer fields by one. The Cancel button discard the question draft. The Submit button create the question and the users can now vote.
+The add question page has fields for question and answers. The plus button increases number of answer fields by one. The minus button decreases number of answer fields by one. The Cancel button discards the question draft. The Submit button creates the question and the users can now vote.
 
 ### Profile page
 
@@ -427,7 +427,7 @@ The add question page has fields for question and answers. The plus button incre
 
 ![Screenshot of profile page when the user isn't the owner](doc/feature-profile-not-owner.webp)
 
-The profile page of a user who isn't the owner of the profile. It shows a Follow or Unfollow button (depending on the logged in user follow the profile or not). When you click the button it performs the action on the button (follow/unfollow). The title is the profile's username. To the left, the chosen profile image is shown. Number of published posts, followers and following are presented. 
+The profile page of a user who isn't the owner of the profile. It shows a Follow or Unfollow button (depending on if the logged in user follows the profile or not). When you click the button it performs the action of the button (follow/unfollow). The title is the profile's username. To the left, the chosen profile image is shown. Number of published posts, followers and  how many the user follows are presented. 
 
 **Profile page - is the owner**
 
@@ -439,13 +439,13 @@ The difference between the profile page for a user who is the owner of the profi
 
 ![Screenshot of three dots menu](doc/feature-edit-profile-dropdown.webp)
 
-If the logged in user is the owner of the profile, the three dots dropdown is visible. If the user presses it, it can choose from edit profile, change username or change password. This allows the user to enter more information about themself or correct information if they previously filled out wrong. To change the password is important to ensure the users security.
+If the logged in user is the owner of the profile, the three dots dropdown is visible. If the user presses it, the user can choose from edit profile, change username or change password. This allows the user to enter more information about themselves or correct information if they previously filled out wrong. To be able to change the password is important to ensure the users security.
 
 ### Edit profile page
 
 ![Screenshot of edit profile page](doc/feature-edit-profile-page.webp)
 
-At the edit profile page the user can edit information about themselfs as real name and a small presentation about themself. The presentation is presented at the profile page. The user can also change the profile image. If the user already has filled out some information, it is prepopulating the fields. 
+At the edit profile page the user can edit information about themselves such as real name and a small presentation about themselves. The presentation is presented at the profile page. The user can also change the profile image. If the user already has filled out some information, it is prepopulating the fields. 
 
 ### Change username page
 
@@ -457,7 +457,7 @@ The current users' username are prepopulated when the user enters the edit usern
 
 ![Screenshot of change password page](doc/feature-change-password.webp)
 
-The user can change their password by filling out their new password twice. This to ensure the user doesn't spell the new password wrong.
+The user can change their password by filling out their new password twice. This to ensure the user doesn't spell the new password wrongly.
 
 ## Features to be Added
 
@@ -466,8 +466,8 @@ Several features can be added in the future. Some of them are listed below.
 | Feature | Explanation and benefits |
 | ---------- | ------------- |
 | Sending private messages | If the users can send private messages to each other they can communicate and have deeper discussions about their plant interest. |
-| Receive notifications | When a comment is posted at your post, a notification would appear. The notifications could also expand and cover if a user like your image, if a followed user publish a post or questions and so on. If the user receives notification can be a way to make the user more interest and more involved in the webpage and what's happening there. |
-| Plant exchange page | If a user has a plant they don't want anymore, they can post it at a plant exchange page and other users can express interest at the plant. This can enhance the community feeling and at the same time avoid plants being thrown away when someone else can have use for them. |
+| Receive notifications | When a comment is posted at your post, a notification would appear. The notifications could also expand and cover if a user like your image, if a followed user publishes a post or question and so on. If the user receives notification, it can be a way to make the user more interested and more involved in the webpage and what's happening there. |
+| Plant exchange page | If a user has a plant they don't want anymore, they can post it at a plant exchange page and other users can express interest in the plant. This can enhance the community feeling and at the same time avoid plants being thrown away when someone else can have use for them. |
 | Sign in with social media and Google credentials | Instead of the user signing in with username and password, the user can select to sign in with their social media account or Google account. This makes it easier for the user to sign in since they don't need to remember another username and password. |
 
 ## Testing
@@ -496,13 +496,13 @@ Validation of JavaScript was done with [ESLint](https://eslint.org/) in Gitpod. 
 
 ![Screenshot of Lighthouse test for desktop](doc/lighthouse-desktop.webp)
 
-The test för desktop resulted in 92 in performance and 100 in accessibility.
+The test for desktop resulted in 92 in performance and 100 in accessibility.
 
 **Mobile**
 
 ![Screenshot of Lighthouse for mobile](doc/lighthouse-mobile.webp)
 
-The test for mobile resulted in 48 in performance and 100 in accessibility. The low result in performance were mainly due to the JavaScript. The two main things slowing the page down were "Largest Contentful Paint element" and "Minimize main-thread work". The largest contentful pain element was render delay the biggest part. To improve the speed all JavaScript code were looked through to see if any code were unnessecary or in big chunks. The finished code resulted in 48. Another reason to the low performance score could be a slow server where the code is performed from.
+The test for mobile devices resulted in 48 in performance and 100 in accessibility. The low result in performance were mainly due to the JavaScript. The two main things slowing the page down were "Largest Contentful Paint element" and "Minimize main-thread work". In the largest contentful paint element, render delay was the biggest part. To improve the performance, all JavaScript code were looked through to see if any code were unnessecary or in big chunks. The finished code resulted in 48. Another reason to the low performance score could be a slow server where the code is performed from.
 
 ### Wave Webaim - accessibility testing
 
@@ -549,29 +549,29 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | Logo	| When clicked, directs the user to the home page	| Click at the logo	| Got directed to the home page	| Pass |
 | Sign up link	| When clicked, directs the user to the sign up page	| Click at "Sign up"	| Got directed to the sign up page	| Pass |
 | Sign in link	| When clicked, directs the user to the sign in page	| Click at "Sign in"	| Got directed to the sign in page	| Pass |
-| Plant friends link	| When clicked, directs the user to the plant friend page	| Click at "Plant friends"	| Got directed to the plant friends page	| Pass |
+| Plant friends link	| When clicked, directs the user to the plant friends page	| Click at "Plant friends"	| Got directed to the plant friends page	| Pass |
 | Profile link	| When clicked, directs the user to the profile page	| Click at "Profile"	| Got directed to the profile page	| Pass |
-| Sign out link	| When clicked, the user get signed out and directed to the home page	| Click at "Sign out"	| Got signed out and directed to the home page	| Pass |
+| Sign out link	| When clicked, the user is signed out and directed to the home page	| Click at "Sign out"	| Got signed out and directed to the home page	| Pass |
 | Responsive design | The navigation bar changes so the content fit at the smallest to the largest screens without scrolling sideways | In DevTools, select the smallest device and make it larger step by step | The navigation bar was responsive and changed depending on screen size | Pass |
 | Toggle menu | On devices smaller than 768 px, a toggle menu appears instead of icons and text | In DevTools, select 768 px as width, change to 767 px | The icons and text were replaced with a toggle menu when the width changed to 767 px | Pass |
 | Toggle menu - open | The toggle menu opens and all icons become visible when clicked at | Select a small device in DevTools to trigger the toggle menu, click at it | All icons became visible | Pass |
-| Toggle menu - close | All icons disappear when clicked at the toggle menu when it is open | Select a small device in DevTools to trigger the toggle menu, open the menu, click at the toggle menu to close it | The menu closed and all the icons disppeared | Pass |
-| Toggle menu - close when clicked outside | All icons disappear when clicked outside of the toggle menu when it is open | Select a small device in DevTools to trigger the toggle menu, open the menu, click outside of the toggle menu to close it | The menu closed and all the icons disppeared | Pass |
+| Toggle menu - close | All icons disappear when toggle menu icon is clicked (when the menu is open) | Select a small device in DevTools to trigger the toggle menu, open the menu, click at the toggle menu to close it | The menu closed and all the icons disppeared | Pass |
+| Toggle menu - close when clicked outside | All icons disappear when you click outside of the toggle menu (when the menu is open) | Select a small device in DevTools to trigger the toggle menu, open the menu, click outside of the toggle menu to close it | The menu closed and all the icons disppeared | Pass |
 
 #### Sign up page
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | Username field | The field is writable | Write "123abc" | The field was writable and the text was presented as it was written | Pass |  
-| Username already exist - message | A message appear if you try to sign up with a username already in use | Try to sign up with a username already in use | A message appeared below the username field "A user with that username already exists." | Pass |
-| Username field empty - message | A message appear if you try to sign up without entering a username | Leave username empty and sign up | A message appeared below the username field "This field may not be blank." | Pass |
+| Username already exist - message | A message appears if you try to sign up with a username already in use | Try to sign up with a username already in use | A message appeared below the username field "A user with that username already exists." | Pass |
+| Username field empty - message | A message appears if you try to sign up without entering a username | Leave username empty and sign up | A message appeared below the username field "This field may not be blank." | Pass |
 | Password field | The field is writable and showing black dots instead of characters | Write "123abc" | The field was writable and the text was presented as black dots | Pass |
-| Password field empty - message | A message appear if you try to sign up without entering a password | Leave password empty and sign up | A message appeared below the password field "This field may not be blank." | Pass |
-| Password field too short - message | A message appear if you try to sign up with a password shorter then eight characters | Enter a password containing seven characters and sign up | A message appeared below the password field "This password is too short. It must contain at least 8 characters." | Pass |
+| Password field empty - message | A message appears if you try to sign up without entering a password | Leave password empty and sign up | A message appeared below the password field "This field may not be blank." | Pass |
+| Password field too short - message | A message appears if you try to sign up with a password shorter than eight characters | Enter a password containing seven characters and sign up | A message appeared below the password field "This password is too short. It must contain at least 8 characters." | Pass |
 | Confirm password field | The field is writable and showing black dots instead of characters | Write "123abc" | The field was writable and the text was presented as black dots | Pass |
-| Confirm password field empty - message | A message appear if you try to sign up without entering a confirm password | Leave confirm password empty and sign up | A message appeared below the confirm password field "This field may not be blank." | Pass |
-| Password not match - message | A message appear if you try to sign up with password not matching each other | Sign up with two password not matching each other | A message appeared below the Sign up button "The two password fields didn't match." | Pass |
-| Sign up button | If the data in the fields are valid, the Sign up button register the user and directs the user to the Sign in page | Enter valid information in the fields, press Sign up | A new user was registred and got directed to the Sign in page | Pass |
+| Confirm password field empty - message | A message appears if you try to sign up without entering a confirmed password | Leave confirm password empty and sign up | A message appeared below the confirm password field "This field may not be blank." | Pass |
+| Password not match - message | A message appears if you try to sign up with passwords not matching each other | Sign up with two passwords not matching each other | A message appeared below the Sign up button "The two password fields didn't match." | Pass |
+| Sign up button | If the data in the fields are valid, the Sign up button register the user and directs the user to the Sign in page | Enter valid information in the fields, press Sign up | A new user was registered and got directed to the Sign in page | Pass |
 | Sign in link | The "Already have an account? Sign in" text directs the user to the sign in page | Press the text | The user got directed to the sign in page | Pass |
 
 #### Sign in page
@@ -579,11 +579,11 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | Username field | The field is writable | Write "abc123" | The field was writable and the text was presented as it was written | Pass |
-| Username field empty - message | A message appear if you try to sign in without entering a username | Leave username empty and sign in | A message appeared below the Sign in button "Must include "username" and "password"." | Pass |
+| Username field empty - message | A message appears if you try to sign in without entering a username | Leave username empty and sign in | A message appeared below the Sign in button "Must include "username" and "password"." | Pass |
 | Password field | The field is writable and showing black dots instead of characters | Write "123abc" | The field was writable and the text was presented as black dots | Pass |
-| Password field empty - message | A message appear if you try to sign in without entering a password | Leave password empty and sign in | A message appeared below the password field "This field may not be blank." | Pass |
-| Incorrect credentials | A message appear if the user enter incorrect username or password | Enter incorrect credentials and sign in | A message appeared below the Sign in button "Unable to log in with provided credentials." | Pass |
-| Sign in button | Pressing the Sign in button makes the user to be logged in and directed to the home page | Enter correct credentials, press Sign in | The user got signed in and directed to the home page | Pass |
+| Password field empty - message | A message appears if you try to sign in without entering a password | Leave password empty and sign in | A message appeared below the password field "This field may not be blank." | Pass |
+| Incorrect credentials | A message appears if the user enters incorrect username or password | Enter incorrect credentials and sign in | A message appeared below the Sign in button "Unable to log in with provided credentials." | Pass |
+| Sign in button | Pressing the Sign in button logs the user in and directs it to the home page | Enter correct credentials, press Sign in | The user got signed in and directed to the home page | Pass |
 | Sign up link | The "Don't have an account yet? Sign up now!" text directs the user to the sign up page | Press the text | The user got directed to the sign up page | Pass |
 
 #### Home page
@@ -591,36 +591,36 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | Add post button - not logged in | When clicked at, the user gets directed back to the home page | Sign out, click at Add post button | The user gets directed back to the homepage | Pass |
-| Add post button - logged in | When clicked at, the user get directed to the create post page | Sign in, click at Add post button | The user gets directed to the create post page | Pass |
-| Search field | When entering a search string, the results presented includes the search string | Enter the search string "hard" | The post presented are all post including the frase "hard" | Pass |
+| Add post button - logged in | When clicked at, the user gets directed to the create post page | Sign in, click at Add post button | The user gets directed to the create post page | Pass |
+| Search field | When entering a search string, the results presented includes the search string | Enter the search string "hard" | The posts presented are all posts including the frase "hard" | Pass |
 | Profile image and name in post | The profile image and name links to the profile page | Click at the profile information | The user gets directed to the profile page | Pass |
 | Post text | The post text (title and content) links to the post page | Click at the post text | The user gets directed to the post page | Pass |
 | Like - not logged in | When the user tries to like a post, a tooltip appears "Log in to like posts!" and it is not possible to like a post | Sign out, try to like a post | A tooltip appeared and it was not possible to like the post | Pass |
-| Like - logged in | When the user like a post, the heart change color and number of likes are increased by one | Sign in, like a post | The heart changed color and the number of likes increased by one | Pass |
-| Like own post - logged in | When the user tries to like their own post, a tooltip appears "You can't like your own post!" and it is not possible to like the post | Sign in, try to like one of your own post | A tooltip appeared and it was not possible to like the post | Pass |
-| Unlike | When the user unlike a post, the heart change color and number of likes are decreased by one | Sign in, find a post you already like, unlike the post | The heart changed color and the number of likes decreased by one | Pass |
+| Like - logged in | When the user likes a post, the heart changes color and number of likes are increased by one | Sign in, like a post | The heart changed color and the number of likes increased by one | Pass |
+| Like own post - logged in | When the user tries to like their own post, a tooltip appears "You can't like your own post!" and it is not possible to like the post | Sign in, try to like one of your own posts | A tooltip appeared and it was not possible to like the post | Pass |
+| Unlike | When the user unlikes a post, the heart changes color and number of likes are decreased by one | Sign in, find a post you already like, unlike the post | The heart changed color and the number of likes decreased by one | Pass |
 | Comment | When the comment icon is pressed, the user gets directed to the post page | Press comment icon | Got directed to the post page | Pass |
 | Most followed profiles - not logged in | The most followed profiles are listed | Sign out, view the section "Most followed profiles" | The most followed profiles are listed | Pass |
-| Most followed profiles - logged in | After each profile (except your own), a follow/unfollow button is located | Log in, view Most followed profiles | After each profile, it was a follow/unfollow button | Pass |
-| Most followed profiles (logged in) - follow button | After a profile the user isn't following, it is a Follow button | Log in, view Most followed profiles and compare to which you have been following | A follow button was present after the profiles not followed | Pass |
-| Most followed profiles (logged in) - unfollow button | After a profile the user is following, it is a Unfollow button | Log in, view Most followed profiles and compare to which you have been following | A unfollow button was present after the profiles followed | Pass |
+| Most followed profiles - logged in | Next to each profile (except your own), a follow/unfollow button is located | Log in, view Most followed profiles | Next to each profile, there was a follow/unfollow button | Pass |
+| Most followed profiles (logged in) - follow button | Next to a profile the user isn't following, there is a Follow button | Log in, view Most followed profiles and compare with which users you have been following | A follow button was present next to the profiles not followed | Pass |
+| Most followed profiles (logged in) - unfollow button | Next to a profile the user is following, there is an Unfollow button | Log in, view Most followed profiles and compare with which users you have been following | An unfollow button was present next to the profiles followed | Pass |
 | Most followed profiles - profile image | The profile image links to the profile page | Click at the profile image | The user gets directed to the profile page | Pass |
 
 #### Post page
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| Three dots menu at post - not visible | If the user isn't the author to the post, the three dots menu isn't visible | Visit a post that isn't written by the logged in user | The three dots weren't visible | Pass |
+| Three dots menu at post - not visible | If the user isn't the author of the post, the three dots menu isn't visible | Visit a post that isn't written by the logged in user | The three dots weren't visible | Pass |
 | Three dots menu at post - visible | If the user is the author of the post, the three dots menu is visible | Visit a post written by the logged in user | The three dots were visible | Pass |
 | Edit post | When Edit is clicked at, the user gets directed to the Edit post page | Press three dots, press Edit | The user got directed to the Edit post page | Pass |
 | Delete post - Confirmation modal |  A confirmation modal is triggered when delete is pressed | Click at three dots, press delete | A confirmation modal is triggered | Pass |
 | Delete post - Confirmation modal - Cancel | The modal closes without deleting the post when Cancel is pressed | Trigger the confirmation modal, press Cancel, see if the post still is published | The post is still published when Cancel is pressed | Pass |
-| Delete post - Confirmation modal - X | The modal closes without deleting the post when X is pressed | Trigger the confirmation modal, press X, see if the post still is published | The post is still published when X is pressed | Pass |
-| Delete post - Confirmation modal - Confirm | The modal closes and delete the post when Confirm is pressed | Trigger the confirmation modal, press Confirm, see if the post still is published | The post is deleted when Confirm is pressed | Pass |
+| Delete post - Confirmation modal - X | The modal closes without deleting the post when X is pressed | Trigger the confirmation modal, press X, see if the post is still published | The post is still published when X is pressed | Pass |
+| Delete post - Confirmation modal - Confirm | The modal closes and deletes the post when Confirm is pressed | Trigger the confirmation modal, press Confirm, see if the post is still published | The post is deleted when Confirm is pressed | Pass |
 | Like - not logged in | When the user tries to like a post, a tooltip appears "Log in to like posts!" and it is not possible to like a post | Sign out, try to like a post | A tooltip appeared and it was not possible to like the post | Pass |
-| Like - logged in | When the user like a post, the heart change color and number of likes are increased by one | Sign in, like a post | The heart changed color and the number of likes increased by one | Pass |
-| Like own post - logged in | When the user tries to like their own post, a tooltip appears "You can't like your own post!" and it is not possible to like the post | Sign in, try to like one of your own post | A tooltip appeared and it was not possible to like the post | Pass |
-| Unlike | When the user unlike a post, the heart change color and number of likes are decreased by one | Sign in, find a post you already like, unlike the post | The heart changed color and the number of likes decreased by one | Pass |
+| Like - logged in | When the user likes a post, the heart changes color and the number of likes are increased by one | Sign in, like a post | The heart changed color and the number of likes increased by one | Pass |
+| Like own post - logged in | When the user tries to like their own post, a tooltip appears "You can't like your own post!" and it is not possible to like the post | Sign in, try to like one of your own posts | A tooltip appeared and it was not possible to like the post | Pass |
+| Unlike | When the user unlikes a post, the heart changes color and the number of likes are decreased by one | Sign in, find a post you already like, unlike the post | The heart changed color and the number of likes decreased by one | Pass |
 | Comment field not showing | When a user isn't logged in, the comment field isn't showing | Sign out, visit a post and look for the comment field | The comment field wasn't showing | Pass |
 | Comment field - logged in | The field is writable | Write "This is it!" | The field was writable and the text was presented as it was written | Pass |
 | Post button - disabled | When nothing is written in the comment field, the post button is disabled and not clickable | Visit a post, click at the post button without writing anything in the comment field | The post button was disabled and wasn't clickable | Pass |
@@ -632,9 +632,9 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | Edit comment - Cancel | The comment returns to its original state when Cancel is clicked at | Edit a comment, press Cancel | The edit mode is closed and the comment return to its original state | Pass | 
 | Edit comment - Save | The published comment updates to the edited version | Edit a comment, press Save | The edit mode is closed and the comment is updated | Pass |
 | Delete comment - Confirmation modal | A confirmation modal is triggered when delete is pressed | Click at three dots, press delete | A confirmation modal is triggered | Pass |
-| Delete comment - Confirmation modal - Cancel | The modal closes without deleting the comment when Cancel is pressed | Trigger the confirmation modal, press Cancel, see if the comment still is published | The comment is still published when Cancel is pressed | Pass |
-| Delete comment - Confirmation modal - X | The modal closes without deleting the comment when X is pressed | Trigger the confirmation modal, press X, see if the comment still is published | The comment is still published when X is pressed | Pass |
-| Delete comment - Confirmation modal - Confirm | The modal closes and delete the comment when Confirm is pressed | Trigger the confirmation modal, press Confirm, see if the comment still is published | The comment is deleted when Confirm is pressed | Pass |
+| Delete comment - Confirmation modal - Cancel | The modal closes without deleting the comment when Cancel is pressed | Trigger the confirmation modal, press Cancel, see if the comment is still published | The comment is still published when Cancel is pressed | Pass |
+| Delete comment - Confirmation modal - X | The modal closes without deleting the comment when X is pressed | Trigger the confirmation modal, press X, see if the comment is still published | The comment is still published when X is pressed | Pass |
+| Delete comment - Confirmation modal - Confirm | The modal closes and deletes the comment when Confirm is pressed | Trigger the confirmation modal, press Confirm, see if the comment is still published | The comment is deleted when Confirm is pressed | Pass |
 
 #### Edit post page 
 
@@ -643,16 +643,16 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | Title field | The field is writable | Write "Here we go 123" | The field was writable and the text was presented as it was written | Pass |
 | Content field | The field is writable | Write "Olala159" | The field was writable and the text was presented as it was written | Pass |
 | Hardiness zone dropdown | The dropdown allows changes | Change hardiness zone in the dropdown | It was possible to change the hardiness zone | Pass |
-| Title field - preoccupied | The text is preoccupied with the title from the post | Read the title in the post, compare to the title when edit is pressed | The preoccupied text is the same as in the original post | Pass |
-| Content field - preoccupied | The text is preoccupied with the content from the post | Read the content in the post, compare to the content when edit is pressed | The preoccupied text is the same as in the original post | Pass |
-| Hardiness zone - preoccupied | The hardiness zone dropdown is preoccupied with the hardiness zone from the post | Read the hardiness zone in the post, compare to the hardiness zone when edit is pressed | The preoccupied hardiness zone is the same as in the original post | Pass |
+| Title field - pre-filled | The text is pre-filled with the title from the post | Read the title in the post, compare to the title when edit is pressed | The pre-filled text is the same as in the original post | Pass |
+| Content field - pre-filled | The text is pre-filled with the content from the post | Read the content in the post, compare to the content when edit is pressed | The pre-filled text is the same as in the original post | Pass |
+| Hardiness zone - pre-filled | The hardiness zone dropdown is pre-filled with the hardiness zone from the post | Read the hardiness zone in the post, compare to the hardiness zone when edit is pressed | The pre-filled hardiness zone is the same as in the original post | Pass |
 | Title field - message | If the title field is left blank, a message appears | Edit a post, delete the title, press Save | A message below the title field appeared, "This field may not be blank." | Pass |
 | Image preview | The image preview holds the image in the post | Look at the image in the post, compare to the image when edit is pressed | The image in the post and the preview is the same | Pass |
-| Change the image - trigger upload | When "Change the image" is pressed, a upload menu is triggered | Click on "Change the image" | A upload menu is triggered | Pass |
-| Image preview - after change | The image preview views the new image when a new image has been uploaded | Upload a new image | The new image are previewed after uploading it | Pass |
-| Image upload - size message | A message appear if the user tries to upload an image larger than 2 MB | Upload an image larger than 2 MB | A message appeared, "Image size larger than 2 MB!" | Pass |
-| Image upload - height message | A message appear if the user tries to upload an image with a height over 4096 px | Upload an image with a height over 4096 px | A message appeared, "Image height larger than 4096px!" | Pass |
-| Image upload - width message | A message appear if the user tries to upload an image with a width over 4096 px | Upload an image with a width over 4096 px | A message appeared, "Image width larger than 4096px!" | Pass |
+| Change the image - trigger upload | When "Change the image" is pressed, an upload menu is triggered | Click on "Change the image" | An upload menu is triggered | Pass |
+| Image preview - after change | The image preview shows the new image when a new image has been uploaded | Upload a new image | The new image is previewed after uploading it | Pass |
+| Image upload - size message | A message appears if the user tries to upload an image larger than 2 MB | Upload an image larger than 2 MB | A message appeared, "Image size larger than 2 MB!" | Pass |
+| Image upload - height message | A message appears if the user tries to upload an image with a height over 4096 px | Upload an image with a height over 4096 px | A message appeared, "Image height larger than 4096px!" | Pass |
+| Image upload - width message | A message appears if the user tries to upload an image with a width over 4096 px | Upload an image with a width over 4096 px | A message appeared, "Image width larger than 4096px!" | Pass |
 | Cancel button | When Cancel button is pressed, the changes are discarded and the user gets redirected back to the original post | Make changes in a post, press Cancel | Got directed back to the original post page, without any changes made | Pass |
 | Save button | When Save button is pressed, the changes are saved and the user gets directed to the post page with the new edits in the post | Edit the post, press Save | The user got directed to the post page with the new edits published | Pass |
 
@@ -665,37 +665,37 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | Hardiness zone dropdown | The dropdown allows changes | Change hardiness zone in the dropdown | It was possible to change the hardiness zone | Pass |
 | Hardiness zone dropdown - placeholder | Once a choice is selected, the placeholder isn't possible to choose | Select hardiness zone 4, try to select back to the placeholder | It wasn't possible to select the placeholder | Pass |
 | Title - message | If the title field is left blank, a message appears | Fill out a hardiness zone, leave everything else blank, press Save | A message below the title field appeared, "This field may not be blank." | Pass |
-| Hardiness zone - message | If a hardiness zone isn't chosen, a message appear | Try to post a post without choosing the hardiness zone | A message appeared prompting the user to select one option | Pass |
+| Hardiness zone - message | If a hardiness zone isn't chosen, a message appears | Try to post a post without choosing the hardiness zone | A message appeared prompting the user to select an option | Pass |
 | Image preview | The image preview holds the image in the post | Look at the image in the post, compare to the image when edit is pressed | The image in the post and the preview is the same | Pass |
-| Change the image - trigger upload | When "Click or tap to upload an image" is pressed, a upload menu is triggered | Click on "Click or tap to upload an image" | A upload menu is triggered | Pass |
-| Image preview - after change | The image preview shows the new image when a new image has been uploaded | Upload a new image | The new image are previewed after uploading it | Pass |
-| Image upload - size message | A message appear if the user tries to upload an image larger than 2 MB | Upload an image larger than 2 MB | A message appeared, "Image size larger than 2 MB!" | Pass |
-| Image upload - height message | A message appear if the user tries to upload an image with a height over 4096 px | Upload an image with a height over 4096 px | A message appeared, "Image height larger than 4096px!" | Pass |
-| Image upload - width message | A message appear if the user tries to upload an image with a width over 4096 px | Upload an image with a width over 4096 px | A message appeared, "Image width larger than 4096px!" | Pass |
-| Cancel button | The draft to the post get discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the draft isn't published by checking the profile page and look for the draft | The draft was discarded and wasn't published and the user got directed to the former 
-| Create button | The draft get published when Create button is pressed and user gets directed to the post page | Fill out all required fields, press Create | The draft get published and user get directed to the post page | Pass |
+| Change the image - trigger upload | When "Click or tap to upload an image" is pressed, an upload menu is triggered | Click on "Click or tap to upload an image" | An upload menu is triggered | Pass |
+| Image preview - after change | The image preview shows the new image when a new image has been uploaded | Upload a new image | The new image is previewed after uploading it | Pass |
+| Image upload - size message | A message appears if the user tries to upload an image larger than 2 MB | Upload an image larger than 2 MB | A message appeared, "Image size larger than 2 MB!" | Pass |
+| Image upload - height message | A message appears if the user tries to upload an image with a height over 4096 px | Upload an image with a height over 4096 px | A message appeared, "Image height larger than 4096px!" | Pass |
+| Image upload - width message | A message appears if the user tries to upload an image with a width over 4096 px | Upload an image with a width over 4096 px | A message appeared, "Image width larger than 4096px!" | Pass |
+| Cancel button | The draft to the post gets discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the draft isn't published by checking the profile page and look for the draft | The draft was discarded and wasn't published and the user got directed to the former page | Pass |
+| Create button | The draft gets published when Create button is pressed and user gets directed to the post page | Fill out all required fields, press Create | The draft got published and user got directed to the post page | Pass |
 
 #### Question page
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| Add question button | When clicked at, the user get directed to the create question page | Sign in, click at Add question button | The user gets directed to the create question page | Pass |
+| Add question button | When clicked at, the user gets directed to the create question page | Sign in, click at Add question button | The user got directed to the create question page | Pass |
 | Search field | When entering a search string, the results presented includes the search string | Enter the search string "pota" | The post presented are all post including the frase "pota" | Pass |
 | Title link | When the title is clicked at, the user gets directed to the individual question page | Click at the title at one question | The user got directed to the individual question page | Pass |
 | Profile link | When the profile who asked the question is clicked at, the user gets directed to the profile page | Click at the user who asked the question | The user got directed to the profile page | Pass |
 | Three dots menu - not visible | If the user isn't the author of the question, the three dots menu isn't visible | View a question not written by the logged in user | The three dots weren't visible | Pass |
 | Three dots menu - visible | If the user is the author of the question, the three dots menu is visible | View a question written by the logged in user | The three dots were visible | Pass |
-| Delete question - Confirmation modal |  A confirmation modal is triggered when delete is pressed | Click at three dots, press delete | A confirmation modal is triggered | Pass |
-| Delete question - Confirmation modal - Cancel | The modal closes without deleting the question when Cancel is pressed | Trigger the confirmation modal, press Cancel, see if the question still is published | The question is still published when Cancel is pressed | Pass |
-| Delete question - Confirmation modal - X | The modal closes without deleting the question when X is pressed | Trigger the confirmation modal, press X, see if the question still is published | The question is still published when X is pressed | Pass |
-| Delete question - Confirmation modal - Confirm | The modal closes and delete the question when Confirm is pressed | Trigger the confirmation modal, press Confirm, see if the question still is published | The question is deleted when Confirm is pressed | Pass |
+| Delete question - Confirmation modal |  A confirmation modal is triggered when delete is pressed | Click at the three dots, press delete | A confirmation modal is triggered | Pass |
+| Delete question - Confirmation modal - Cancel | The modal closes without deleting the question when Cancel is pressed | Trigger the confirmation modal, press Cancel, see if the question is still published | The question is still published when Cancel is pressed | Pass |
+| Delete question - Confirmation modal - X | The modal closes without deleting the question when X is pressed | Trigger the confirmation modal, press X, see if the question is still published | The question is still published when X is pressed | Pass |
+| Delete question - Confirmation modal - Confirm | The modal closes and deletes the question when Confirm is pressed | Trigger the confirmation modal, press Confirm, see if the question is still published | The question is deleted when Confirm is pressed | Pass |
 | Submit button - disabled | If the user hasn't selected an answer option, the submit button is disabled | Try to press Submit without choosing an option | The Submit button had disabled colors and wasn't clickable | Pass |
 | Submit button - enabled | If the user has selected an answer option, the submit button is enabled | Try to press Submit when an option is selected | The Submit button had enabled colors and was clickable | Pass |
 | Submit button - trigger modal | When an option is selected and Submit is pressed, a thank you for voting modal is triggered | Select an option, press Submit | A modal is triggered to confirm the vote | Pass |
 | Thank you for voting modal - Cancel | The modal closes when Cancel is pressed | Trigger the thank you for voting modal, press Cancel | The modal closes when Cancel is pressed | Pass |
 | Thank you for voting modal - X | The modal closes when X is pressed | Trigger the thank you for voting modal, press X | The modal closes when X is pressed | Pass |
 | Votes update | When a user submits a vote, number of votes are increased by one | View how many votes an answer has, submit a vote | Number of votes increased by one | Pass |
-| Already voted modal | When the user submit a vote in a question they have already voted at, a modal telling the user is triggered | Vote twice at the same question | At the second time, a modal is triggered telling the user they have already voted | Pass |
+| Already voted modal | When the user submits a vote in a question they have already voted on, a modal telling the user is triggered | Vote twice at the same question | At the second time, a modal is triggered telling the user they have already voted | Pass |
 | Already voted modal - Cancel | The modal closes when Cancel is pressed | Trigger the already voted modal, press Cancel | The modal closes when Cancel is pressed | Pass |
 | Already voted modal - X | The modal closes when X is pressed | Trigger the already voted modal, press X | The modal closes when X is pressed | Pass |
 | See results | When See results is pressed, number of votes at each answer is presented and the text changes to Hide results | Press See results | Number of votes at each answer is presented, text changed to Hide results | Pass |
@@ -707,15 +707,15 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | Question field | The field is writable | Write "This is my question" | The field was writable and the text was presented as it was written | Pass |
 | Answer field | The field is writable | Write "Hello world" | The field was writable and the text was presented as it was written | Pass |
-| Add answer button | When add answer button is pressed, another answer field is presented | Press add answer button | Another add answer field was presented | Pass |
+| Add answer button | When add answer button is pressed, another answer field is presented | Press add answer button | Another answer field was presented | Pass |
 | Remove answer button - not visible | When there is one answer field, remove answer button isn't visible | Make sure only one answer field is present, look for remove answer button | Remove answer button wasn't visible | Pass |
-| Remove answer button - visible | When it is more than two answer fields, remove answer button is visible | Add an answer field to have two answer fields | The remove answer button appears next to the add answer button | Pass |
+| Remove answer button - visible | When there is more than two answer fields, remove answer button is visible | Add an answer field to have two answer fields | The remove answer button appears next to the add answer button | Pass |
 | Remove answer button | When remove answer button is pressed, the last answer field is removed | Press remove answer button | The last answer field was removed | Pass |
-| Question field - not blank | When a question is submitted without anything written in the question field, a message appear | Submit a question without writing anything in the question field | A message appeared below the question field "The question cannot be left blank." | Pass |
-| Answer field - not blank | When a question is submitted without anything written in the answer field, a message appear | Submit a question without writing anything in the answer field | A message appeared below the answer field "Answer cannot be left blank." | Pass |
-| At least two answers | When a question is submitted with only one answer filled out, a message appear | Submit a question with only written in one answer field | A message appeared below the question field "At least two answers are required and none can be left blank." | Pass |
+| Question field - not blank | When a question is submitted without anything written in the question field, a message appears | Submit a question without writing anything in the question field | A message appeared below the question field "The question cannot be left blank." | Pass |
+| Answer field - not blank | When a question is submitted without anything written in the answer field, a message appears | Submit a question without writing anything in the answer field | A message appeared below the answer field "Answer cannot be left blank." | Pass |
+| At least two answers | When a question is submitted with only one answer filled out, a message appears | Submit a question with only writing in one answer field | A message appeared below the question field "At least two answers are required and none can be left blank." | Pass |
 | Cancel button | When Cancel is pressed, the question draft is discarded and the user gets directed to the last visited page | Press Cancel, view questions page to make sure the question wasn't published | The question wasn't published and the user got directed to the last visited page | Pass |
-| Submit button | When Submit is pressed, the question is published and is viewed to the user | Enter valid information in the create question form, press Submit | The question is published and is presented to the user at the individual question page | Pass |
+| Submit button | When Submit is pressed, the question is published and is shown to the user | Enter valid information in the create question form, press Submit | The question is published and is presented to the user at the individual question page | Pass |
 
 #### Profile page
 
@@ -736,22 +736,22 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | Name field | The field is writable | Write "My name" | The field was writable and the text was presented as it was written | Pass |
 | Content field | The field is writable | Write "My content" | The field was writable and the text was presented as it was written | Pass |
-| Content field - preoccupied | The text is preoccupied with the content from the profile | Read the content in the profile, compare to the content in edit mode | The preoccupied text is the same as in the original profile | Pass |
-| Image preview | The image preview holds the image in the profile | Look at the image in the profile, compare to the image in edit mode | The image in the profile and the preview is the same | Pass |
-| Change the image - trigger upload | When "Ready for a new image?" is pressed, a upload menu is triggered | Click on "Ready for a new image?" | A upload menu is triggered | Pass |
-| Image preview - after change | The image preview views the new image when a new image has been uploaded | Upload a new image | The new image are previewed after uploading it | Pass |
+| Content field - pre-filled | The text is pre-filled with the content from the profile | Read the content in the profile, compare to the content in edit mode | The pre-filled text is the same as in the original profile | Pass |
+| Image preview | The image preview shows the image in the profile | Look at the image in the profile, compare to the image in edit mode | The image in the profile and the preview is the same | Pass |
+| Change the image - trigger upload | When "Ready for a new image?" is pressed, an upload menu is triggered | Click on "Ready for a new image?" | An upload menu is triggered | Pass |
+| Image preview - after change | The image preview shows the new image when a new image has been uploaded | Upload a new image | The new image is shown after uploading it | Pass |
 | Cancel button | The changes get discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the changes aren't published by checking the profile page | The changes were discarded and weren't published and the user got directed to the last visited page | Pass |
-| Save button | The changes get published when Save button is pressed and the user gets directed to the profile page | Make changes, press Save | The changes get published and user get directed to the profile page | Pass |
+| Save button | The changes get published when Save button is pressed and the user gets directed to the profile page | Make changes, press Save | The changes got published and user got directed to the profile page | Pass |
 
 #### Change username page
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| Username field - preoccupied | The text is preoccupied with the username of the logged in user | Read the username in the profile, compare to the username in the field | The preoccupied username is the same as in the profile | Pass |
-| Username field - not blank | When a username change is submitted without anything written in the username field, a message appear | Submit a username change without writing anything in the username field | A message appeared below the username field, "This field may not be blank." | Pass |
-| Username already exist | When a username change is submitted to a username already in use, a message appear | Submit a username change to an already existing username | A message appeared below the username field, "A user with that username already exists." | Pass |
+| Username field - pre-filled | The text is pre-filled with the username of the logged in user | Read the username in the profile, compare to the username in the field | The pre-filled username is the same as in the profile | Pass |
+| Username field - not blank | When a username change is submitted without anything written in the username field, a message appears | Submit a username change without writing anything in the username field | A message appeared below the username field, "This field may not be blank." | Pass |
+| Username already exist | When a username change is submitted to a username already in use, a message appears | Submit a username change to an already existing username | A message appeared below the username field, "A user with that username already exists." | Pass |
 | Cancel button | The changes get discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the changes aren't published by checking the profile page | The changes were discarded and weren't published and the user got directed to the last visited page | Pass |
-| Save button | The username changes when Save button is pressed and the user gets directed to the profile page | Make changes, press Save | The changes get published and user get directed to the profile page | Pass |
+| Save button | The username changes when Save button is pressed and the user gets directed to the profile page | Make changes, press Save | The changes got published and user got directed to the profile page | Pass |
 
 #### Change password page
 
@@ -759,21 +759,21 @@ Every page at the website has been manually tested. It is done in Google Chrome 
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
 | New password field | The field is writable | Write "Password" | The field was writable and the text was presented as black dots | Pass |
 | Confirm new password field | The field is writable | Write "Password" | The field was writable and the text was presented as black dots | Pass |
-| Password too short | If the new password is shorter than eight characters, a message appear | Select a password shorter than eight characters and press Save | A message appeared, "This password is too short. It must contain at least 8 characters." | Pass |
-| Passwords not matching | If the two passwords don't match, a message appear | Write to different passwords and press Save | A message appeared, "The two password fields didn’t match." | Pass |
-| Cancel button | The changes get discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the password isn't changed by sign out and sign in again | The password wasn't changed and the user got directed to the last visited page | Pass |
-| Save button | The password changes when Save button is pressed and the user gets directed to the profile page | Write the new password twice, press Save, sign out and sign in again | The password get changed and the user get directed to the profile page | Pass |
+| Password too short | If the new password is shorter than eight characters, a message appears | Select a password shorter than eight characters and press Save | A message appeared, "This password is too short. It must contain at least 8 characters." | Pass |
+| Passwords not matching | If the two passwords don't match, a message appears | Write two different passwords and press Save | A message appeared, "The two password fields didn’t match." | Pass |
+| Cancel button | The changes get discarded and the user redirected back to the page they last visited | Press Cancel button, make sure the password isn't changed by signing out and signing in again | The password wasn't changed and the user got directed to the last visited page | Pass |
+| Save button | The password changes when Save button is pressed and the user gets directed to the profile page | Write the new password twice, press Save, sign out and sign in again | The password got changed and the user got directed to the profile page | Pass |
 
 #### 404 page
 
 | Feature being tested | Expected Outcome | Testing Performed | Actual Outcome | Result (Pass or fail) |
 | -------------------- | ---------------- | ----------------- | -------------- | --------------------- |
-| Go back button | The user get directed to the last visited page | Enter an invalid url, press Go back button | The user got directed back to the last visited page | Pass |
-| Home page button | The user get directed to the home page | Enter an invalid url, press Home page button | The user got directed to the home page | Pass |
+| Go back button | The user gets directed to the last visited page | Enter an invalid url, press Go back button | The user got directed back to the last visited page | Pass |
+| Home page button | The user gets directed to the home page | Enter an invalid url, press Home page button | The user got directed to the home page | Pass |
 
 ### Automated Testing
 
-A total of 46 tests was run in 16 different test suites. All tests has been written with Jest. The tests have been focused at pages and components that aren't based at [CI Moments](https://github.com/mr-fibonacci/moments)
+A total of 46 tests were run in 16 different test suites. All tests has been written with Jest. The tests have been focused on pages and components that aren't based at [CI Moments](https://github.com/mr-fibonacci/moments)
 
 ![Screenshot of all test suites](doc/tests-all.webp)
 
@@ -820,13 +820,13 @@ The tests can be found here:
 
 Several bugs were discovered during the development process.
 
-During the JavaScript validation, over 100 errors were discovered. Some of the errors were the use of snake case when constants were taken from the backend. This was solved by renaming them to camel case when they were imported in the JavaScript. Some other reaccuring notes were to change ' to &apos;. All console.log did also throw errors, which was resolved by commenting out all console.log which were in try-catch block. These were kept to make it easier to troubleshoot later on, in future versions. All console.log outside of try-catch blocks were deleted.
+During the JavaScript validation, more than 100 errors were discovered. Some of the errors were the use of snake case when constants were taken from the backend. This was solved by renaming them to camel case when they were imported in the JavaScript. Some other reaccuring notes were to change ' to &amp;apos;. All console.log did also throw errors, which were resolved by commenting out all console.log which were in try-catch block. These were kept to make it easier to troubleshoot later on, in future versions. All console.log outside of try-catch blocks were deleted.
 
-During the Wave Webaim validation it was discovered that several forms (example search bar, edit profile, add post). These were fixed by connecting form and label with htmlFor in the label. This didn't work at all pages, it was then solved by adding aria-label. 
+During the Wave Webaim validation it was discovered that several forms (example search bar, edit profile, add post) didn't have a label. These were fixed by connecting form and label with htmlFor in the label. This didn't work at all pages, it was then solved by adding aria-label. 
 
 When the manual testing was performed, two bugs where discovered. The first bug was that the user couldn't upload an image when they were creating a post. When they clicked at the image area, nothing happened. The bug was caused by a form label controlling the form for uploading an image was set to screen readers only. The second bug was the text in the follow button didn't change to unfollow when you pressed follow. The user had to refresh the page to see the change. The bug was caused by the change from snake case to camel case in the JavaScript file. It was forgotten to declare a snake case value to camel case.
 
-None known bug were left unfixed.
+No known bugs were left unfixed.
 
 ## Technologies Used
 
@@ -920,4 +920,4 @@ All images are stored at [Cloudinary](https://cloudinary.com/).
 
 Thanks to Gareth McGirr for pointing my project in the right direction. A deep bow to Linus Wikell for proofreading!
 
-[Back to top](#greenthumb---frontend)
+[Back to top](#greenthumb-hub---frontend)
